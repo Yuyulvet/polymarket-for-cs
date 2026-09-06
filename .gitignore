@@ -1,0 +1,34 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- 虚拟环境 ---
+.venv/
+venv/
+env/
+
+# --- 数据 / 模型（全部是生成产物，体积巨大，不提交） ---
+data/
+models/
+.scratch/
+
+# --- 报告产物（可选：CSV/大文件不提交，只留 .md） ---
+reports/*.csv
+reports/*.txt
+
+# --- 根目录临时脚本 ---
+_*.py
+
+# --- 编辑器 / 系统 ---
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.log
