@@ -158,6 +158,15 @@ class BookRebuilderTests(unittest.TestCase):
         reb.feed_row(1.0, json.dumps([_book_msg("999", 0.5, 0.6)]))
         self.assertEqual(reb.applied.get("book_snapshot", 0), 0)
 
+    def test_l5_depth_uses_best_price_levels_not_largest_sizes(self):
+        reb = td.MarketRebuilder({TOK_YES})
+        bids = [[.60, 1], [.59, 100], [.58, 2], [.57, 3], [.56, 4], [.55, 1000]]
+        asks = [[.62, 1000], [.63, 1], [.64, 1], [.65, 1], [.66, 1], [.67, .5]]
+        reb.tapes[TOK_YES].apply_snapshot(1.0, bids, asks)
+        state = reb.tapes[TOK_YES].states[-1]
+        self.assertEqual(state[3], 110)   # bid .60 through .56
+        self.assertEqual(state[4], 1004)  # ask .62 through .66
+
 
 class TriggerTests(unittest.TestCase):
     def test_collect_triggers_eligible_only(self):

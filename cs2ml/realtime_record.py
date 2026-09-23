@@ -18,6 +18,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import math
 import re
 import sys
 import time
@@ -72,8 +73,11 @@ def event_tokens(event_id: int) -> dict:
 
 # ---------------------------------------------------------------- WebSocket 录价
 class RealtimeRecorder:
+    BOOK_DEPTH_LEVELS = 5
+
     def __init__(self, tokens: dict[str, dict[str, str]], out_file: Path,
-                 probe_limit: int = 0, event_id: str | None = None):
+                 probe_limit: int = 0, event_id: str | None = None,
+                 market_metadata: dict[str, dict] | None = None):
         self.tokens = tokens                      # market -> {outcome: token}
         self.tok2info = {}                        # token -> (market, outcome)
         self.assets = []
@@ -84,9 +88,10 @@ class RealtimeRecorder:
         self.out_file = out_file
         self.probe_limit = probe_limit
         self.event_id = None if event_id is None else str(event_id)
+        self.market_metadata = market_metadata or {}
         self.n_events = 0
         self.n_msgs = 0
-        self.best = {}                            # token -> {"bid","ask","last","ts"}
+        self.books: dict[str, dict[str, dict[float, float]]] = {}
         self.last_write = 0.0
 
     # ---- 连接 ----
@@ -118,7 +123,8 @@ class RealtimeRecorder:
         try:
             if v is None:
                 return None
-            return float(v)
+            value = float(v)
+            return value if math.isfinite(value) else None
         except Exception:
             return None
 
@@ -133,7 +139,8 @@ class RealtimeRecorder:
             if msg == "PING":
                 ws.send("PONG")
             return
-        if not isinstance(msg, dict):
+        messages = msg if isinstance(msg, list) else [msg]
+        if not all(isinstance(item, dict) for item in messages):
             return
         if self.probe_limit:
             print(f"[PROBE] {json.dumps(msg, ensure_ascii=False)[:400]}", flush=True)
@@ -141,10 +148,12 @@ class RealtimeRecorder:
             if self.n_events >= self.probe_limit:
                 ws.close()
             return
-        self._handle(msg)
-
-    def _handle(self, msg):
         local_ts = time.time()
+        for item in messages:
+            self._handle(item, local_ts=local_ts)
+
+    def _handle(self, msg, local_ts=None):
+        local_ts = time.time() if local_ts is None else local_ts
         source_ts = self._source_ts(msg)
         # 1) price_changes：数组，每项带 asset_id + best_bid/best_ask
         pcs = msg.get("price_changes")
@@ -157,14 +166,16 @@ class RealtimeRecorder:
                 if info is None:
                     continue
                 market, outcome = info
+                self._apply_change(aid, pc)
                 bb = self._f(pc.get("best_bid"))
                 ba = self._f(pc.get("best_ask"))
-                mid = (bb + ba) / 2 if (bb is not None and ba is not None) else None
+                metrics = self._book_metrics(aid, best_bid=bb, best_ask=ba)
                 self._write({
                     "type": "pc", "market": market, "outcome": outcome, "token": aid,
                     "price": self._f(pc.get("price")), "size": self._f(pc.get("size")),
-                    "side": pc.get("side"), "best_bid": bb, "best_ask": ba, "mid": mid,
+                    "side": pc.get("side"), **metrics,
                     "local_ts": local_ts, "source_ts": source_ts,
+                    **self._identity_fields(market),
                 })
             return
         # 2) book 快照：asset_id + bids/asks
@@ -174,16 +185,33 @@ class RealtimeRecorder:
             if info is None:
                 return
             market, outcome = info
-            bb = self._top(msg.get("bids"), "bids")
-            ba = self._top(msg.get("asks"), "asks")
-            mid = (bb + ba) / 2 if (bb is not None and ba is not None) else None
+            self._replace_book(aid, msg.get("bids"), msg.get("asks"))
+            metrics = self._book_metrics(aid)
             self._write({
                 "type": "book", "market": market, "outcome": outcome, "token": aid,
-                "best_bid": bb, "best_ask": ba, "mid": mid, "local_ts": local_ts,
+                **metrics, "local_ts": local_ts,
                 "source_ts": source_ts,
+                **self._identity_fields(market),
             })
             return
-        # 3) last_trade_price 成交
+        # 3) best_bid_ask：只有 L1 价格；已有深度状态若存在则继续携带
+        if ("asset_id" in msg and ("best_bid" in msg or "best_ask" in msg)
+                and not ("price" in msg and ("side" in msg or "size" in msg))):
+            aid = str(msg.get("asset_id"))
+            info = self.tok2info.get(aid)
+            if info is None:
+                return
+            market, outcome = info
+            metrics = self._book_metrics(
+                aid, best_bid=self._f(msg.get("best_bid")),
+                best_ask=self._f(msg.get("best_ask")))
+            self._write({
+                "type": "best_bid_ask", "market": market, "outcome": outcome,
+                "token": aid, **metrics, "local_ts": local_ts,
+                "source_ts": source_ts, **self._identity_fields(market),
+            })
+            return
+        # 4) last_trade_price 成交
         if "asset_id" in msg and "price" in msg and ("side" in msg or "size" in msg):
             aid = str(msg.get("asset_id"))
             info = self.tok2info.get(aid)
@@ -193,7 +221,12 @@ class RealtimeRecorder:
             self._write({
                 "type": "trade", "market": market, "outcome": outcome, "token": aid,
                 "price": self._f(msg.get("price")), "size": self._f(msg.get("size")),
-                "side": msg.get("side"), "local_ts": local_ts, "source_ts": source_ts,
+                "side": msg.get("side"),
+                "trade_price": self._f(msg.get("price")),
+                "trade_size": self._f(msg.get("size")), "trade_side": msg.get("side"),
+                **self._book_metrics(aid),
+                "local_ts": local_ts, "source_ts": source_ts,
+                **self._identity_fields(market),
             })
             return
 
@@ -201,6 +234,90 @@ class RealtimeRecorder:
     def _top(levels, kind):
         if not isinstance(levels, list) or not levels:
             return None
+        if kind not in {"bids", "asks"}:
+            return None
+        prices = []
+        for level in levels:
+            try:
+                price = level.get("price") if isinstance(level, dict) else level[0]
+                price = float(price)
+            except (AttributeError, IndexError, KeyError, TypeError, ValueError):
+                continue
+            if price == price and price not in (float("inf"), float("-inf")):
+                prices.append(price)
+        if not prices:
+            return None
+        return max(prices) if kind == "bids" else min(prices)
+
+    @classmethod
+    def _levels(cls, levels, kind, limit=None):
+        """Return valid price/size levels in executable price priority order."""
+        if kind not in {"bids", "asks"} or not isinstance(levels, list):
+            return []
+        valid = []
+        for level in levels:
+            try:
+                if isinstance(level, dict):
+                    price, size = level.get("price"), level.get("size")
+                else:
+                    price, size = level[0], level[1]
+                price, size = float(price), float(size)
+            except (AttributeError, IndexError, KeyError, TypeError, ValueError):
+                continue
+            if (price != price or size != size or price in (float("inf"), float("-inf"))
+                    or size in (float("inf"), float("-inf")) or size <= 0):
+                continue
+            valid.append({"price": price, "size": size})
+        valid.sort(key=lambda item: item["price"], reverse=kind == "bids")
+        return valid if limit is None else valid[:limit]
+
+    def _replace_book(self, token, bids, asks):
+        self.books[token] = {
+            "bids": {lv["price"]: lv["size"] for lv in self._levels(bids, "bids")},
+            "asks": {lv["price"]: lv["size"] for lv in self._levels(asks, "asks")},
+        }
+
+    def _apply_change(self, token, change):
+        side = str(change.get("side") or "").lower()
+        kind = {"buy": "bids", "bid": "bids", "sell": "asks", "ask": "asks"}.get(side)
+        price, size = self._f(change.get("price")), self._f(change.get("size"))
+        if kind is None or price is None or size is None:
+            return
+        book = self.books.setdefault(token, {"bids": {}, "asks": {}})[kind]
+        if size <= 0:
+            book.pop(price, None)
+        else:
+            book[price] = size
+
+    def _book_metrics(self, token, *, best_bid=None, best_ask=None):
+        book = self.books.get(token) or {"bids": {}, "asks": {}}
+        bids = self._levels(
+            [{"price": price, "size": size} for price, size in book["bids"].items()],
+            "bids", self.BOOK_DEPTH_LEVELS)
+        asks = self._levels(
+            [{"price": price, "size": size} for price, size in book["asks"].items()],
+            "asks", self.BOOK_DEPTH_LEVELS)
+        bb = best_bid if best_bid is not None else self._top(bids, "bids")
+        ba = best_ask if best_ask is not None else self._top(asks, "asks")
+        midpoint = (bb + ba) / 2 if bb is not None and ba is not None else None
+        return {
+            "best_bid": bb, "best_ask": ba,
+            "spread": ba - bb if bb is not None and ba is not None else None,
+            "midpoint": midpoint, "mid": midpoint,
+            "bid_size_l1": bids[0]["size"] if bids else None,
+            "ask_size_l1": asks[0]["size"] if asks else None,
+            "bid_depth_l5": sum(level["size"] for level in bids) if bids else None,
+            "ask_depth_l5": sum(level["size"] for level in asks) if asks else None,
+            "bids_l5": bids, "asks_l5": asks,
+        }
+
+    def _identity_fields(self, market):
+        metadata = self.market_metadata.get(market) or {}
+        return {
+            "market_id": (None if metadata.get("market_id") is None
+                          else str(metadata["market_id"])),
+            "condition_id": metadata.get("condition_id"),
+        }
 
     @staticmethod
     def _source_ts(message):
@@ -209,22 +326,15 @@ class RealtimeRecorder:
         except (AttributeError, TypeError, ValueError):
             return None
         return value / 1000.0 if value > 10_000_000_000 else value
-        try:
-            prices = []
-            for lv in levels:
-                p = lv.get("price") if isinstance(lv, dict) else lv[0]
-                prices.append(float(p))
-            if not prices:
-                return None
-            return max(prices) if kind == "bids" else min(prices)
-        except Exception:
-            return None
 
     def _write(self, row):
         # 追加 JSONL；每行一个事件，保秒级时间戳
         if self.event_id is not None:
             row = {"event_id": self.event_id, **row}
-        row["recv_utc"] = dt.datetime.now(dt.timezone.utc).isoformat()
+        received = row.get("local_ts")
+        row["recv_utc"] = (dt.datetime.fromtimestamp(received, dt.timezone.utc).isoformat()
+                           if isinstance(received, (int, float))
+                           else dt.datetime.now(dt.timezone.utc).isoformat())
         line = json.dumps(row, ensure_ascii=False)
         with open(self.out_file, "a", encoding="utf-8") as f:
             f.write(line + "\n")
@@ -321,15 +431,22 @@ def main():
             "fee_schedule": market.get("feeSchedule"),
         })
     meta = {
-        "schema_version": 2, "event_id": str(event_id),
+        "schema_version": 3, "event_id": str(event_id),
         "event_title": event.get("title"), "event_slug": event.get("slug"),
         "ws_url": WS_URL, "timing_basis": "local_receive_time",
         "started_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
+        "book_depth_levels": RealtimeRecorder.BOOK_DEPTH_LEVELS,
         "markets": selected,
     }
     out.with_suffix(".meta.json").write_text(
         json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
-    rec = RealtimeRecorder(tokens, out, event_id=str(event_id))
+    market_metadata = {
+        item["market"]: {"market_id": item["market_id"],
+                         "condition_id": item["condition_id"]}
+        for item in selected
+    }
+    rec = RealtimeRecorder(tokens, out, event_id=str(event_id),
+                           market_metadata=market_metadata)
     rec.run(duration_hours=args.hours)
 
 

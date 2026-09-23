@@ -65,8 +65,12 @@ class TokenTape:
     def _commit(self, mono: float) -> None:
         best_bid = max(self._bids) if self._bids else None
         best_ask = min(self._asks) if self._asks else None
-        bid_depth = sum(sorted(self._bids.values(), reverse=True)[:DEPTH_LEVELS])
-        ask_depth = sum(sorted(self._asks.values())[:DEPTH_LEVELS])
+        # L5 means the five best *price* levels, not the five largest/smallest
+        # sizes. The old value-only sort silently measured a different object.
+        bid_depth = sum(size for _, size in
+                        sorted(self._bids.items(), reverse=True)[:DEPTH_LEVELS])
+        ask_depth = sum(size for _, size in
+                        sorted(self._asks.items())[:DEPTH_LEVELS])
         self.states.append((mono, best_bid, best_ask, bid_depth, ask_depth))
 
     def apply_snapshot(self, mono: float, bids, asks) -> None:

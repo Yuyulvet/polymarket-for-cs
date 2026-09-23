@@ -59,6 +59,11 @@ HLTV 确实提供 scorebot/livescore 功能；官方历史说明也提醒服务�
 没有可信源 UTC 时，可以按本地收到时间做前向观察，但必须把源延迟标为未知，不能宣称测得秒级领先。
 
 Polymarket 的公开市场 WebSocket 提供 book/price_change 等事件及服务端 timestamp；这不替代本地到达时间。
+
+自 recorder schema v3 起，normalized book 还保存 L1/L5 depth、top-five
+levels、spread、midpoint 和显式 trade fields。相关 P0 研究口径与已发现的
+历史 recorder 缺陷见 `docs/market-microstructure-p0.md`。旧 schema 缺少的
+depth 不得以 0 填充，也不得用于声称完成了 liquidity/OBI 分层验证。
 字段依据：[官方 Market Channel](https://docs.polymarket.com/api-reference/wss/market)。
 
 ## 事件/状态最低要求
