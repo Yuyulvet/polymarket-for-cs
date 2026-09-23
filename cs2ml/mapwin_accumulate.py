@@ -27,6 +27,10 @@ FORM = ["ct_spread", "t_spread", "ct_stack", "t_stack"]
 
 
 def _load() -> pd.DataFrame:
+    raise RuntimeError(
+        "legacy_mapwin_evaluation_disabled: sparse midround/formation rows cannot reconstruct "
+        "map results; use live_map_model for corrected chronological checkpoints"
+    )
     rd = build_round_dataset()
     mr = build_midround()
     df = rd.merge(mr, on=["demo_path", "round_num"], how="inner", suffixes=("", "_m"))

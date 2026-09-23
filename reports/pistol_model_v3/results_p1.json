@@ -1,0 +1,29 @@
+{
+  "control_v2best": {
+    "auc": 0.5568,
+    "n_test": 316,
+    "ece_raw": 0.0681,
+    "ece_platt": 0.0885,
+    "gte60_test": {
+      "n": 0
+    }
+  },
+  "v3_nocsnet": {
+    "auc": 0.5123,
+    "n_test": 316,
+    "ece_raw": 0.0617,
+    "ece_platt": 0.0722,
+    "gte60_test": {
+      "n": 0
+    }
+  },
+  "v3_full": {
+    "auc": 0.5416,
+    "n_test": 316,
+    "ece_raw": 0.0864,
+    "ece_platt": 0.0756,
+    "gte60_test": {
+      "n": 0
+    }
+  }
+}

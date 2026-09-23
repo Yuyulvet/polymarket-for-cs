@@ -1,0 +1,30 @@
+{
+  "r2_end": {
+    "n": 7,
+    "pnl_mean_pt": -0.79,
+    "pnl_median_pt": -1.0,
+    "win_rate": 0.286,
+    "pnl_total_pt": -5.5
+  },
+  "pre_r3": {
+    "n": 7,
+    "pnl_mean_pt": -1.36,
+    "pnl_median_pt": -1.0,
+    "win_rate": 0.286,
+    "pnl_total_pt": -9.5
+  },
+  "pre_r4": {
+    "n": 7,
+    "pnl_mean_pt": -11.29,
+    "pnl_median_pt": -11.0,
+    "win_rate": 0.143,
+    "pnl_total_pt": -79.0
+  },
+  "map_end": {
+    "n": 1,
+    "pnl_mean_pt": -31.0,
+    "pnl_median_pt": -31.0,
+    "win_rate": 0.0,
+    "pnl_total_pt": -31.0
+  }
+}

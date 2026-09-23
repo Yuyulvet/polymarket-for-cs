@@ -1,0 +1,1410 @@
+{
+  "version": 1,
+  "mode": "offline_pistol_probability_research",
+  "event": "StarLadder StarSeries Fall 2026",
+  "event_starts_at": "2026-09-17T00:00:00Z",
+  "live_trading_enabled": false,
+  "promoted_model": null,
+  "execution_pnl": null,
+  "audit": {
+    "source_round_maps": 607,
+    "eligible_label_maps": 593,
+    "pistol_rows": 1186,
+    "maps": 593,
+    "rejected_maps": {},
+    "map_side_columns": [
+      "side_de_ancient",
+      "side_de_anubis",
+      "side_de_cache",
+      "side_de_dust2",
+      "side_de_inferno",
+      "side_de_mirage",
+      "side_de_nuke",
+      "side_de_overpass"
+    ],
+    "zero_player_history_rows": 126,
+    "player_history_basis": "past_series_available_at_only_half_life_90_days"
+  },
+  "target_team_coverage": {
+    "MOUZ": {
+      "all_maps": 70,
+      "recent_three_month_maps": 18,
+      "recent_series": 9,
+      "lineup": [
+        "torzsi",
+        "Spinx",
+        "xertioN",
+        "PR",
+        "xelex"
+      ]
+    },
+    "Vitality": {
+      "all_maps": 71,
+      "recent_three_month_maps": 15,
+      "recent_series": 9,
+      "lineup": [
+        "apEX",
+        "ropz",
+        "ZywOo",
+        "flameZ",
+        "mezii"
+      ]
+    },
+    "FURIA": {
+      "all_maps": 63,
+      "recent_three_month_maps": 12,
+      "recent_series": 9,
+      "lineup": [
+        "FalleN",
+        "yuurih",
+        "YEKINDAR",
+        "KSCERATO",
+        "molodoy"
+      ]
+    },
+    "Natus Vincere": {
+      "all_maps": 71,
+      "recent_three_month_maps": 9,
+      "recent_series": 5,
+      "lineup": [
+        "Aleksib",
+        "iM",
+        "b1t",
+        "w0nderful",
+        "makazze"
+      ]
+    },
+    "Aurora": {
+      "all_maps": 67,
+      "recent_three_month_maps": 9,
+      "recent_series": 7,
+      "lineup": [
+        "XANTARES",
+        "woxic",
+        "Jimpphat",
+        "kyxsan",
+        "Wicadia"
+      ]
+    },
+    "magic": {
+      "all_maps": 14,
+      "recent_three_month_maps": 2,
+      "recent_series": 2,
+      "lineup": [
+        "MaSvAl",
+        "sFade8",
+        "eksiver",
+        "mo0N",
+        "tenzy"
+      ]
+    },
+    "MIBR": {
+      "all_maps": 6,
+      "recent_three_month_maps": 2,
+      "recent_series": 2,
+      "lineup": [
+        "LNZ",
+        "nqz",
+        "insani",
+        "venomzera",
+        "tomaszin"
+      ]
+    },
+    "NRG": {
+      "all_maps": 18,
+      "recent_three_month_maps": 0,
+      "recent_series": 0,
+      "lineup": [
+        "nitr0",
+        "Sonic",
+        "hallzerk",
+        "Grim",
+        "Jeorge"
+      ]
+    }
+  },
+  "weighting": {
+    "series": "equal aggregate weight within each pistol model",
+    "recency_half_life_days": 90,
+    "target_team_multiplier_recent": 3.0,
+    "target_team_multiplier_older": 1.5,
+    "recent_definition_for_manifest": "2026-06-17T00:00:00Z"
+  },
+  "evaluation": {
+    "1": {
+      "pistol_round": 1,
+      "target_rows": 593,
+      "scored_rows": 491,
+      "scored_series": 273,
+      "recent_target_scored_rows": 66,
+      "models": {
+        "side_only": {
+          "features": [
+            "a_is_ct",
+            "side_de_ancient",
+            "side_de_anubis",
+            "side_de_cache",
+            "side_de_dust2",
+            "side_de_inferno",
+            "side_de_mirage",
+            "side_de_nuke",
+            "side_de_overpass"
+          ]
+        },
+        "roster_history": {
+          "features": [
+            "a_is_ct",
+            "side_de_ancient",
+            "side_de_anubis",
+            "side_de_cache",
+            "side_de_dust2",
+            "side_de_inferno",
+            "side_de_mirage",
+            "side_de_nuke",
+            "side_de_overpass",
+            "all_win_gap",
+            "all_round_gap",
+            "all_pistol_gap",
+            "all_kd_gap",
+            "all_opening_gap",
+            "all_trade_gap",
+            "all_ct_gap",
+            "map_win_gap",
+            "map_round_gap",
+            "map_pistol_gap",
+            "map_kd_gap",
+            "map_opening_gap",
+            "map_trade_gap",
+            "map_ct_gap"
+          ]
+        },
+        "roster_plus_players": {
+          "features": [
+            "a_is_ct",
+            "side_de_ancient",
+            "side_de_anubis",
+            "side_de_cache",
+            "side_de_dust2",
+            "side_de_inferno",
+            "side_de_mirage",
+            "side_de_nuke",
+            "side_de_overpass",
+            "all_win_gap",
+            "all_round_gap",
+            "all_pistol_gap",
+            "all_kd_gap",
+            "all_opening_gap",
+            "all_trade_gap",
+            "all_ct_gap",
+            "map_win_gap",
+            "map_round_gap",
+            "map_pistol_gap",
+            "map_kd_gap",
+            "map_opening_gap",
+            "map_trade_gap",
+            "map_ct_gap",
+            "player_all_pistol_gap",
+            "player_map_pistol_gap",
+            "player_side_pistol_gap"
+          ]
+        }
+      },
+      "all_scored_metrics": {
+        "constant_0_5": {
+          "n": 491,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453,
+          "auc": 0.5,
+          "accuracy": 0.539714867617108,
+          "calibration": [
+            {
+              "low": 0.5,
+              "n": 491,
+              "predicted": 0.5,
+              "actual": 0.539714867617108
+            }
+          ]
+        },
+        "side_only": {
+          "n": 491,
+          "brier": 0.26768066412691116,
+          "log_loss": 0.7636926815655127,
+          "auc": 0.5253381198864585,
+          "accuracy": 0.5458248472505092,
+          "calibration": [
+            {
+              "low": 0.0,
+              "n": 5,
+              "predicted": 0.015490502021933885,
+              "actual": 1.0
+            },
+            {
+              "low": 0.2,
+              "n": 17,
+              "predicted": 0.23997271388500074,
+              "actual": 0.6470588235294118
+            },
+            {
+              "low": 0.3,
+              "n": 45,
+              "predicted": 0.35216087703772525,
+              "actual": 0.4888888888888889
+            },
+            {
+              "low": 0.4,
+              "n": 172,
+              "predicted": 0.44270640290922597,
+              "actual": 0.46511627906976744
+            },
+            {
+              "low": 0.5,
+              "n": 183,
+              "predicted": 0.5579789610214867,
+              "actual": 0.5792349726775956
+            },
+            {
+              "low": 0.6,
+              "n": 43,
+              "predicted": 0.6369508947689099,
+              "actual": 0.6744186046511628
+            },
+            {
+              "low": 0.7,
+              "n": 20,
+              "predicted": 0.7712129411749314,
+              "actual": 0.45
+            },
+            {
+              "low": 0.9,
+              "n": 6,
+              "predicted": 0.9845094979780661,
+              "actual": 0.5
+            }
+          ]
+        },
+        "roster_history": {
+          "n": 491,
+          "brier": 0.28490644851697955,
+          "log_loss": 0.8132876098632145,
+          "auc": 0.5118383703456337,
+          "accuracy": 0.5132382892057027,
+          "calibration": [
+            {
+              "low": 0.0,
+              "n": 7,
+              "predicted": 0.032669667569268555,
+              "actual": 1.0
+            },
+            {
+              "low": 0.1,
+              "n": 19,
+              "predicted": 0.15027340720947557,
+              "actual": 0.5789473684210527
+            },
+            {
+              "low": 0.2,
+              "n": 28,
+              "predicted": 0.251993590001074,
+              "actual": 0.39285714285714285
+            },
+            {
+              "low": 0.3,
+              "n": 77,
+              "predicted": 0.3528627395148793,
+              "actual": 0.5064935064935064
+            },
+            {
+              "low": 0.4,
+              "n": 102,
+              "predicted": 0.45415248307049033,
+              "actual": 0.5392156862745098
+            },
+            {
+              "low": 0.5,
+              "n": 97,
+              "predicted": 0.5493309268453237,
+              "actual": 0.5360824742268041
+            },
+            {
+              "low": 0.6,
+              "n": 75,
+              "predicted": 0.649052256934617,
+              "actual": 0.6
+            },
+            {
+              "low": 0.7,
+              "n": 44,
+              "predicted": 0.7392017695773657,
+              "actual": 0.4772727272727273
+            },
+            {
+              "low": 0.8,
+              "n": 33,
+              "predicted": 0.8366787851815706,
+              "actual": 0.6060606060606061
+            },
+            {
+              "low": 0.9,
+              "n": 9,
+              "predicted": 0.9598405357003803,
+              "actual": 0.4444444444444444
+            }
+          ]
+        },
+        "roster_plus_players": {
+          "n": 491,
+          "brier": 0.2862357924804785,
+          "log_loss": 0.8192942499218591,
+          "auc": 0.515394890632827,
+          "accuracy": 0.5213849287169042,
+          "calibration": [
+            {
+              "low": 0.0,
+              "n": 10,
+              "predicted": 0.048985602035240786,
+              "actual": 0.8
+            },
+            {
+              "low": 0.1,
+              "n": 18,
+              "predicted": 0.1526538446708946,
+              "actual": 0.5555555555555556
+            },
+            {
+              "low": 0.2,
+              "n": 36,
+              "predicted": 0.25705954125160363,
+              "actual": 0.4722222222222222
+            },
+            {
+              "low": 0.3,
+              "n": 71,
+              "predicted": 0.3586338046181406,
+              "actual": 0.49295774647887325
+            },
+            {
+              "low": 0.4,
+              "n": 102,
+              "predicted": 0.45446832051131636,
+              "actual": 0.5196078431372549
+            },
+            {
+              "low": 0.5,
+              "n": 81,
+              "predicted": 0.5496620522642861,
+              "actual": 0.6049382716049383
+            },
+            {
+              "low": 0.6,
+              "n": 83,
+              "predicted": 0.64881261492139,
+              "actual": 0.5421686746987951
+            },
+            {
+              "low": 0.7,
+              "n": 47,
+              "predicted": 0.7469789410129194,
+              "actual": 0.5319148936170213
+            },
+            {
+              "low": 0.8,
+              "n": 34,
+              "predicted": 0.8423812913564257,
+              "actual": 0.5588235294117647
+            },
+            {
+              "low": 0.9,
+              "n": 9,
+              "predicted": 0.9639484449577347,
+              "actual": 0.4444444444444444
+            }
+          ]
+        }
+      },
+      "recent_target_metrics": {
+        "constant_0_5": {
+          "n": 66,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599454,
+          "auc": 0.5,
+          "accuracy": 0.4696969696969697,
+          "calibration": [
+            {
+              "low": 0.5,
+              "n": 66,
+              "predicted": 0.5,
+              "actual": 0.4696969696969697
+            }
+          ]
+        },
+        "side_only": {
+          "n": 66,
+          "brier": 0.2961603803563314,
+          "log_loss": 0.9353108362644449,
+          "auc": 0.5059907834101383,
+          "accuracy": 0.5151515151515151,
+          "calibration": [
+            {
+              "low": 0.0,
+              "n": 2,
+              "predicted": 0.015490502021933887,
+              "actual": 1.0
+            },
+            {
+              "low": 0.2,
+              "n": 1,
+              "predicted": 0.25150907235119746,
+              "actual": 1.0
+            },
+            {
+              "low": 0.3,
+              "n": 8,
+              "predicted": 0.3639358272288057,
+              "actual": 0.5
+            },
+            {
+              "low": 0.4,
+              "n": 28,
+              "predicted": 0.4372362016866264,
+              "actual": 0.39285714285714285
+            },
+            {
+              "low": 0.5,
+              "n": 20,
+              "predicted": 0.5508893947067149,
+              "actual": 0.45
+            },
+            {
+              "low": 0.6,
+              "n": 2,
+              "predicted": 0.6390886999713734,
+              "actual": 1.0
+            },
+            {
+              "low": 0.9,
+              "n": 5,
+              "predicted": 0.9845094979780662,
+              "actual": 0.4
+            }
+          ]
+        },
+        "roster_history": {
+          "n": 66,
+          "brier": 0.3298910170048903,
+          "log_loss": 1.0113425162243843,
+          "auc": 0.43133640552995395,
+          "accuracy": 0.45454545454545453,
+          "calibration": [
+            {
+              "low": 0.0,
+              "n": 2,
+              "predicted": 0.014786991528378535,
+              "actual": 1.0
+            },
+            {
+              "low": 0.2,
+              "n": 8,
+              "predicted": 0.2439183354410966,
+              "actual": 0.375
+            },
+            {
+              "low": 0.3,
+              "n": 8,
+              "predicted": 0.34734083569294016,
+              "actual": 0.625
+            },
+            {
+              "low": 0.4,
+              "n": 13,
+              "predicted": 0.4484899144970606,
+              "actual": 0.46153846153846156
+            },
+            {
+              "low": 0.5,
+              "n": 11,
+              "predicted": 0.5421088363452264,
+              "actual": 0.36363636363636365
+            },
+            {
+              "low": 0.6,
+              "n": 13,
+              "predicted": 0.6478633224682546,
+              "actual": 0.6153846153846154
+            },
+            {
+              "low": 0.7,
+              "n": 5,
+              "predicted": 0.7524533969612955,
+              "actual": 0.2
+            },
+            {
+              "low": 0.8,
+              "n": 1,
+              "predicted": 0.8157200393801022,
+              "actual": 0.0
+            },
+            {
+              "low": 0.9,
+              "n": 5,
+              "predicted": 0.9834145431114523,
+              "actual": 0.4
+            }
+          ]
+        },
+        "roster_plus_players": {
+          "n": 66,
+          "brier": 0.32637727731170785,
+          "log_loss": 1.0067291605704436,
+          "auc": 0.44055299539170506,
+          "accuracy": 0.48484848484848486,
+          "calibration": [
+            {
+              "low": 0.0,
+              "n": 2,
+              "predicted": 0.012904950555887803,
+              "actual": 1.0
+            },
+            {
+              "low": 0.2,
+              "n": 8,
+              "predicted": 0.2496272942240626,
+              "actual": 0.375
+            },
+            {
+              "low": 0.3,
+              "n": 10,
+              "predicted": 0.35579435891725875,
+              "actual": 0.5
+            },
+            {
+              "low": 0.4,
+              "n": 11,
+              "predicted": 0.45971877297948216,
+              "actual": 0.45454545454545453
+            },
+            {
+              "low": 0.5,
+              "n": 11,
+              "predicted": 0.5469387378680188,
+              "actual": 0.45454545454545453
+            },
+            {
+              "low": 0.6,
+              "n": 10,
+              "predicted": 0.6471244923117295,
+              "actual": 0.6
+            },
+            {
+              "low": 0.7,
+              "n": 8,
+              "predicted": 0.7388363663055305,
+              "actual": 0.375
+            },
+            {
+              "low": 0.8,
+              "n": 1,
+              "predicted": 0.8090132560044722,
+              "actual": 0.0
+            },
+            {
+              "low": 0.9,
+              "n": 5,
+              "predicted": 0.984025582191389,
+              "actual": 0.4
+            }
+          ]
+        }
+      },
+      "paired_brier_minus_side_only": {
+        "side_only": 0.0,
+        "roster_history": 0.01722578439006835,
+        "roster_plus_players": 0.018555128353567332
+      },
+      "folds": [
+        {
+          "test_start": "2026-02-22T12:00:00+00:00",
+          "train_rows": 102,
+          "train_series": 58,
+          "test_rows": 86,
+          "test_series": 51,
+          "recent_target_train_rows": 0
+        },
+        {
+          "test_start": "2026-04-14T16:40:00+00:00",
+          "train_rows": 187,
+          "train_series": 108,
+          "test_rows": 103,
+          "test_series": 56,
+          "recent_target_train_rows": 0
+        },
+        {
+          "test_start": "2026-05-11T18:35:00+00:00",
+          "train_rows": 290,
+          "train_series": 164,
+          "test_rows": 101,
+          "test_series": 56,
+          "recent_target_train_rows": 0
+        },
+        {
+          "test_start": "2026-06-07T18:50:00+00:00",
+          "train_rows": 392,
+          "train_series": 221,
+          "test_rows": 113,
+          "test_series": 55,
+          "recent_target_train_rows": 0
+        },
+        {
+          "test_start": "2026-08-02T10:30:00+00:00",
+          "train_rows": 505,
+          "train_series": 276,
+          "test_rows": 88,
+          "test_series": 55,
+          "recent_target_train_rows": 10
+        }
+      ]
+    },
+    "13": {
+      "pistol_round": 13,
+      "target_rows": 593,
+      "scored_rows": 491,
+      "scored_series": 273,
+      "recent_target_scored_rows": 66,
+      "models": {
+        "side_only": {
+          "features": [
+            "a_is_ct",
+            "side_de_ancient",
+            "side_de_anubis",
+            "side_de_cache",
+            "side_de_dust2",
+            "side_de_inferno",
+            "side_de_mirage",
+            "side_de_nuke",
+            "side_de_overpass"
+          ]
+        },
+        "roster_history": {
+          "features": [
+            "a_is_ct",
+            "side_de_ancient",
+            "side_de_anubis",
+            "side_de_cache",
+            "side_de_dust2",
+            "side_de_inferno",
+            "side_de_mirage",
+            "side_de_nuke",
+            "side_de_overpass",
+            "all_win_gap",
+            "all_round_gap",
+            "all_pistol_gap",
+            "all_kd_gap",
+            "all_opening_gap",
+            "all_trade_gap",
+            "all_ct_gap",
+            "map_win_gap",
+            "map_round_gap",
+            "map_pistol_gap",
+            "map_kd_gap",
+            "map_opening_gap",
+            "map_trade_gap",
+            "map_ct_gap"
+          ]
+        },
+        "roster_plus_players": {
+          "features": [
+            "a_is_ct",
+            "side_de_ancient",
+            "side_de_anubis",
+            "side_de_cache",
+            "side_de_dust2",
+            "side_de_inferno",
+            "side_de_mirage",
+            "side_de_nuke",
+            "side_de_overpass",
+            "all_win_gap",
+            "all_round_gap",
+            "all_pistol_gap",
+            "all_kd_gap",
+            "all_opening_gap",
+            "all_trade_gap",
+            "all_ct_gap",
+            "map_win_gap",
+            "map_round_gap",
+            "map_pistol_gap",
+            "map_kd_gap",
+            "map_opening_gap",
+            "map_trade_gap",
+            "map_ct_gap",
+            "player_all_pistol_gap",
+            "player_map_pistol_gap",
+            "player_side_pistol_gap"
+          ]
+        },
+        "roster_players_first_half": {
+          "features": [
+            "a_is_ct",
+            "side_de_ancient",
+            "side_de_anubis",
+            "side_de_cache",
+            "side_de_dust2",
+            "side_de_inferno",
+            "side_de_mirage",
+            "side_de_nuke",
+            "side_de_overpass",
+            "all_win_gap",
+            "all_round_gap",
+            "all_pistol_gap",
+            "all_kd_gap",
+            "all_opening_gap",
+            "all_trade_gap",
+            "all_ct_gap",
+            "map_win_gap",
+            "map_round_gap",
+            "map_pistol_gap",
+            "map_kd_gap",
+            "map_opening_gap",
+            "map_trade_gap",
+            "map_ct_gap",
+            "player_all_pistol_gap",
+            "player_map_pistol_gap",
+            "player_side_pistol_gap",
+            "first_half_score_gap",
+            "first_pistol_gap",
+            "first_kill_gap",
+            "last3_gap",
+            "stomp_gap"
+          ]
+        }
+      },
+      "all_scored_metrics": {
+        "constant_0_5": {
+          "n": 491,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453,
+          "auc": 0.5,
+          "accuracy": 0.4847250509164969,
+          "calibration": [
+            {
+              "low": 0.5,
+              "n": 491,
+              "predicted": 0.5,
+              "actual": 0.4847250509164969
+            }
+          ]
+        },
+        "side_only": {
+          "n": 491,
+          "brier": 0.2543502816086127,
+          "log_loss": 0.7124763415319583,
+          "auc": 0.5433869199853856,
+          "accuracy": 0.5336048879837068,
+          "calibration": [
+            {
+              "low": 0.0,
+              "n": 6,
+              "predicted": 0.015309285522097897,
+              "actual": 0.16666666666666666
+            },
+            {
+              "low": 0.2,
+              "n": 14,
+              "predicted": 0.25039340435805885,
+              "actual": 0.35714285714285715
+            },
+            {
+              "low": 0.3,
+              "n": 76,
+              "predicted": 0.3676177042302129,
+              "actual": 0.4605263157894737
+            },
+            {
+              "low": 0.4,
+              "n": 156,
+              "predicted": 0.4610480944683718,
+              "actual": 0.46794871794871795
+            },
+            {
+              "low": 0.5,
+              "n": 161,
+              "predicted": 0.536781632235851,
+              "actual": 0.5093167701863354
+            },
+            {
+              "low": 0.6,
+              "n": 52,
+              "predicted": 0.6220349636302699,
+              "actual": 0.5192307692307693
+            },
+            {
+              "low": 0.7,
+              "n": 21,
+              "predicted": 0.7557185641886109,
+              "actual": 0.5714285714285714
+            },
+            {
+              "low": 0.9,
+              "n": 5,
+              "predicted": 0.984690714477902,
+              "actual": 0.6
+            }
+          ]
+        },
+        "roster_history": {
+          "n": 491,
+          "brier": 0.2756967955592494,
+          "log_loss": 0.7733055968094804,
+          "auc": 0.5280084365762114,
+          "accuracy": 0.5336048879837068,
+          "calibration": [
+            {
+              "low": 0.0,
+              "n": 13,
+              "predicted": 0.04433824458944573,
+              "actual": 0.38461538461538464
+            },
+            {
+              "low": 0.1,
+              "n": 7,
+              "predicted": 0.15327030240123074,
+              "actual": 0.8571428571428571
+            },
+            {
+              "low": 0.2,
+              "n": 37,
+              "predicted": 0.2558263132890955,
+              "actual": 0.3783783783783784
+            },
+            {
+              "low": 0.3,
+              "n": 83,
+              "predicted": 0.3493671870706332,
+              "actual": 0.4578313253012048
+            },
+            {
+              "low": 0.4,
+              "n": 92,
+              "predicted": 0.4517115917334403,
+              "actual": 0.44565217391304346
+            },
+            {
+              "low": 0.5,
+              "n": 109,
+              "predicted": 0.5530853781663688,
+              "actual": 0.5321100917431193
+            },
+            {
+              "low": 0.6,
+              "n": 86,
+              "predicted": 0.6431233262833258,
+              "actual": 0.5116279069767442
+            },
+            {
+              "low": 0.7,
+              "n": 35,
+              "predicted": 0.7440681734103296,
+              "actual": 0.5142857142857142
+            },
+            {
+              "low": 0.8,
+              "n": 18,
+              "predicted": 0.847948203352462,
+              "actual": 0.3333333333333333
+            },
+            {
+              "low": 0.9,
+              "n": 11,
+              "predicted": 0.9496920442588578,
+              "actual": 0.7272727272727273
+            }
+          ]
+        },
+        "roster_plus_players": {
+          "n": 491,
+          "brier": 0.2793763923778935,
+          "log_loss": 0.7845196087520812,
+          "auc": 0.5216727007008337,
+          "accuracy": 0.5478615071283096,
+          "calibration": [
+            {
+              "low": 0.0,
+              "n": 12,
+              "predicted": 0.038254171488501326,
+              "actual": 0.4166666666666667
+            },
+            {
+              "low": 0.1,
+              "n": 12,
+              "predicted": 0.16083420013969785,
+              "actual": 0.75
+            },
+            {
+              "low": 0.2,
+              "n": 30,
+              "predicted": 0.25476358320464293,
+              "actual": 0.36666666666666664
+            },
+            {
+              "low": 0.3,
+              "n": 84,
+              "predicted": 0.3469143922527303,
+              "actual": 0.47619047619047616
+            },
+            {
+              "low": 0.4,
+              "n": 95,
+              "predicted": 0.4510949957885929,
+              "actual": 0.37894736842105264
+            },
+            {
+              "low": 0.5,
+              "n": 113,
+              "predicted": 0.5538431446287834,
+              "actual": 0.5309734513274337
+            },
+            {
+              "low": 0.6,
+              "n": 79,
+              "predicted": 0.645030922258562,
+              "actual": 0.5316455696202531
+            },
+            {
+              "low": 0.7,
+              "n": 35,
+              "predicted": 0.7431913570935142,
+              "actual": 0.5428571428571428
+            },
+            {
+              "low": 0.8,
+              "n": 21,
+              "predicted": 0.8534996202669415,
+              "actual": 0.5238095238095238
+            },
+            {
+              "low": 0.9,
+              "n": 10,
+              "predicted": 0.9533032813886327,
+              "actual": 0.5
+            }
+          ]
+        },
+        "roster_players_first_half": {
+          "n": 491,
+          "brier": 0.2898999948695531,
+          "log_loss": 0.8147074968987309,
+          "auc": 0.5006975122064636,
+          "accuracy": 0.515274949083503,
+          "calibration": [
+            {
+              "low": 0.0,
+              "n": 14,
+              "predicted": 0.040894272082712894,
+              "actual": 0.5714285714285714
+            },
+            {
+              "low": 0.1,
+              "n": 19,
+              "predicted": 0.1711665254697332,
+              "actual": 0.47368421052631576
+            },
+            {
+              "low": 0.2,
+              "n": 40,
+              "predicted": 0.24797164355910972,
+              "actual": 0.475
+            },
+            {
+              "low": 0.3,
+              "n": 70,
+              "predicted": 0.3473504584165363,
+              "actual": 0.5
+            },
+            {
+              "low": 0.4,
+              "n": 88,
+              "predicted": 0.45414349493581346,
+              "actual": 0.42045454545454547
+            },
+            {
+              "low": 0.5,
+              "n": 97,
+              "predicted": 0.55030457493423,
+              "actual": 0.5360824742268041
+            },
+            {
+              "low": 0.6,
+              "n": 82,
+              "predicted": 0.6457327335097135,
+              "actual": 0.4634146341463415
+            },
+            {
+              "low": 0.7,
+              "n": 50,
+              "predicted": 0.743570850700689,
+              "actual": 0.48
+            },
+            {
+              "low": 0.8,
+              "n": 20,
+              "predicted": 0.8403771414163472,
+              "actual": 0.55
+            },
+            {
+              "low": 0.9,
+              "n": 11,
+              "predicted": 0.9580775595781794,
+              "actual": 0.45454545454545453
+            }
+          ]
+        }
+      },
+      "recent_target_metrics": {
+        "constant_0_5": {
+          "n": 66,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599454,
+          "auc": 0.5,
+          "accuracy": 0.5151515151515151,
+          "calibration": [
+            {
+              "low": 0.5,
+              "n": 66,
+              "predicted": 0.5,
+              "actual": 0.5151515151515151
+            }
+          ]
+        },
+        "side_only": {
+          "n": 66,
+          "brier": 0.23829500420690503,
+          "log_loss": 0.6851708851778644,
+          "auc": 0.622702205882353,
+          "accuracy": 0.5757575757575758,
+          "calibration": [
+            {
+              "low": 0.0,
+              "n": 5,
+              "predicted": 0.015309285522097895,
+              "actual": 0.2
+            },
+            {
+              "low": 0.2,
+              "n": 4,
+              "predicted": 0.27959282101198446,
+              "actual": 0.25
+            },
+            {
+              "low": 0.3,
+              "n": 1,
+              "predicted": 0.37409989168816393,
+              "actual": 0.0
+            },
+            {
+              "low": 0.4,
+              "n": 24,
+              "predicted": 0.4396328276059367,
+              "actual": 0.5416666666666666
+            },
+            {
+              "low": 0.5,
+              "n": 26,
+              "predicted": 0.5602959147728502,
+              "actual": 0.5769230769230769
+            },
+            {
+              "low": 0.6,
+              "n": 1,
+              "predicted": 0.6188426236178581,
+              "actual": 1.0
+            },
+            {
+              "low": 0.7,
+              "n": 3,
+              "predicted": 0.7204071789880157,
+              "actual": 0.3333333333333333
+            },
+            {
+              "low": 0.9,
+              "n": 2,
+              "predicted": 0.9846907144779021,
+              "actual": 1.0
+            }
+          ]
+        },
+        "roster_history": {
+          "n": 66,
+          "brier": 0.24355881862840903,
+          "log_loss": 0.6994403311740467,
+          "auc": 0.6268382352941176,
+          "accuracy": 0.5757575757575758,
+          "calibration": [
+            {
+              "low": 0.0,
+              "n": 5,
+              "predicted": 0.016622975722270006,
+              "actual": 0.2
+            },
+            {
+              "low": 0.2,
+              "n": 2,
+              "predicted": 0.22410207773640392,
+              "actual": 0.0
+            },
+            {
+              "low": 0.3,
+              "n": 14,
+              "predicted": 0.3383845289312825,
+              "actual": 0.5
+            },
+            {
+              "low": 0.4,
+              "n": 15,
+              "predicted": 0.45710662725507867,
+              "actual": 0.5333333333333333
+            },
+            {
+              "low": 0.5,
+              "n": 14,
+              "predicted": 0.5624011807636619,
+              "actual": 0.5714285714285714
+            },
+            {
+              "low": 0.6,
+              "n": 9,
+              "predicted": 0.625965373848608,
+              "actual": 0.6666666666666666
+            },
+            {
+              "low": 0.7,
+              "n": 3,
+              "predicted": 0.7544857218672685,
+              "actual": 0.3333333333333333
+            },
+            {
+              "low": 0.8,
+              "n": 2,
+              "predicted": 0.8045212284544374,
+              "actual": 0.5
+            },
+            {
+              "low": 0.9,
+              "n": 2,
+              "predicted": 0.9842991411396758,
+              "actual": 1.0
+            }
+          ]
+        },
+        "roster_plus_players": {
+          "n": 66,
+          "brier": 0.24581977961202975,
+          "log_loss": 0.7048477892863677,
+          "auc": 0.6158088235294118,
+          "accuracy": 0.5757575757575758,
+          "calibration": [
+            {
+              "low": 0.0,
+              "n": 5,
+              "predicted": 0.017603770097675924,
+              "actual": 0.2
+            },
+            {
+              "low": 0.2,
+              "n": 2,
+              "predicted": 0.23501131885694032,
+              "actual": 0.0
+            },
+            {
+              "low": 0.3,
+              "n": 14,
+              "predicted": 0.3432890457773537,
+              "actual": 0.5
+            },
+            {
+              "low": 0.4,
+              "n": 13,
+              "predicted": 0.4543388885469048,
+              "actual": 0.5384615384615384
+            },
+            {
+              "low": 0.5,
+              "n": 16,
+              "predicted": 0.5552301297520552,
+              "actual": 0.625
+            },
+            {
+              "low": 0.6,
+              "n": 9,
+              "predicted": 0.6253434312870421,
+              "actual": 0.5555555555555556
+            },
+            {
+              "low": 0.7,
+              "n": 3,
+              "predicted": 0.7657828001823136,
+              "actual": 0.3333333333333333
+            },
+            {
+              "low": 0.8,
+              "n": 2,
+              "predicted": 0.8090488583853401,
+              "actual": 0.5
+            },
+            {
+              "low": 0.9,
+              "n": 2,
+              "predicted": 0.9826946636264278,
+              "actual": 1.0
+            }
+          ]
+        },
+        "roster_players_first_half": {
+          "n": 66,
+          "brier": 0.25345939873573126,
+          "log_loss": 0.718382786277521,
+          "auc": 0.5753676470588235,
+          "accuracy": 0.5151515151515151,
+          "calibration": [
+            {
+              "low": 0.0,
+              "n": 5,
+              "predicted": 0.012982967731329542,
+              "actual": 0.2
+            },
+            {
+              "low": 0.1,
+              "n": 1,
+              "predicted": 0.19309668774663397,
+              "actual": 0.0
+            },
+            {
+              "low": 0.2,
+              "n": 4,
+              "predicted": 0.25972949653974176,
+              "actual": 0.25
+            },
+            {
+              "low": 0.3,
+              "n": 13,
+              "predicted": 0.3493022262422851,
+              "actual": 0.5384615384615384
+            },
+            {
+              "low": 0.4,
+              "n": 13,
+              "predicted": 0.45676713720440976,
+              "actual": 0.6923076923076923
+            },
+            {
+              "low": 0.5,
+              "n": 15,
+              "predicted": 0.550182850933244,
+              "actual": 0.6
+            },
+            {
+              "low": 0.6,
+              "n": 8,
+              "predicted": 0.6523346670069334,
+              "actual": 0.25
+            },
+            {
+              "low": 0.7,
+              "n": 4,
+              "predicted": 0.7512269137965353,
+              "actual": 0.75
+            },
+            {
+              "low": 0.8,
+              "n": 1,
+              "predicted": 0.8476767917105523,
+              "actual": 0.0
+            },
+            {
+              "low": 0.9,
+              "n": 2,
+              "predicted": 0.989124621413366,
+              "actual": 1.0
+            }
+          ]
+        }
+      },
+      "paired_brier_minus_side_only": {
+        "side_only": 0.0,
+        "roster_history": 0.02134651395063665,
+        "roster_plus_players": 0.02502611076928077,
+        "roster_players_first_half": 0.03554971326094033
+      },
+      "folds": [
+        {
+          "test_start": "2026-02-22T12:00:00+00:00",
+          "train_rows": 102,
+          "train_series": 58,
+          "test_rows": 86,
+          "test_series": 51,
+          "recent_target_train_rows": 0
+        },
+        {
+          "test_start": "2026-04-14T16:40:00+00:00",
+          "train_rows": 187,
+          "train_series": 108,
+          "test_rows": 103,
+          "test_series": 56,
+          "recent_target_train_rows": 0
+        },
+        {
+          "test_start": "2026-05-11T18:35:00+00:00",
+          "train_rows": 290,
+          "train_series": 164,
+          "test_rows": 101,
+          "test_series": 56,
+          "recent_target_train_rows": 0
+        },
+        {
+          "test_start": "2026-06-07T18:50:00+00:00",
+          "train_rows": 392,
+          "train_series": 221,
+          "test_rows": 113,
+          "test_series": 55,
+          "recent_target_train_rows": 0
+        },
+        {
+          "test_start": "2026-08-02T10:30:00+00:00",
+          "train_rows": 505,
+          "train_series": 276,
+          "test_rows": 88,
+          "test_series": 55,
+          "recent_target_train_rows": 10
+        }
+      ]
+    }
+  },
+  "validation": "whole-series forward blocks; labels require available_at < block start; mirrored only after split",
+  "limitations": [
+    "Historical data ends before the event and has already been inspected; this is development evidence, not a fresh acceptance set.",
+    "Map and starting side are assumed known at decision time.",
+    "No synchronized historical Polymarket order books exist for these maps, so profitability is not evaluated.",
+    "magic, MIBR and NRG have sparse or zero recent local demo coverage; targeted collection remains required.",
+    "The round-13 model uses completed first-half state but no round-13 equipment because the current live feed does not reliably expose it."
+  ],
+  "inputs": {
+    "history": {
+      "path": "D:\\polymarket\\data\\map1\\history.parquet",
+      "sha256": "1d2895f3744f10f15617afb59f9e4d672bfd17bcd7ad9706bf454446d3b6ea86"
+    },
+    "rounds": {
+      "path": "D:\\polymarket\\data\\map1\\rebuild\\full-20260916\\round_states.parquet",
+      "sha256": "a02055ceb548cb955aa40e50569d3b564fc2c7c7c2f0c4700c649e6039ec16a3"
+    },
+    "labels": {
+      "path": "D:\\polymarket\\data\\map1\\rebuild\\full-20260916\\map_labels.parquet",
+      "sha256": "4817bdf7559c97186a598d6e4a5fd5e5315d8b3449c389223f9ef3396c4695a7"
+    },
+    "manifest": {
+      "path": "D:\\polymarket\\cs2ml\\starladder_fall_2026.json",
+      "sha256": "db108c82e01ea878b1cafc75edfb4e121eb7e454e2292407aad46322edfc5205"
+    }
+  },
+  "sources": {
+    "official_format": "https://www.starladder.com/en/news/starladder-announces-starseries-20-for-2026-anniversary-season-overview-format-and-prize-pool",
+    "teams_and_lineups": "https://www.hltv.org/events/8057/starladder-starseries-fall-2026",
+    "magic_substitution": "https://www.hltv.org/news/45528/vitality-and-mouz-top-pick-charts-for-starladder-starseries-fall-fantasy"
+  }
+}

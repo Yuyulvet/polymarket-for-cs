@@ -1,0 +1,56 @@
+{
+  "side_only": {
+    "auc": 0.5169,
+    "n_test": 356,
+    "top20_pred": 0.5072,
+    "top20_actual": 0.5112,
+    "top10_pred": 0.518,
+    "top10_actual": 0.5281,
+    "bot10_actual": 0.4944
+  },
+  "side_form": {
+    "auc": 0.5232,
+    "n_test": 330,
+    "top20_pred": 0.5783,
+    "top20_actual": 0.6379,
+    "top10_pred": 0.6014,
+    "top10_actual": 0.6875,
+    "bot10_actual": 0.6061
+  },
+  "side_pistolrate": {
+    "auc": 0.5243,
+    "n_test": 350,
+    "top20_pred": 0.5283,
+    "top20_actual": 0.5714,
+    "top10_pred": 0.5312,
+    "top10_actual": 0.6571,
+    "bot10_actual": 0.4
+  },
+  "side_form_pistolrate": {
+    "auc": 0.523,
+    "n_test": 330,
+    "top20_pred": 0.5818,
+    "top20_actual": 0.6212,
+    "top10_pred": 0.6032,
+    "top10_actual": 0.6364,
+    "bot10_actual": 0.5758
+  },
+  "full_all": {
+    "auc": 0.5647,
+    "n_test": 330,
+    "top20_pred": 0.6088,
+    "top20_actual": 0.6212,
+    "top10_pred": 0.6406,
+    "top10_actual": 0.7879,
+    "bot10_actual": 0.3636
+  },
+  "full_pistcsnet": {
+    "auc": 0.5316,
+    "n_test": 330,
+    "top20_pred": 0.5975,
+    "top20_actual": 0.5152,
+    "top10_pred": 0.6204,
+    "top10_actual": 0.5152,
+    "bot10_actual": 0.5758
+  }
+}

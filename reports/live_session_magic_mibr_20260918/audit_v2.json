@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-18T18:40:17.191291+00:00",
+  "protocol_id": "cs2_swing_trend_v1",
+  "protocol_sha256": "0c1131c7793fb4dc104c1f3a41145f4c6c4cf124e4a63505768e915afd2b4536",
+  "paper_only": true,
+  "session_id": "magic-mibr-20260918-map1-partial",
+  "eligible_for_trend_dataset": false,
+  "blocking_reasons": [
+    "capture_did_not_observe_round_one_live",
+    "fivee_event_segment_missing_session_end",
+    "fivee_mqtt_state_source_missing",
+    "insufficient_three_source_overlap",
+    "market_capture_missing_normal_end",
+    "market_full_depth_missing",
+    "no_strict_eligible_mqtt_snapshots"
+  ],
+  "warnings": [],
+  "three_source_overlap_seconds": 0.0,
+  "sources": {
+    "fivee_events": {
+      "paths": [
+        "D:\\polymarket\\data\\fivee\\eventlog_csgo_mc_2398100_20260918T134033Z.jsonl"
+      ],
+      "segments": 1,
+      "complete_segments": 0,
+      "match_ids": [
+        "csgo_mc_2398100"
+      ],
+      "maps": [
+        "de_ancient",
+        "de_mirage"
+      ],
+      "bouts": [
+        1,
+        2
+      ],
+      "round_one_bouts": [],
+      "terminal_bouts": [
+        1
+      ],
+      "counts": {
+        "session_start": 1,
+        "event": 222,
+        "ineligible_events": 144,
+        "poll_ok": 413,
+        "eligible_events": 78,
+        "eligible_type_8": 38,
+        "eligible_type_2": 7,
+        "eligible_type_1": 6,
+        "eligible_type_6": 3,
+        "eligible_type_10": 4,
+        "eligible_type_3": 20
+      },
+      "coverage": {
+        "start": 1789738833.610312,
+        "end": 1789739753.353346,
+        "seconds": 919.7430341243744
+      }
+    },
+    "fivee_states": {
+      "paths": [],
+      "segments": 0,
+      "complete_segments": 0,
+      "match_ids": [],
+      "counts": {},
+      "coverage": {
+        "start": null,
+        "end": null,
+        "seconds": 0.0
+      }
+    },
+    "market": {
+      "format": "normalized_top",
+      "events": "D:\\polymarket\\data\\realtime\\event_1039777_20260918_214036.jsonl",
+      "event_id": "1039777",
+      "market_ids": [
+        "4657629"
+      ],
+      "expected_tokens": [
+        "106770063798764930580243588952047513449815564638451443181833212277272550667369",
+        "17165059735991199264099713887573428553036246209651609261822418776116415692848"
+      ],
+      "depth_tokens": [],
+      "has_full_depth_for_expected_tokens": false,
+      "exit_reason": null,
+      "normal_end": false,
+      "counts": {
+        "pc": 77556,
+        "book": 518,
+        "trade": 256
+      },
+      "coverage": {
+        "start": 1789738837.591653,
+        "end": 1789739754.459242,
+        "seconds": 916.8675889968872
+      }
+    }
+  },
+  "protocol": {
+    "protocol_id": "cs2_swing_trend_v1",
+    "mode": "paper_only",
+    "decision_unit": "one row per mechanism transition, never per quote or video frame",
+    "decision_kinds": [
+      "post_pistol_freeze",
+      "round_end_economy_update",
+      "prematch_prior_dislocation"
+    ],
+    "horizons_seconds": [
+      15,
+      30,
+      60,
+      120
+    ],
+    "entry": "first executable ask at or after state receipt + measured model latency + market secondsDelay",
+    "exit": "first executable bid at or after the fixed horizon",
+    "net_label": "exit proceeds - entry cost - observed market fees",
+    "price_prohibitions": [
+      "no midpoint fills",
+      "no window maximum as an exit",
+      "no quote received before the executable decision time"
+    ],
+    "model_comparison": [
+      "market_only",
+      "game_only",
+      "market_plus_game"
+    ],
+    "cohort_rule": "same decision rows and whole-series forward splits for every model",
+    "timing_rule": "initial snapshots and recovery backfills are ineligible; unknown event time stays unknown",
+    "execution_rule": "full depth is required for size-aware PnL; otherwise the session is diagnostic only",
+    "minimum_source_overlap_seconds": 300,
+    "promotion": "none; a separate frozen future acceptance window is required"
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-19T22:52:53.928784+00:00",
+  "protocol_id": "cs2_swing_trend_v1",
+  "protocol_sha256": "0c1131c7793fb4dc104c1f3a41145f4c6c4cf124e4a63505768e915afd2b4536",
+  "paper_only": true,
+  "session_id": "manual-1045844-omc2398164",
+  "eligible_for_trend_dataset": false,
+  "blocking_reasons": [
+    "market_capture_missing_normal_end",
+    "no_strict_eligible_mqtt_snapshots"
+  ],
+  "warnings": [
+    "fivee_event_snapshot_limit_reached_review_for_gaps"
+  ],
+  "three_source_overlap_seconds": 27477.879306077957,
+  "sources": {
+    "fivee_events": {
+      "paths": [
+        "D:\\polymarket\\data\\live_sessions\\manual-1045844-omc2398164\\fivee_events.jsonl"
+      ],
+      "segments": 1,
+      "complete_segments": 1,
+      "match_ids": [
+        "csgo_mc_2398164"
+      ],
+      "maps": [
+        "de_cache",
+        "de_mirage"
+      ],
+      "bouts": [
+        1,
+        2
+      ],
+      "round_one_bouts": [
+        1,
+        2
+      ],
+      "terminal_bouts": [
+        1,
+        2
+      ],
+      "counts": {
+        "session_start": 2,
+        "poll_ok": 14697,
+        "event": 669,
+        "eligible_events": 669,
+        "eligible_type_8": 485,
+        "eligible_type_3": 28,
+        "eligible_type_4": 14,
+        "eligible_type_10": 11,
+        "eligible_type_1": 51,
+        "eligible_type_2": 52,
+        "eligible_type_6": 28,
+        "truncated_polls": 5837,
+        "session_end": 1
+      },
+      "coverage": {
+        "start": 1789811314.970569,
+        "end": 1789858370.078654,
+        "seconds": 47055.10808515549
+      }
+    },
+    "fivee_states": {
+      "paths": [
+        "D:\\polymarket\\data\\live_sessions\\manual-1045844-omc2398164\\fivee_states.jsonl"
+      ],
+      "segments": 1,
+      "complete_segments": 1,
+      "match_ids": [
+        "csgo_mc_2398164"
+      ],
+      "counts": {
+        "session_start": 2,
+        "state_snapshot": 2,
+        "ineligible_snapshots": 2,
+        "mqtt_connected": 842,
+        "mqtt_subscribe_requested": 2,
+        "mqtt_subscribed": 2,
+        "mqtt_disconnected": 842,
+        "session_end": 1
+      },
+      "coverage": {
+        "start": 1789811314.971658,
+        "end": 1789858373.676562,
+        "seconds": 47058.70490407944
+      }
+    },
+    "market": {
+      "format": "raw_depth",
+      "events": "D:\\polymarket\\data\\live_sessions\\manual-1045844-omc2398164\\market\\events.jsonl",
+      "event_id": "1045844",
+      "market_ids": [
+        "4714767",
+        "4714768"
+      ],
+      "expected_tokens": [
+        "53243546526730467438451099028939861834281806914033323497229935412289836210938",
+        "6263865504882328907000903327144354479371406868755256408591507099550453809339",
+        "98354122285126753974222112458029693513333119107383891614275612003178655985326",
+        "98970979733779185137121900963814109021473967830453567117224985387340550454022"
+      ],
+      "depth_tokens": [
+        "53243546526730467438451099028939861834281806914033323497229935412289836210938",
+        "6263865504882328907000903327144354479371406868755256408591507099550453809339",
+        "98354122285126753974222112458029693513333119107383891614275612003178655985326",
+        "98970979733779185137121900963814109021473967830453567117224985387340550454022"
+      ],
+      "has_full_depth_for_expected_tokens": true,
+      "exit_reason": "error",
+      "normal_end": false,
+      "counts": {
+        "market_raw": 7287,
+        "invalid_raw_messages": 1431
+      },
+      "coverage": {
+        "start": 1789812273.64118,
+        "end": 1789839751.520486,
+        "seconds": 27477.879306077957
+      }
+    }
+  },
+  "protocol": {
+    "protocol_id": "cs2_swing_trend_v1",
+    "mode": "paper_only",
+    "decision_unit": "one row per mechanism transition, never per quote or video frame",
+    "decision_kinds": [
+      "post_pistol_freeze",
+      "round_end_economy_update",
+      "prematch_prior_dislocation"
+    ],
+    "horizons_seconds": [
+      15,
+      30,
+      60,
+      120
+    ],
+    "entry": "first executable ask at or after state receipt + measured model latency + market secondsDelay",
+    "exit": "first executable bid at or after the fixed horizon",
+    "net_label": "exit proceeds - entry cost - observed market fees",
+    "price_prohibitions": [
+      "no midpoint fills",
+      "no window maximum as an exit",
+      "no quote received before the executable decision time"
+    ],
+    "model_comparison": [
+      "market_only",
+      "game_only",
+      "market_plus_game"
+    ],
+    "cohort_rule": "same decision rows and whole-series forward splits for every model",
+    "timing_rule": "initial snapshots and recovery backfills are ineligible; unknown event time stays unknown",
+    "execution_rule": "full depth is required for size-aware PnL; otherwise the session is diagnostic only",
+    "minimum_source_overlap_seconds": 300,
+    "promotion": "none; a separate frozen future acceptance window is required"
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-20T22:50:46.179466+00:00",
+  "protocol_id": "cs2_swing_trend_v1",
+  "protocol_sha256": "0c1131c7793fb4dc104c1f3a41145f4c6c4cf124e4a63505768e915afd2b4536",
+  "paper_only": true,
+  "session_id": "manual-1053479-omc2398108",
+  "eligible_for_trend_dataset": false,
+  "blocking_reasons": [
+    "capture_did_not_observe_round_one_live"
+  ],
+  "warnings": [
+    "fivee_event_snapshot_limit_reached_review_for_gaps"
+  ],
+  "three_source_overlap_seconds": 31926.171117067337,
+  "sources": {
+    "fivee_events": {
+      "paths": [
+        "D:\\polymarket\\data\\live_sessions\\manual-1053479-omc2398108\\fivee_events.jsonl"
+      ],
+      "segments": 1,
+      "complete_segments": 1,
+      "match_ids": [
+        "csgo_mc_2398108"
+      ],
+      "maps": [
+        "de_anubis",
+        "de_cache",
+        "de_inferno",
+        "de_mirage"
+      ],
+      "bouts": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "round_one_bouts": [
+        2,
+        3,
+        4
+      ],
+      "terminal_bouts": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "counts": {
+        "session_start": 2,
+        "poll_ok": 13007,
+        "event": 1540,
+        "eligible_events": 1061,
+        "eligible_type_8": 768,
+        "eligible_type_6": 44,
+        "eligible_type_2": 76,
+        "eligible_type_1": 76,
+        "eligible_type_4": 15,
+        "eligible_type_3": 63,
+        "eligible_type_10": 19,
+        "ineligible_events": 479,
+        "truncated_polls": 8211,
+        "session_end": 1
+      },
+      "coverage": {
+        "start": 1789912710.538134,
+        "end": 1789944642.811068,
+        "seconds": 31932.27293395996
+      }
+    },
+    "fivee_states": {
+      "paths": [
+        "D:\\polymarket\\data\\live_sessions\\manual-1053479-omc2398108\\fivee_states.jsonl"
+      ],
+      "segments": 1,
+      "complete_segments": 1,
+      "match_ids": [
+        "csgo_mc_2398108"
+      ],
+      "counts": {
+        "session_start": 2,
+        "state_snapshot": 315,
+        "ineligible_snapshots": 8,
+        "mqtt_connected": 13,
+        "mqtt_subscribe_requested": 13,
+        "mqtt_subscribed": 13,
+        "mqtt_disconnected": 12,
+        "mqtt_connection_closed": 12,
+        "mqtt_message_error": 8,
+        "mqtt_message": 313,
+        "strict_eligible_snapshots": 307,
+        "session_end": 1
+      },
+      "coverage": {
+        "start": 1789912710.538134,
+        "end": 1789944642.989606,
+        "seconds": 31932.451471805573
+      }
+    },
+    "market": {
+      "format": "raw_depth",
+      "events": "D:\\polymarket\\data\\live_sessions\\manual-1053479-omc2398108\\market\\events.jsonl",
+      "event_id": "1053479",
+      "market_ids": [
+        "4757898",
+        "4757900",
+        "4757902",
+        "4757904"
+      ],
+      "expected_tokens": [
+        "10367675714336259055319931344376240152941916277838133317094286611875024663564",
+        "108064296704092198969860077320863441820991180388349679890169280796838997700648",
+        "29729117733804890808212048972839591445564007061896050610533093912145584003825",
+        "4901396058167659175888710002173303725043098744902790303882087800444417602353",
+        "54495897344642150091825356821738283836362335715728059857778749544775500837422",
+        "62054765975150717795674245656055125289467915266599984666794268532822604467313",
+        "62357855675470746118374518632570121824496445839315842446723954968385885380850",
+        "98068629329933427214290511091220776027878057712222025996823415761317584002646"
+      ],
+      "depth_tokens": [
+        "10367675714336259055319931344376240152941916277838133317094286611875024663564",
+        "108064296704092198969860077320863441820991180388349679890169280796838997700648",
+        "29729117733804890808212048972839591445564007061896050610533093912145584003825",
+        "4901396058167659175888710002173303725043098744902790303882087800444417602353",
+        "54495897344642150091825356821738283836362335715728059857778749544775500837422",
+        "62054765975150717795674245656055125289467915266599984666794268532822604467313",
+        "62357855675470746118374518632570121824496445839315842446723954968385885380850",
+        "98068629329933427214290511091220776027878057712222025996823415761317584002646"
+      ],
+      "has_full_depth_for_expected_tokens": true,
+      "exit_reason": "deadline",
+      "normal_end": true,
+      "counts": {
+        "market_raw": 402021,
+        "invalid_raw_messages": 3115
+      },
+      "coverage": {
+        "start": 1789912711.082141,
+        "end": 1789944637.253258,
+        "seconds": 31926.171117067337
+      }
+    }
+  },
+  "protocol": {
+    "protocol_id": "cs2_swing_trend_v1",
+    "mode": "paper_only",
+    "decision_unit": "one row per mechanism transition, never per quote or video frame",
+    "decision_kinds": [
+      "post_pistol_freeze",
+      "round_end_economy_update",
+      "prematch_prior_dislocation"
+    ],
+    "horizons_seconds": [
+      15,
+      30,
+      60,
+      120
+    ],
+    "entry": "first executable ask at or after state receipt + measured model latency + market secondsDelay",
+    "exit": "first executable bid at or after the fixed horizon",
+    "net_label": "exit proceeds - entry cost - observed market fees",
+    "price_prohibitions": [
+      "no midpoint fills",
+      "no window maximum as an exit",
+      "no quote received before the executable decision time"
+    ],
+    "model_comparison": [
+      "market_only",
+      "game_only",
+      "market_plus_game"
+    ],
+    "cohort_rule": "same decision rows and whole-series forward splits for every model",
+    "timing_rule": "initial snapshots and recovery backfills are ineligible; unknown event time stays unknown",
+    "execution_rule": "full depth is required for size-aware PnL; otherwise the session is diagnostic only",
+    "minimum_source_overlap_seconds": 300,
+    "promotion": "none; a separate frozen future acceptance window is required"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "SIDE_only": {
+    "auc": 0.5345,
+    "n_test": 356
+  },
+  "SIDE_plus_form": {
+    "auc": 0.5387,
+    "n_test": 330,
+    "paired_vs_SIDE": {
+      "base": 0.5341,
+      "new": 0.5387,
+      "diff": 0.0046,
+      "ci95": [
+        -0.0512,
+        0.0594
+      ],
+      "p_gt0": 0.569,
+      "n": 330
+    }
+  },
+  "SIDE_plus_c2": {
+    "auc": 0.5195,
+    "n_test": 350,
+    "paired_vs_SIDE": {
+      "base": 0.535,
+      "new": 0.5195,
+      "diff": -0.0155,
+      "ci95": [
+        -0.075,
+        0.0442
+      ],
+      "p_gt0": 0.321,
+      "n": 350
+    }
+  },
+  "SIDE_form_c2": {
+    "auc": 0.5299,
+    "n_test": 330,
+    "paired_vs_SIDE": {
+      "base": 0.5341,
+      "new": 0.5299,
+      "diff": -0.0042,
+      "ci95": [
+        -0.0599,
+        0.0509
+      ],
+      "p_gt0": 0.442,
+      "n": 330
+    }
+  },
+  "P1_plus_early3": {
+    "auc": 0.5285,
+    "n_test": 330,
+    "paired_vs_SIDE": {
+      "base": 0.5341,
+      "new": 0.5285,
+      "diff": -0.0055,
+      "ci95": [
+        -0.0596,
+        0.0495
+      ],
+      "p_gt0": 0.426,
+      "n": 330
+    }
+  },
+  "strategy_stat_form_favored_pistol_winrate": {
+    "all": 0.5341,
+    "n": 586,
+    "train": 0.5366,
+    "test": 0.5284,
+    "test_n": 176
+  },
+  "base_rate_a_won_pistol": 0.5084
+}

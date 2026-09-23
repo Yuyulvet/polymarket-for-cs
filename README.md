@@ -2,7 +2,37 @@
 
 CS2（Counter-Strike 2）电竞的**胜率预测 + Polymarket 交易**研究代码库。目标：从比赛数据里提炼比市场更准的「读局」信号，并验证能否在 Polymarket 的 CS2 盘口上货币化。
 
-> ⚠️ **诚实结论（截至 2026-09）**：统计/模型层目前**没有找到可货币化的 edge**。Polymarket 对 CS2 盘口定价有效——比分几乎是充分统计量，经济/装备信号被比分吸收，赛前模型跑不赢市场价。唯一尚未证伪的线索是 **latency edge（先于市场读到局面变化）**，这需要实时观赛线，是当前工作重心。
+**开发约定：先开发与验证，再单独决定是否尝试实盘。** 当前不接钱包、不收集私钥、不授权、不下真实订单。
+详见 [开发与验证约定](docs/map1-development-plan.md)。新增本地纸面工作台：
+
+```powershell
+.venv\Scripts\python.exe -B -m cs2ml.map1_web --port 8765
+```
+
+打开 `http://127.0.0.1:8765`，刷新公开赛程，导入 HLTV 比赛链接、核实选手身份与本场地图/名单后进行纸面采集。
+HLTV 页面证据自动留存；已核实的 HLTV ID—SteamID 关系复用，TBA、身份冲突、过期或变更时不产生信号。
+启动默认暂停；当前提供本地持久化、公开二元结果核验、账本复盘与原始记录导出。
+完整步骤与限制见 [纸面工作台说明](docs/map1-workbench.md)。测试通过不等于策略盈利。
+数据源许可提醒：HLTV 免费浏览不等于允许自动化抓取。现行条款限制抓取/数据挖掘；
+已新增独立的短时原始采集原型，但本次 scorebot 握手返回 HTTP 403 后停止，实时事件数为 0；
+未接入模型或交易，也未绕过访问限制。详见 [采集原型与实测结果](docs/hltv-live-capture.md)。
+
+**当前开发主线：模型审计与粒度对照。** 运行 `.venv\Scripts\python.exe -B -m cs2ml.map1_research`，
+在统一时间和历史覆盖门槛下，对照 50%、Elo、阵容与 SteamID 个人历史模型。
+结果写入新的时间戳目录，不替换工作台模型。已看过的历史末段只作诊断，不再冒充全新验收集。
+详见 [模型研究说明](docs/model-research.md) 与 [后续赛中验证契约](docs/live-validation-contract.md)。
+
+**赛中旧实验修正：** 30 秒特征和事件轨迹采用新版本缓存；地图模拟已修正串图及 MR3 加时，
+checkpoint 对照改为同样本、结果可用时间前向验证。部分不安全旧入口已明确阻断，不能继续沿用旧成绩。
+重建方式与未完成项见 [赛中修正说明](docs/inplay-fixes.md)。
+
+**2026-09-16：新增 Map 1 验证入口。** `python -m cs2ml.map1 prepare` 按单图构建样本，
+以比赛结束后的结果可用时间切分，输出冻结留出集评估；`inspect / record / replay`
+提供严格的 Map 1 市场绑定、完整盘口采集和延迟纸面成交。见
+[Map 1 使用说明](docs/map1-pilot.md)。该流程与下方旧实验分开，当前只支持赛前 Map 1，
+不下真实订单；历史缺少地图/阵容公告时间时，不输出可成交收益。
+
+> **当前结论（2026-09-16）**：尚未验证出稳定、可成交的预测优势。旧实验存在不同的标签、时间对齐和成本口径，不能据此断言只有延迟优势值得研究。当前优先完成地图/阵容已确定的 Map 1 前向验证；下文历史实验结果保留作研究记录，不等同于新流程的验证结果。
 
 ---
 
@@ -89,9 +119,10 @@ S 级赛事（bo3.gg，近 3 个月）──> collect.py ──> 下载 HLTV .ra
 把「读局」接到实时市场，纸面交易验证（**不碰真钱**）：
 
 ```
-bo3.gg live（地图比分 + 庄家赔率） ──> live_state.py
-Polymarket CLOB WebSocket 秒级价    ──> realtime_record.py
-预测 → 买入 → 实时判断 → 卖出        ──> paper_trade.py（纸面状态机）
+5E MQTT（比分 / HP / 现金 / 当前武器）──> fivee_mqtt.py
+Polymarket CLOB WebSocket 可执行报价 ──> realtime_record.py
+本地接收时间严格配对                  ──> live_pair.py
+预测 → 买入 → 实时判断 → 卖出         ──> paper_trade.py（纸面状态机）
 ```
 
 ---
@@ -109,7 +140,10 @@ cs2ml/                  # 主包（全部模块）
   round_transition.py   # 回合级经济决策模型
   player_behavior.py / player_style.py / team_strategy.py  # 操作画像 / 队伍策略
   live_state.py         # bo3.gg live 轮询（地图比分 + 赔率）
+  fivee_mqtt.py         # 5E 单场 MQTT 推送（局势状态；HTTP 仅作初始种子）
   realtime_record.py    # Polymarket CLOB WebSocket 录价
+  live_pair.py          # 5E 状态与 token 级盘口的严格接收时间配对
+  live_predict.py       # 严格配对状态 -> 5E-compatible 纸面概率（不下单）
   paper_trade.py        # P4 纸面交易状态机
 docs/                   # 设计 / 调研文档
 reports/                # 评估产出（eval_report.md 等）
@@ -131,7 +165,7 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-依赖（`requirements.txt`）：`requests`、`pandas`、`scikit-learn`、`lightgbm`、`joblib`、`curl_cffi`、`rarfile`、`demoparser2==0.42.0`。
+依赖（`requirements.txt`）：`requests`、`pandas`、`scikit-learn`、`lightgbm`、`joblib`、`curl_cffi`、`paho-mqtt`、`rarfile`、`demoparser2==0.42.0`。
 
 > 需在 Windows 上运行（demo 解压依赖系统 `7z` / `rar`）。`config.py` 里的路径默认相对于项目根目录，无需额外配置；bo3.gg 与 Polymarket 均无需鉴权 token。
 
@@ -175,6 +209,17 @@ python -m cs2ml.rosters
 ### 实时交易线（纸面）
 
 ```powershell
+# 5E 实时局势（MQTT 推送；初始 HTTP 与重连首帧自动排除）
+python -m cs2ml.fivee_mqtt --match-id csgo_mc_2398089 --hours 4
+
+# 只录目标地图的双边可执行盘口
+python -m cs2ml.realtime_record --event 1005582 --market "Map 2 Winner" --hours 4
+
+# 状态与盘口配对后，只生成纸面概率和毛差，不产生订单
+python -m cs2ml.live_predict --paired reports\live_pair\paired_states.jsonl `
+  --models data\map1\research\fivee-compatible-20260918-v3\models.joblib `
+  --output-dir reports\live_predict
+
 # 列出当前 live 比赛 + 匹配到的 Polymarket 盘口
 python -m cs2ml.paper_trade --list
 
@@ -191,10 +236,16 @@ python -m cs2ml.paper_trade --team1 Spirit --team2 MOUZ --minutes 60
 |---|---|---|
 | **bo3.gg** | 赛程 / 赛果 / 赔率 / live 地图比分 | `/api/v2/matches/*`，无需 token |
 | **HLTV GOTV** | demo 文件（.rar） | 赛后 ~90s 延迟，逐 tick 解析过程数据 |
+| **5EPlay** | 实时比分 / HP / 现金 / 当前武器 / 护甲 | 单场 MQTT 推送；初始 HTTP 快照不参与严格回测 |
 | **Polymarket** | CLOB（下单 / 价）/ Gamma（盘口发现） | `clob.polymarket.com`、`gamma-api.polymarket.com` |
 | **CS2 GSI**（规划） | 回合级经济 / 击杀 / 存活（实时） | Valve 官方，自托管 GOTV 观战，唯一免费全字段路径 |
 
-回合级实时游戏内数据（经济 / 击杀 / 存活）当前**没有免费托管源**：HLTV scorebot 反爬混淆、bo3.gg live 只有地图比分 + 赔率。可选路径见 `docs/data-sources.md` 与 `docs/cs2-markets-guide.md`。
+5E 单场 MQTT 已验证能收到比分、HP、现金、当前显示武器、护甲与拆包器；它不是完整 inventory，
+不能替代 demo 的精确装备总值。一次 10 分钟样本中 MQTT 状态间隔中位数 24 秒、估算源滞后中位数 9.9 秒，
+仅 6/15 帧满足 5 秒门槛；独立事件日志主题收到 0 条消息。因此当前只能做严格过滤的状态/回合级纸面验证，
+不能宣称具备逐击杀高频优势。HTTP 快照约 40 秒刷新且可能倒退，只可诊断，不可作为交易时钟。
+HLTV scorebot 的独立连接仍返回 403；bo3.gg 现有适配仅提供地图比分与赔率。
+可选路径见 `docs/data-sources.md` 与 `docs/cs2-markets-guide.md`。
 
 ---
 
@@ -209,13 +260,16 @@ python -m cs2ml.paper_trade --team1 Spirit --team2 MOUZ --minutes 60
 - **per-player form**：跨图 K/D → 赛前 map winner AUC 0.62（时间序诚实），超 roster 强度 0.600，但跑不赢市场价
 - **仓位管理**：负 edge 无法靠先买 / 补仓 / 止损弥补
 
-**核心矛盾**：模型能「读懂」比赛（回合级 AUC 0.75~0.80），但市场已经把比分 + 经济都定价了；要货币化只剩「**比市场更早读到**」的 latency edge，这正是实时观赛线（第 3 层）在做的事。
+**待验证的问题**：回合可预测性是否能转化为同一时刻、同一地图盘口上的增量信息，并在费用和成交延迟后留下收益。历史回合级 AUC 本身不能回答这个问题；赛前 Map 1 与盘中延迟两条假设都需要独立前向检验。
 
 ---
 
-## 为什么 `models/` 是空的
+## 为什么顶层 `models/` 仍是空的
 
-模型在训练时**内联构建、不序列化**：`LogisticRegression`、`LGBMClassifier`、`HistGradientBoosting`、`KMeans` + `StandardScaler` / `OneHotEncoder` / `Pipeline` / `ColumnTransformer`，用 `GroupKFold(match_id)` 交叉验证 + `cross_val_predict` 即时产出预测。历史实验多、结论多为负面，所以没有落盘一个「最终模型」——需要时由 `train.py` / `predict.py` 现场训练。
+尚未选出可投入交易的「最终模型」。多数研究仍在训练时内联构建并按整场时间切分评估。
+为进行下一场前向纸面验证，`inplay_map_research` 现在会在带版本的研究目录中保存
+`models.joblib`，其中只有 `fivee_score` 与 `fivee_state` 两个固定预处理器模型；产物明确标记
+`paper_only=true`、`promoted=false`，不会放进顶层 `models/`，也不会启用真实交易。
 
 ---
 

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "protocol_id": "cs2_swing_trend_v1",
+  "protocol_sha256": "0c1131c7793fb4dc104c1f3a41145f4c6c4cf124e4a63505768e915afd2b4536",
+  "session_id": "manual-1053479-omc2398108",
+  "model_latency_seconds": 0.0,
+  "exit_grace_seconds": 30.0,
+  "horizons_seconds": [
+    15,
+    30,
+    60,
+    120
+  ],
+  "market_applied": {
+    "book_snapshot": 7254,
+    "price_change": 388046,
+    "invalid_json": 3115,
+    "trade": 3610,
+    "other_tick_size_change": 16
+  },
+  "trigger_stats": {
+    "non_trigger_type_8": 768,
+    "non_trigger_type_6": 44,
+    "trigger_round_end_economy_update": 76,
+    "trigger_post_pistol_freeze": 4,
+    "non_trigger_type_1": 72,
+    "non_trigger_type_4": 15,
+    "non_trigger_type_3": 63,
+    "non_trigger_type_10": 19,
+    "ineligible_event_skipped": 479
+  },
+  "drop_reasons": {},
+  "state_snapshots_strict": 307,
+  "rows": 162,
+  "label_valid_rate": {
+    "h15": 0.9259259259259259,
+    "h30": 0.9259259259259259,
+    "h60": 0.9259259259259259,
+    "h120": 0.9135802469135802
+  },
+  "inputs_sha256": {
+    "fivee_events": [
+      "897a69679b19e28281e0351c9dc764ddb93e8663b5b98b8a227960fdeb0fc8ba"
+    ],
+    "fivee_states": [
+      "44b496da5e00f8af6d4a20beddb1f886a6e7c6fae423fc9cda52fbe6d50a6e9e"
+    ],
+    "market_events": "031ce16b21e63ef8aeabd40443f70d2232d2d9388e3523e39b287b80168e873b",
+    "market_meta": "67e63cca1c934e53ff1375f49b38e621c0c060a5c4d0453f7ae92120886da019",
+    "spec": "b969c559c00bf45870a4a4817471d946643114090ea824be18f90c7242127e0c"
+  }
+}

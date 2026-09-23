@@ -1,0 +1,61 @@
+{
+  "F_form_gap": {
+    "auc": 0.6733,
+    "ci95": [
+      0.592,
+      0.7511
+    ],
+    "n_train": 327,
+    "n_test": 165
+  },
+  "C2_csnet_history_gap": {
+    "auc": 0.6769,
+    "ci95": [
+      0.5934,
+      0.7608
+    ],
+    "n_train": 381,
+    "n_test": 175
+  },
+  "C1_csnet_earlymap_gap": {
+    "auc": 0.7479,
+    "ci95": [
+      0.6698,
+      0.818
+    ],
+    "n_train": 415,
+    "n_test": 178
+  },
+  "C2_plus_F": {
+    "auc": 0.6573,
+    "ci95": [
+      0.5741,
+      0.7399
+    ],
+    "n_train": 327,
+    "n_test": 165
+  },
+  "paired_diff_C2F_minus_F": {
+    "auc_diff": -0.016,
+    "ci95": [
+      -0.0576,
+      0.0263
+    ],
+    "n": 165,
+    "p_gt0": 0.228
+  },
+  "c2_univariate_test_auc": {
+    "c2_early_winrate_gap": 0.4866,
+    "c2_mid_winrate_gap": 0.5697,
+    "c2_early_alive_end_gap": 0.6201,
+    "c2_mid_alive_end_gap": 0.65,
+    "c2_early_future_kill_gap": 0.6569,
+    "c2_mid_future_kill_gap": 0.6389
+  },
+  "coverage": {
+    "n_maps": 593,
+    "form_both_teams": 492,
+    "c2_both_teams": 556,
+    "c1_both_teams": 593
+  }
+}

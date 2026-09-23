@@ -1,0 +1,444 @@
+{
+  "status": "exploratory_not_acceptance",
+  "folds": [
+    {
+      "train_series": 19,
+      "test_series": 18,
+      "train_rows": 311,
+      "test_rows": 321,
+      "train_max_available": "2026-03-18 20:56:12.568000+00:00",
+      "test_min_start": "2026-03-19 16:50:00+00:00",
+      "test_max_start": "2026-05-01 23:50:00+00:00",
+      "overlap": 0,
+      "metrics": {
+        "label_ct_win__macro": {
+          "brier": 0.2485868746882099,
+          "log_loss": 0.6945333086744176,
+          "accuracy": 0.5766451483513746,
+          "auc": 0.6203857300041007
+        },
+        "label_ct_map_win__macro": {
+          "brier": 0.21075218343793609,
+          "log_loss": 0.6368888444615411,
+          "accuracy": 0.7065109854153542,
+          "auc": 0.7400294437008799
+        },
+        "label_ct_win__coarse_geometry": {
+          "brier": 0.24388989792917595,
+          "log_loss": 0.6823795060560796,
+          "accuracy": 0.5708164965345908,
+          "auc": 0.631695464005837
+        },
+        "label_ct_map_win__coarse_geometry": {
+          "brier": 0.21143833416109178,
+          "log_loss": 0.6410838514604487,
+          "accuracy": 0.7033820760772945,
+          "auc": 0.738222149763814
+        },
+        "label_ct_win__regional_deployment": {
+          "brier": 0.25211869242990315,
+          "log_loss": 0.7021895639894071,
+          "accuracy": 0.5834682081414108,
+          "auc": 0.6223851585057572
+        },
+        "label_ct_map_win__regional_deployment": {
+          "brier": 0.20992890995932129,
+          "log_loss": 0.637559213681732,
+          "accuracy": 0.7196139049639222,
+          "auc": 0.7362019245656206
+        }
+      }
+    },
+    {
+      "train_series": 37,
+      "test_series": 17,
+      "train_rows": 632,
+      "test_rows": 253,
+      "train_max_available": "2026-05-02 02:15:50.040000+00:00",
+      "test_min_start": "2026-05-09 06:50:00+00:00",
+      "test_max_start": "2026-05-17 08:00:00+00:00",
+      "overlap": 0,
+      "metrics": {
+        "label_ct_win__macro": {
+          "brier": 0.22254123747446777,
+          "log_loss": 0.6303769768724247,
+          "accuracy": 0.6183911676558734,
+          "auc": 0.6930635579882325
+        },
+        "label_ct_map_win__macro": {
+          "brier": 0.15983436432193615,
+          "log_loss": 0.48677477121885093,
+          "accuracy": 0.780350164541341,
+          "auc": 0.8715882255309355
+        },
+        "label_ct_win__coarse_geometry": {
+          "brier": 0.22697284620574998,
+          "log_loss": 0.6401801050082977,
+          "accuracy": 0.6409476144770262,
+          "auc": 0.6720892608979382
+        },
+        "label_ct_map_win__coarse_geometry": {
+          "brier": 0.16438470501895766,
+          "log_loss": 0.5039117089011931,
+          "accuracy": 0.7737725101695689,
+          "auc": 0.8476594201130858
+        },
+        "label_ct_win__regional_deployment": {
+          "brier": 0.22806457695048785,
+          "log_loss": 0.642970181794968,
+          "accuracy": 0.6274379215555685,
+          "auc": 0.6727077236561798
+        },
+        "label_ct_map_win__regional_deployment": {
+          "brier": 0.16015773423570168,
+          "log_loss": 0.4904898535044545,
+          "accuracy": 0.7590001909854851,
+          "auc": 0.8541895960910242
+        }
+      }
+    },
+    {
+      "train_series": 54,
+      "test_series": 19,
+      "train_rows": 885,
+      "test_rows": 316,
+      "train_max_available": "2026-05-17 09:41:00+00:00",
+      "test_min_start": "2026-06-03 14:40:00+00:00",
+      "test_max_start": "2026-06-12 16:45:00+00:00",
+      "overlap": 0,
+      "metrics": {
+        "label_ct_win__macro": {
+          "brier": 0.21709862976832428,
+          "log_loss": 0.6195034761174124,
+          "accuracy": 0.6227524276723362,
+          "auc": 0.6933588352108275
+        },
+        "label_ct_map_win__macro": {
+          "brier": 0.1308077374786005,
+          "log_loss": 0.41384715374747083,
+          "accuracy": 0.7995678552314707,
+          "auc": 0.8967242731738344
+        },
+        "label_ct_win__coarse_geometry": {
+          "brier": 0.21954428636474274,
+          "log_loss": 0.6238507211727601,
+          "accuracy": 0.5896969745653957,
+          "auc": 0.6841190656275865
+        },
+        "label_ct_map_win__coarse_geometry": {
+          "brier": 0.1312790444971077,
+          "log_loss": 0.417852774545928,
+          "accuracy": 0.821381891690816,
+          "auc": 0.8964845232907683
+        },
+        "label_ct_win__regional_deployment": {
+          "brier": 0.2273805672234662,
+          "log_loss": 0.6421211725779831,
+          "accuracy": 0.5739427504015605,
+          "auc": 0.6615801816392292
+        },
+        "label_ct_map_win__regional_deployment": {
+          "brier": 0.12803952291058104,
+          "log_loss": 0.41049676762349796,
+          "accuracy": 0.8257246884821254,
+          "auc": 0.8991564001778966
+        }
+      }
+    },
+    {
+      "train_series": 73,
+      "test_series": 19,
+      "train_rows": 1201,
+      "test_rows": 300,
+      "train_max_available": "2026-06-12 19:42:39.279000+00:00",
+      "test_min_start": "2026-06-13 12:13:53+00:00",
+      "test_max_start": "2026-08-31 11:30:00+00:00",
+      "overlap": 0,
+      "metrics": {
+        "label_ct_win__macro": {
+          "brier": 0.21140568852233127,
+          "log_loss": 0.6050039579569702,
+          "accuracy": 0.6515820963657857,
+          "auc": 0.7193414593466468
+        },
+        "label_ct_map_win__macro": {
+          "brier": 0.15266504701934047,
+          "log_loss": 0.46459536254292877,
+          "accuracy": 0.7765858114420117,
+          "auc": 0.8546787017949656
+        },
+        "label_ct_win__coarse_geometry": {
+          "brier": 0.2128009129837336,
+          "log_loss": 0.6091012480677794,
+          "accuracy": 0.6286216634167588,
+          "auc": 0.7193094521064349
+        },
+        "label_ct_map_win__coarse_geometry": {
+          "brier": 0.14722753304520958,
+          "log_loss": 0.45301307389222767,
+          "accuracy": 0.793642988267805,
+          "auc": 0.8665074747833957
+        },
+        "label_ct_win__regional_deployment": {
+          "brier": 0.21704646681164402,
+          "log_loss": 0.617604006290436,
+          "accuracy": 0.6369008116971292,
+          "auc": 0.7035425764909511
+        },
+        "label_ct_map_win__regional_deployment": {
+          "brier": 0.14383515722499224,
+          "log_loss": 0.44394760610870726,
+          "accuracy": 0.7944496075382504,
+          "auc": 0.8715858893007185
+        }
+      }
+    }
+  ],
+  "scored_series": 73,
+  "scored_maps": 73,
+  "scored_rounds": 774,
+  "scored_snapshots": 1190,
+  "metrics": {
+    "label_ct_win__macro": {
+      "brier": 0.2246485866983039,
+      "log_loss": 0.6367623206901918,
+      "accuracy": 0.6178714859890261,
+      "auc": 0.6746779019106777
+    },
+    "label_ct_win__coarse_geometry": {
+      "brier": 0.2255221278882735,
+      "log_loss": 0.6382463056126129,
+      "accuracy": 0.6071076781560687,
+      "auc": 0.6717628150258723
+    },
+    "label_ct_win__regional_deployment": {
+      "brier": 0.2309499714871732,
+      "log_loss": 0.6507490909701883,
+      "accuracy": 0.6051356177104816,
+      "auc": 0.6605348165607487
+    },
+    "label_ct_map_win__macro": {
+      "brier": 0.16296858083310467,
+      "log_loss": 0.49903531671980544,
+      "accuracy": 0.7661653452256896,
+      "auc": 0.8355391235261966
+    },
+    "label_ct_map_win__coarse_geometry": {
+      "brier": 0.16290486265104054,
+      "log_loss": 0.502088486273059,
+      "accuracy": 0.7739792159107914,
+      "auc": 0.8326296116844285
+    },
+    "label_ct_map_win__regional_deployment": {
+      "brier": 0.1598222025185014,
+      "log_loss": 0.49381967748984656,
+      "accuracy": 0.7758817145272737,
+      "auc": 0.8379860841921724
+    }
+  },
+  "comparisons": {
+    "label_ct_win__regional_vs_macro": {
+      "candidate_minus_baseline_brier": 0.0063013847888692825,
+      "series_bootstrap_95pct": [
+        0.00034352531609158836,
+        0.01257671149671145
+      ],
+      "series": 73,
+      "negative_favors_candidate": true
+    },
+    "label_ct_win__regional_vs_coarse_geometry": {
+      "candidate_minus_baseline_brier": 0.0054278435988996615,
+      "series_bootstrap_95pct": [
+        0.0007967808197221497,
+        0.010089818191668416
+      ],
+      "series": 73,
+      "negative_favors_candidate": true
+    },
+    "label_ct_map_win__regional_vs_macro": {
+      "candidate_minus_baseline_brier": -0.0031463783146032536,
+      "series_bootstrap_95pct": [
+        -0.00958652150690014,
+        0.0032739774206131706
+      ],
+      "series": 73,
+      "negative_favors_candidate": true
+    },
+    "label_ct_map_win__regional_vs_coarse_geometry": {
+      "candidate_minus_baseline_brier": -0.003082660132539137,
+      "series_bootstrap_95pct": [
+        -0.00787811378176376,
+        0.0012950213525342476
+      ],
+      "series": 73,
+      "negative_favors_candidate": true
+    }
+  },
+  "by_elapsed": {
+    "15": {
+      "rows": 774,
+      "series": 73,
+      "metrics": {
+        "label_ct_win__macro": {
+          "brier": 0.22439604264049515,
+          "log_loss": 0.6362640519289207,
+          "accuracy": 0.6192675072788087,
+          "auc": 0.6757012041069415
+        },
+        "label_ct_win__coarse_geometry": {
+          "brier": 0.2241953476795945,
+          "log_loss": 0.6353083983528568,
+          "accuracy": 0.6095943582628262,
+          "auc": 0.6760489927524546
+        },
+        "label_ct_win__regional_deployment": {
+          "brier": 0.22852503977697133,
+          "log_loss": 0.6452022630582893,
+          "accuracy": 0.6109596764398291,
+          "auc": 0.6671188040622712
+        },
+        "label_ct_map_win__macro": {
+          "brier": 0.1608330281871904,
+          "log_loss": 0.49378954951713233,
+          "accuracy": 0.7702533561159374,
+          "auc": 0.8391554113494213
+        },
+        "label_ct_map_win__coarse_geometry": {
+          "brier": 0.161778702443232,
+          "log_loss": 0.49968055543362627,
+          "accuracy": 0.7812009843861832,
+          "auc": 0.8343092018507167
+        },
+        "label_ct_map_win__regional_deployment": {
+          "brier": 0.1590239098992687,
+          "log_loss": 0.4916564883561182,
+          "accuracy": 0.7797527872600432,
+          "auc": 0.8395515210815201
+        }
+      }
+    },
+    "30": {
+      "rows": 269,
+      "series": 71,
+      "metrics": {
+        "label_ct_win__macro": {
+          "brier": 0.22722183488208444,
+          "log_loss": 0.6404838700070761,
+          "accuracy": 0.6043203666443103,
+          "auc": 0.6648018346582025
+        },
+        "label_ct_win__coarse_geometry": {
+          "brier": 0.22961791452688435,
+          "log_loss": 0.6441943557387183,
+          "accuracy": 0.6109937402190923,
+          "auc": 0.652448509828941
+        },
+        "label_ct_win__regional_deployment": {
+          "brier": 0.23590915989173933,
+          "log_loss": 0.6575101390698611,
+          "accuracy": 0.5893360160965795,
+          "auc": 0.6388181488306307
+        },
+        "label_ct_map_win__macro": {
+          "brier": 0.17413541185472686,
+          "log_loss": 0.522648364831562,
+          "accuracy": 0.7400681868991729,
+          "auc": 0.8266103454013498
+        },
+        "label_ct_map_win__coarse_geometry": {
+          "brier": 0.17553223636423698,
+          "log_loss": 0.5308383343034709,
+          "accuracy": 0.7318801699083389,
+          "auc": 0.8185484097872496
+        },
+        "label_ct_map_win__regional_deployment": {
+          "brier": 0.1710835378457839,
+          "log_loss": 0.5193693923362928,
+          "accuracy": 0.7332662642521797,
+          "auc": 0.8274826913519139
+        }
+      }
+    },
+    "45": {
+      "rows": 147,
+      "series": 60,
+      "metrics": {
+        "label_ct_win__macro": {
+          "brier": 0.2196088125010947,
+          "log_loss": 0.6200094095584258,
+          "accuracy": 0.6261111111111111,
+          "auc": 0.6770048425247407
+        },
+        "label_ct_win__coarse_geometry": {
+          "brier": 0.22461349711192086,
+          "log_loss": 0.6292301337830201,
+          "accuracy": 0.5894444444444443,
+          "auc": 0.6593452570056009
+        },
+        "label_ct_win__regional_deployment": {
+          "brier": 0.23836100288465303,
+          "log_loss": 0.6673188675315121,
+          "accuracy": 0.6024999999999998,
+          "auc": 0.6393913911591819
+        },
+        "label_ct_map_win__macro": {
+          "brier": 0.17399980856247813,
+          "log_loss": 0.5191599607419248,
+          "accuracy": 0.7341666666666666,
+          "auc": 0.8491292128306972
+        },
+        "label_ct_map_win__coarse_geometry": {
+          "brier": 0.17680417065223533,
+          "log_loss": 0.5331150834078309,
+          "accuracy": 0.7302777777777777,
+          "auc": 0.8371907493864152
+        },
+        "label_ct_map_win__regional_deployment": {
+          "brier": 0.17270273452280152,
+          "log_loss": 0.5240076339527333,
+          "accuracy": 0.7383333333333333,
+          "auc": 0.8295610836256089
+        }
+      }
+    }
+  },
+  "protocol": {
+    "version": "inferno_spatial_fixed_time_v1",
+    "map": "Inferno",
+    "offsets_seconds": [
+      15,
+      30,
+      45
+    ],
+    "eligible_maps": 92,
+    "rejected_maps": {
+      "D:\\polymarket\\data\\demos\\hltv-2396017-109861\\3dmax-vs-mouz-m3-inferno.dem": "'d:/polymarket/data/demos/hltv-2396017-109861/3dmax-vs-mouz-m3-inferno.dem'",
+      "D:\\polymarket\\data\\demos\\hltv-2396945-110839\\mouz-vs-falcons-m3-inferno.dem": "'d:/polymarket/data/demos/hltv-2396945-110839/mouz-vs-falcons-m3-inferno.dem'"
+    },
+    "cohort": "Fixed checkpoints, all ten alive at 100HP, no planted bomb; same rows in every variant.",
+    "learner": "HGB 100 trees, 7 leaves, min_leaf30, lr .05, L2=5; no tuning, no random early-stop split",
+    "validation": "4 forward series blocks; labels available strictly before test; equal series/round/snapshot weights",
+    "primary": "Round winner Brier; regional versus macro and coarse geometry",
+    "secondary": "Map winner Brier and checkpoint strata; exploratory, not independent confirmations",
+    "limitations": [
+      "Full HP is not proof that no shots have been fired.",
+      "Euclidean distance ignores walls, visibility, utility and true rotate paths.",
+      "Regional occupancy does not reveal intended future attack destination.",
+      "No live receipt time, execution costs, market prices or profitability validation.",
+      "Previously researched history is not an untouched holdout; confidence intervals are exploratory."
+    ]
+  },
+  "exclusions": {
+    "already_damaged_or_dead": 4277,
+    "round_already_ended": 96
+  },
+  "failures": {},
+  "chronology": {
+    "rows_missing_clean_chronology": 0,
+    "retained_series": 92,
+    "retained_maps": 92,
+    "availability_basis": "clean_history_match_end_plus_lag_proxy_not_live_receipt"
+  },
+  "total_retained_snapshots": 1501,
+  "retained_rounds": 980
+}

@@ -1,0 +1,26 @@
+{
+  "version": "inferno_spatial_fixed_time_v1",
+  "map": "Inferno",
+  "offsets_seconds": [
+    15,
+    30,
+    45
+  ],
+  "eligible_maps": 92,
+  "rejected_maps": {
+    "D:\\polymarket\\data\\demos\\hltv-2396017-109861\\3dmax-vs-mouz-m3-inferno.dem": "'d:/polymarket/data/demos/hltv-2396017-109861/3dmax-vs-mouz-m3-inferno.dem'",
+    "D:\\polymarket\\data\\demos\\hltv-2396945-110839\\mouz-vs-falcons-m3-inferno.dem": "'d:/polymarket/data/demos/hltv-2396945-110839/mouz-vs-falcons-m3-inferno.dem'"
+  },
+  "cohort": "Fixed checkpoints, all ten alive at 100HP, no planted bomb; same rows in every variant.",
+  "learner": "HGB 100 trees, 7 leaves, min_leaf30, lr .05, L2=5; no tuning, no random early-stop split",
+  "validation": "4 forward series blocks; labels available strictly before test; equal series/round/snapshot weights",
+  "primary": "Round winner Brier; regional versus macro and coarse geometry",
+  "secondary": "Map winner Brier and checkpoint strata; exploratory, not independent confirmations",
+  "limitations": [
+    "Full HP is not proof that no shots have been fired.",
+    "Euclidean distance ignores walls, visibility, utility and true rotate paths.",
+    "Regional occupancy does not reveal intended future attack destination.",
+    "No live receipt time, execution costs, market prices or profitability validation.",
+    "Previously researched history is not an untouched holdout; confidence intervals are exploratory."
+  ]
+}

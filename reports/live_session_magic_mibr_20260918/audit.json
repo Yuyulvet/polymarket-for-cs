@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-18T18:38:24.141729+00:00",
+  "protocol_id": "cs2_swing_trend_v1",
+  "protocol_sha256": "0c1131c7793fb4dc104c1f3a41145f4c6c4cf124e4a63505768e915afd2b4536",
+  "paper_only": true,
+  "session_id": "magic-mibr-20260918-map1-partial",
+  "eligible_for_trend_dataset": false,
+  "blocking_reasons": [
+    "capture_did_not_observe_round_one_live",
+    "fivee_event_segment_missing_session_end",
+    "fivee_mqtt_state_source_missing",
+    "insufficient_three_source_overlap",
+    "market_capture_missing_normal_end",
+    "market_full_depth_missing",
+    "no_strict_eligible_mqtt_snapshots"
+  ],
+  "warnings": [],
+  "three_source_overlap_seconds": 0.0,
+  "sources": {
+    "fivee_events": {
+      "paths": [
+        "D:\\polymarket\\data\\fivee\\eventlog_csgo_mc_2398100_20260918T134033Z.jsonl"
+      ],
+      "segments": 1,
+      "complete_segments": 0,
+      "match_ids": [
+        "csgo_mc_2398100"
+      ],
+      "maps": [
+        "de_ancient",
+        "de_mirage"
+      ],
+      "bouts": [
+        1,
+        2
+      ],
+      "round_one_bouts": [],
+      "terminal_bouts": [
+        1
+      ],
+      "counts": {
+        "session_start": 1,
+        "event": 222,
+        "ineligible_events": 144,
+        "poll_ok": 413,
+        "eligible_events": 78,
+        "eligible_type_8": 38,
+        "eligible_type_2": 7,
+        "eligible_type_1": 6,
+        "eligible_type_6": 3,
+        "eligible_type_10": 4,
+        "eligible_type_3": 20
+      },
+      "coverage": {
+        "start": 1789738833.610312,
+        "end": 1789739753.353346,
+        "seconds": 919.7430341243744
+      }
+    },
+    "fivee_states": {
+      "paths": [],
+      "segments": 0,
+      "complete_segments": 0,
+      "match_ids": [],
+      "counts": {},
+      "coverage": {
+        "start": null,
+        "end": null,
+        "seconds": 0.0
+      }
+    },
+    "market": {
+      "format": "normalized_top",
+      "events": "D:\\polymarket\\data\\realtime\\event_1039777_20260918_214036.jsonl",
+      "event_id": "1039777",
+      "market_ids": [
+        "4657629",
+        "4657630",
+        "4657631",
+        "4657632",
+        "4657928",
+        "4657929",
+        "4657930",
+        "4657931",
+        "4657932",
+        "4657933",
+        "4657934",
+        "4685304",
+        "4685305",
+        "4685306",
+        "4685609",
+        "4685610"
+      ],
+      "expected_tokens": [
+        "106770063798764930580243588952047513449815564638451443181833212277272550667369",
+        "11391926999936333200265701215937445936083613764957669744167889651887093022934",
+        "16800430574074981232791233003137641217109982328396145939899148952081833283267",
+        "17160201632511012893962460513773697980879817563031080178024669606649183063923",
+        "17165059735991199264099713887573428553036246209651609261822418776116415692848",
+        "22700216107736259097533333071860163308056109202851379655710049698612476411498",
+        "25948928599122143463017180609385115419808680769860772903937196297258496666780",
+        "2636495616069799042348816150585052609817553074091665499410201055817685080277",
+        "28265204261095000382205741201405454535472573155920366837748294612367033033617",
+        "30408077642792223766290714993824095601095319531979974264495117254349751805238",
+        "32157850024383090562382142277459203413876946635491384293892371117628380484398",
+        "35389440946984388170120911462420419070010451936819573595695458405174475701977",
+        "37978940018319588227052345657275195766656654882616019043475252148964038298227",
+        "39116655568556357843711627604996102576542864424927981714331726329504689051980",
+        "40607506294257834399692169049275402124878832206519653265148200400258321132716",
+        "4393450845652990873591161618276083897361991364772251246468066556482069475026",
+        "47477137286289335861050968548478447837333357098024439431192184603122043530158",
+        "48308058493497913505176169080664957516529407095407202509906622103752262795223",
+        "54671066562207959897852574449367904352937140618392019998206339140733580867568",
+        "58086558198455900780089979898609482352680524056667448793296840517837522885315",
+        "59659957967483382355165756522883239266269161301052239768204878149631339845834",
+        "71358871262112396730036879584955562393435106229506498259146979796900129046314",
+        "7346171667259607700796642772461971113780358005443795954700385795620710333459",
+        "77336061104400996318825327626654160648550276439335655840642174771402079350358",
+        "79991847039965698300403579420511469569062906984457066358420465890893154774046",
+        "83083458840363348537954772456653274549012731648480271869922977853085383306581",
+        "83132033765005024506124714731746579756455695155879777852690357627777001392961",
+        "84682125325147067564379618978760403009301231650674080957258509509516120863054",
+        "89114356602929789071996448936396190804442789609274400969204859566633940668274",
+        "91917870124565905592938850360285846479405486459295203886861129757663976159814",
+        "92519651366299502340747834074870988222455617825971370306310942010547319665892",
+        "9731055848950126976202855449879574584237616388470034894035107619199927122188"
+      ],
+      "depth_tokens": [],
+      "has_full_depth_for_expected_tokens": false,
+      "exit_reason": null,
+      "normal_end": false,
+      "counts": {
+        "pc": 77556,
+        "book": 518,
+        "trade": 256
+      },
+      "coverage": {
+        "start": 1789738837.591653,
+        "end": 1789739754.459242,
+        "seconds": 916.8675889968872
+      }
+    }
+  },
+  "protocol": {
+    "protocol_id": "cs2_swing_trend_v1",
+    "mode": "paper_only",
+    "decision_unit": "one row per mechanism transition, never per quote or video frame",
+    "decision_kinds": [
+      "post_pistol_freeze",
+      "round_end_economy_update",
+      "prematch_prior_dislocation"
+    ],
+    "horizons_seconds": [
+      15,
+      30,
+      60,
+      120
+    ],
+    "entry": "first executable ask at or after state receipt + measured model latency + market secondsDelay",
+    "exit": "first executable bid at or after the fixed horizon",
+    "net_label": "exit proceeds - entry cost - observed market fees",
+    "price_prohibitions": [
+      "no midpoint fills",
+      "no window maximum as an exit",
+      "no quote received before the executable decision time"
+    ],
+    "model_comparison": [
+      "market_only",
+      "game_only",
+      "market_plus_game"
+    ],
+    "cohort_rule": "same decision rows and whole-series forward splits for every model",
+    "timing_rule": "initial snapshots and recovery backfills are ineligible; unknown event time stays unknown",
+    "execution_rule": "full depth is required for size-aware PnL; otherwise the session is diagnostic only",
+    "minimum_source_overlap_seconds": 300,
+    "promotion": "none; a separate frozen future acceptance window is required"
+  }
+}

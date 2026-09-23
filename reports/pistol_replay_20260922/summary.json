@@ -1,0 +1,50 @@
+{
+  "M0_market": {
+    "maps": 7,
+    "pistol_hit_rate": 0.571,
+    "A_spread_mean": -0.03,
+    "A_spread_total": -0.21,
+    "A_winrate": 0.429,
+    "B_spread_mean": -0.0414,
+    "B_spread_total": -0.29,
+    "B_winrate": 0.571,
+    "C_spread_mean": -0.0243,
+    "C_spread_total": -0.17,
+    "C_winrate": 0.429,
+    "D_spread_mean": -0.27,
+    "D_spread_total": -0.27,
+    "D_winrate": 0.0
+  },
+  "M1_pistol_rate": {
+    "maps": 7,
+    "pistol_hit_rate": 0.571,
+    "A_spread_mean": -0.03,
+    "A_spread_total": -0.21,
+    "A_winrate": 0.429,
+    "B_spread_mean": -0.0414,
+    "B_spread_total": -0.29,
+    "B_winrate": 0.571,
+    "C_spread_mean": -0.0243,
+    "C_spread_total": -0.17,
+    "C_winrate": 0.429,
+    "D_spread_mean": -0.27,
+    "D_spread_total": -0.27,
+    "D_winrate": 0.0
+  },
+  "M2_map_blend": {
+    "maps": 7,
+    "pistol_hit_rate": 0.571,
+    "A_spread_mean": -0.01,
+    "A_spread_total": -0.07,
+    "A_winrate": 0.571,
+    "B_spread_mean": -0.0264,
+    "B_spread_total": -0.185,
+    "B_winrate": 0.571,
+    "C_spread_mean": -0.0229,
+    "C_spread_total": -0.16,
+    "C_winrate": 0.571,
+    "D_spread_mean": -0.27,
+    "D_spread_total": -0.27,
+    "D_winrate": 0.0
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "protocol_id": "cs2_swing_trend_v1",
+  "protocol_sha256": "0c1131c7793fb4dc104c1f3a41145f4c6c4cf124e4a63505768e915afd2b4536",
+  "session_id": "magic-mibr-20260918-map1-partial",
+  "model_latency_seconds": 0.0,
+  "horizons_seconds": [
+    15,
+    30,
+    60,
+    120
+  ],
+  "market_format": null,
+  "drop_reasons": {
+    "market_format_not_time_joinable": 1
+  },
+  "rows": 0,
+  "label_valid_rate": {
+    "h15": 0.0,
+    "h30": 0.0,
+    "h60": 0.0,
+    "h120": 0.0
+  },
+  "inputs_sha256": {
+    "fivee_events": [
+      "43e5ea89c528a519e81a89f50e72bed0bdacfc8f992a8208d9fa3108feaf1219"
+    ],
+    "fivee_states": [
+      null
+    ],
+    "market_events": "5caef63623f479eedf9b1f3064be280b6aa2e36fb791bab1c4d56cb920fd1262",
+    "market_meta": "cbd9ca288f5de9fb726c00ee05e235ffd7bb2d7852342ecddb3f602d0223db25",
+    "spec": "32f0924e35261a63ab12f872c2b291b5dfb86f8ad5a8f819d2fdd30eabd35ec8"
+  }
+}

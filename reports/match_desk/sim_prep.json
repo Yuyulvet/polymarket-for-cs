@@ -1,0 +1,15 @@
+{
+  "key": "hltv_2389653_103979_furia_vs_natus_vincere_m1_mirage",
+  "match_id": "hltv-2389653-103979",
+  "map": "de_mirage",
+  "a": "furia",
+  "b": "natusvincere",
+  "price_a": 0.495,
+  "price_b": 0.505,
+  "at": "2026-02-02T18:16:13+00:00",
+  "ct_first": "furia",
+  "delta_min": -1,
+  "team_a": "furia",
+  "team_b": "natusvincere",
+  "note": "阵营(赛前公开): 首CT = furia"
+}

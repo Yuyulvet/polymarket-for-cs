@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-17T15:04:13.863906+00:00",
+  "paper_only": true,
+  "timing_basis": "strict_local_receive_time",
+  "event_id": "1005582",
+  "market": "Map 2 Winner",
+  "market_id": "4473245",
+  "condition_id": "0xa61b0987d912313dec724511fb5c1fc3471ebb73d66ac0d77447b47bb6b3d231",
+  "bout_num": 2,
+  "include_ineligible": false,
+  "allow_http_polling": true,
+  "accepted_state_timing": "all timing qualities (diagnostic only)",
+  "quote_max_age_seconds": 5.0,
+  "local_model_latency_seconds": 0.0,
+  "market_delay_seconds": 1.0,
+  "horizons_seconds": [
+    1.0,
+    2.0,
+    5.0,
+    10.0
+  ],
+  "state_audit": {
+    "rows_scanned": 1185,
+    "snapshots": 13,
+    "duplicates": 0,
+    "ineligible": 1,
+    "wrong_bout_or_not_live": 2,
+    "disallowed_timing_quality": 0,
+    "non_monotonic": 3,
+    "invalid": 0
+  },
+  "quote_audit": {
+    "rows_scanned": 79614,
+    "accepted": 1764,
+    "duplicates": 77610,
+    "coalesced_unchanged_top": 77610,
+    "invalid": 0,
+    "cross_event_or_market": 0,
+    "identity_mismatch": 0
+  },
+  "pair_audit": {
+    "states": 7,
+    "paired_states": 5,
+    "rows": 10,
+    "team_identity_mismatch": 0,
+    "missing_effective_quote": 2
+  },
+  "artifacts": {
+    "paired_states": "reports\\live_pair_vit_magic_map2_20260917_http_diagnostic\\paired_states.jsonl"
+  }
+}

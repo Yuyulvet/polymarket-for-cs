@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-20T17:51:14.268885+00:00",
+  "protocol_id": "cs2_swing_trend_v1",
+  "protocol_sha256": "0c1131c7793fb4dc104c1f3a41145f4c6c4cf124e4a63505768e915afd2b4536",
+  "audit_version": 2,
+  "paper_only": true,
+  "session_id": "manual-1049948-omc2398107",
+  "eligible_for_trend_dataset": true,
+  "blocking_reasons": [],
+  "v1_blocking_reasons": [
+    "capture_did_not_observe_round_one_live",
+    "market_capture_missing_normal_end"
+  ],
+  "bout_status": {
+    "1": "incomplete_no_round_one",
+    "2": "complete"
+  },
+  "incomplete_bouts": [
+    1
+  ],
+  "restarts_accepted": 0,
+  "warnings": [
+    "fivee_event_snapshot_limit_reached_review_for_gaps"
+  ],
+  "three_source_overlap_seconds": 12200.921045064926,
+  "sources": {
+    "fivee_events": {
+      "paths": [
+        "D:\\polymarket\\data\\live_sessions\\manual-1049948-omc2398107\\fivee_events.jsonl"
+      ],
+      "segments": 1,
+      "complete_segments": 1,
+      "match_ids": [
+        "csgo_mc_2398107"
+      ],
+      "maps": [
+        "de_anubis",
+        "de_cache"
+      ],
+      "bouts": [
+        1,
+        2
+      ],
+      "round_one_bouts": [
+        2
+      ],
+      "terminal_bouts": [
+        1,
+        2
+      ],
+      "counts": {
+        "session_start": 1,
+        "poll_ok": 8009,
+        "event": 514,
+        "eligible_events": 514,
+        "eligible_type_2": 40,
+        "eligible_type_1": 37,
+        "eligible_type_8": 387,
+        "eligible_type_6": 18,
+        "source_error": 1,
+        "source_recovered": 1,
+        "eligible_type_10": 6,
+        "eligible_type_3": 23,
+        "eligible_type_4": 3,
+        "truncated_polls": 3397,
+        "session_end": 1
+      },
+      "coverage": {
+        "start": 1789901121.65465,
+        "end": 1789919121.910064,
+        "seconds": 18000.255414009094
+      },
+      "last_match_event": 1789911325.142252,
+      "segments_v2": [
+        {
+          "path": "D:\\polymarket\\data\\live_sessions\\manual-1049948-omc2398107\\fivee_events.jsonl",
+          "end": true,
+          "start_utc": "2026-09-20T10:45:21.654650+00:00",
+          "last_utc": "2026-09-20T15:45:21.706248+00:00"
+        }
+      ],
+      "restarts_accepted": 0,
+      "unrecovered_incomplete_segments": [],
+      "rows_outside_segments": 0
+    },
+    "fivee_states": {
+      "paths": [
+        "D:\\polymarket\\data\\live_sessions\\manual-1049948-omc2398107\\fivee_states.jsonl"
+      ],
+      "segments": 1,
+      "complete_segments": 1,
+      "match_ids": [
+        "csgo_mc_2398107"
+      ],
+      "counts": {
+        "session_start": 1,
+        "state_snapshot": 140,
+        "ineligible_snapshots": 4,
+        "mqtt_connected": 6,
+        "mqtt_subscribe_requested": 6,
+        "mqtt_subscribed": 6,
+        "mqtt_disconnected": 6,
+        "mqtt_connection_closed": 6,
+        "mqtt_message_error": 6,
+        "mqtt_message": 140,
+        "strict_eligible_snapshots": 136,
+        "session_end": 1
+      },
+      "coverage": {
+        "start": 1789901121.655154,
+        "end": 1789919122.066032,
+        "seconds": 18000.41087794304
+      },
+      "segments_v2": [
+        {
+          "path": "D:\\polymarket\\data\\live_sessions\\manual-1049948-omc2398107\\fivee_states.jsonl",
+          "end": true,
+          "start_utc": "2026-09-20T10:45:21.655154+00:00",
+          "last_utc": "2026-09-20T15:45:22.066032+00:00"
+        }
+      ],
+      "restarts_accepted": 0,
+      "unrecovered_incomplete_segments": [],
+      "rows_outside_segments": 0
+    },
+    "market": {
+      "format": "raw_depth",
+      "events": "D:\\polymarket\\data\\live_sessions\\manual-1049948-omc2398107\\market\\events.jsonl",
+      "event_id": "1049948",
+      "market_ids": [
+        "4734896",
+        "4734897"
+      ],
+      "expected_tokens": [
+        "11549788647875949909879237241896499879602318477708790131719004866983705144401",
+        "25832554198039092855524542151587217768177115767661915986209922321564868490074",
+        "4805300729840485922691152102662350921081591315001296500359282137493940231585",
+        "8917327909768543120203951432983424880843294446676667946210595335396371486886"
+      ],
+      "depth_tokens": [
+        "11549788647875949909879237241896499879602318477708790131719004866983705144401",
+        "25832554198039092855524542151587217768177115767661915986209922321564868490074",
+        "4805300729840485922691152102662350921081591315001296500359282137493940231585",
+        "8917327909768543120203951432983424880843294446676667946210595335396371486886"
+      ],
+      "has_full_depth_for_expected_tokens": true,
+      "exit_reason": "connection_closed",
+      "normal_end": false,
+      "counts": {
+        "market_raw": 255272,
+        "invalid_raw_messages": 1189
+      },
+      "coverage": {
+        "start": 1789901122.20245,
+        "end": 1789913323.123495,
+        "seconds": 12200.921045064926
+      },
+      "normal_end_v2": true
+    }
+  },
+  "protocol": {
+    "protocol_id": "cs2_swing_trend_v1",
+    "mode": "paper_only",
+    "decision_unit": "one row per mechanism transition, never per quote or video frame",
+    "decision_kinds": [
+      "post_pistol_freeze",
+      "round_end_economy_update",
+      "prematch_prior_dislocation"
+    ],
+    "horizons_seconds": [
+      15,
+      30,
+      60,
+      120
+    ],
+    "entry": "first executable ask at or after state receipt + measured model latency + market secondsDelay",
+    "exit": "first executable bid at or after the fixed horizon",
+    "net_label": "exit proceeds - entry cost - observed market fees",
+    "price_prohibitions": [
+      "no midpoint fills",
+      "no window maximum as an exit",
+      "no quote received before the executable decision time"
+    ],
+    "model_comparison": [
+      "market_only",
+      "game_only",
+      "market_plus_game"
+    ],
+    "cohort_rule": "same decision rows and whole-series forward splits for every model",
+    "timing_rule": "initial snapshots and recovery backfills are ineligible; unknown event time stays unknown",
+    "execution_rule": "full depth is required for size-aware PnL; otherwise the session is diagnostic only",
+    "minimum_source_overlap_seconds": 300,
+    "promotion": "none; a separate frozen future acceptance window is required"
+  }
+}

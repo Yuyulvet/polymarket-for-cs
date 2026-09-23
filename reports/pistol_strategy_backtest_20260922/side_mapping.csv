@@ -1,0 +1,172 @@
+match_id,outcome_a,outcome_b,mapping_src
+hltv-2389651-103966,Aurora Gaming,MOUZ,market_resolution
+hltv-2389652-103972,NRG,Team Falcons,market_resolution
+hltv-2389653-103979,FURIA,Natus Vincere,market_resolution
+hltv-2389654-103977,Astralis,FUT Esports,market_resolution
+hltv-2389656-103994,Team Falcons,3DMAX,market_resolution
+hltv-2389657-104002,FURIA,Astralis,market_resolution
+hltv-2389947-104312,Astralis,Natus Vincere,market_resolution
+hltv-2389948-104317,Aurora Gaming,FUT Esports,market_resolution
+hltv-2389952-104340,Team Falcons,3DMAX,market_resolution
+hltv-2389956-104371,Astralis,3DMAX,market_resolution
+hltv-2389958-104377,G2,PARIVISION,market_resolution
+hltv-2389959-104390,FURIA,FUT Esports,market_resolution
+hltv-2389960-104385,Aurora Gaming,paiN,market_resolution
+hltv-2389961-104404,Vitality,TheMongolz,market_resolution
+hltv-2389963-104429,Aurora Gaming,Natus Vincere,market_resolution
+hltv-2389964-104425,FaZe,PARIVISION,market_resolution
+hltv-2389965-104434,B8,TheMongolz,market_resolution
+hltv-2389966-104430,Astralis,FUT Esports,market_resolution
+hltv-2389972-104462,FaZe,Astralis,market_resolution
+hltv-2389974-104468,Aurora Gaming,B8,market_resolution
+hltv-2389975-104482,FURIA,PARIVISION,market_resolution
+hltv-2389977-104519,Aurora Gaming,Astralis,market_resolution
+hltv-2389978-104525,PARIVISION,FUT Esports,market_resolution
+hltv-2389979-104530,G2,Natus Vincere,market_resolution
+hltv-2389980-104594,Team Falcons,PARIVISION,market_resolution
+hltv-2389984-104660,PARIVISION,MOUZ,market_resolution
+hltv-2390811-105805,NRG,Team Falcons,market_resolution
+hltv-2391140-105700,Astralis,FUT Esports,market_resolution
+hltv-2391758-105904,FURIA,Aurora Gaming,market_resolution
+hltv-2391761-105949,PARIVISION,Spirit,market_resolution
+hltv-2391771-106232,Aurora Gaming,TheMongolz,market_resolution
+hltv-2391773-106290,Aurora Gaming,Vitality,market_resolution
+hltv-2391774-106313,Natus Vincere,PARIVISION,market_resolution
+hltv-2393084-107112,Team Falcons,3DMAX,market_resolution
+hltv-2393086-107114,Natus Vincere,B8,market_resolution
+hltv-2393088-107115,Legacy,MOUZ,market_resolution
+hltv-2393225-107127,Gentle Mates,RED Canids,market_resolution
+hltv-2393228-107138,FURIA,Natus Vincere,market_resolution
+hltv-2393229-107137,Passion UA,B8,market_resolution
+hltv-2393230-107140,Aurora Gaming,MOUZ,market_resolution
+hltv-2393232-107149,Spirit,RED Canids,market_resolution
+hltv-2393233-107147,3DMAX,G2,market_resolution
+hltv-2393234-107153,Aurora Gaming,B8,market_resolution
+hltv-2393235-107152,Natus Vincere,HOTU,market_resolution
+hltv-2393236-107158,Vitality,Team Falcons,market_resolution
+hltv-2393238-107159,FURIA,MOUZ,market_resolution
+hltv-2393240-107175,MOUZ,Spirit,market_resolution
+hltv-2393319-107557,Vitality,FUT Esports,market_resolution
+hltv-2393320-107565,Astralis,G2,market_resolution
+hltv-2393333-107598,Astralis,FUT Esports,market_resolution
+hltv-2393334-107607,Vitality,G2,market_resolution
+hltv-2393335-107611,FURIA,FaZe,market_resolution
+hltv-2393336-107614,GamerLegion,Natus Vincere,market_resolution
+hltv-2393346-107656,G2,FaZe,market_resolution
+hltv-2393347-107661,GamerLegion,Astralis,market_resolution
+hltv-2393348-107692,Natus Vincere,FaZe,market_resolution
+hltv-2393349-107699,Vitality,GamerLegion,market_resolution
+hltv-2393350-107729,Vitality,Natus Vincere,market_resolution
+hltv-2394110-107912,paiN,FaZe,market_resolution
+hltv-2394111-107920,NRG,FUT Esports,market_resolution
+hltv-2394112-107922,Natus Vincere,Passion UA,market_resolution
+hltv-2394115-107924,Astralis,Liquid,market_resolution
+hltv-2394116-107828,Aurora Gaming,Heroic,market_resolution
+hltv-2394118-107831,Gentle Mates,MOUZ,market_resolution
+hltv-2394123-107837,PARIVISION,9z,market_resolution
+hltv-2394124-107855,G2,MOUZ,market_resolution
+hltv-2394125-107854,Gentle Mates,K27,market_resolution
+hltv-2394126-107862,Spirit,TheMongolz,market_resolution
+hltv-2394127-107860,Aurora Gaming,The Huns Esports,market_resolution
+hltv-2394128-107867,FURIA,Heroic,market_resolution
+hltv-2394130-107875,Team Falcons,9z,market_resolution
+hltv-2394132-107892,Aurora Gaming,PARIVISION,market_resolution
+hltv-2394133-107891,Gentle Mates,Heroic,market_resolution
+hltv-2394134-107896,Team Falcons,Monte,market_resolution
+hltv-2394136-107903,MOUZ,9z,market_resolution
+hltv-2394139-107907,Fisher College,The Huns Esports,market_resolution
+hltv-2394140-107930,Aurora Gaming,MOUZ,market_resolution
+hltv-2394141-107929,Heroic,magic,market_resolution
+hltv-2394142-107935,Team Falcons,TheMongolz,market_resolution
+hltv-2394143-107936,Monte,The Huns Esports,market_resolution
+hltv-2394144-107942,FURIA,Gentle Mates,market_resolution
+hltv-2394145-107943,G2,PARIVISION,market_resolution
+hltv-2394147-107971,G2,Monte,market_resolution
+hltv-2394148-107977,Aurora Gaming,TheMongolz,market_resolution
+hltv-2394149-108024,Aurora Gaming,MOUZ,market_resolution
+hltv-2394151-108031,9z,magic,market_resolution
+hltv-2394154-108061,Team Falcons,magic,market_resolution
+hltv-2394157-107957,Vitality,BetBoom Team,market_resolution
+hltv-2394159-107950,BC.Game Esports,B8,market_resolution
+hltv-2394160-107951,NRG,FaZe,market_resolution
+hltv-2394161-107961,GamerLegion,Natus Vincere,market_resolution
+hltv-2394162-107963,Astralis,Legacy,market_resolution
+hltv-2394164-107966,Liquid,M80,market_resolution
+hltv-2394165-107988,B8,FUT Esports,market_resolution
+hltv-2394167-107993,Astralis,Sinners,market_resolution
+hltv-2394170-107998,Vitality,B8,market_resolution
+hltv-2394171-108002,Natus Vincere,Legacy,market_resolution
+hltv-2394172-108000,GamerLegion,Astralis,market_resolution
+hltv-2394853-108687,Sinners,TYLOO,market_resolution
+hltv-2394854-108693,M80,B8,market_resolution
+hltv-2394855-108690,Gaimin Gladiators,Heroic,market_resolution
+hltv-2394856-108703,FlyQuest,THUNDER dOWNUNDER,market_resolution
+hltv-2394857-108705,Sharks,TYLOO,market_resolution
+hltv-2394858-108709,BIG,GamerLegion,market_resolution
+hltv-2394860-108715,Liquid,Heroic,market_resolution
+hltv-2394861-108714,NRG,M80,market_resolution
+hltv-2394862-108723,Lynn Vision,TYLOO,market_resolution
+hltv-2394863-108727,FlyQuest,Liquid,market_resolution
+hltv-2394886-108783,FlyQuest,paiN,market_resolution
+hltv-2394887-108793,G2,FUT Esports,market_resolution
+hltv-2394888-108788,9z,Spirit,market_resolution
+hltv-2394889-108803,paiN,Astralis,market_resolution
+hltv-2394890-108804,MIBR,B8,market_resolution
+hltv-2394891-108807,BetBoom Team,Monte,market_resolution
+hltv-2394892-108806,9z,TYLOO,market_resolution
+hltv-2394893-108809,BIG,G2,market_resolution
+hltv-2394894-108812,Legacy,M80,market_resolution
+hltv-2394895-108825,paiN,Monte,market_resolution
+hltv-2394896-108829,Legacy,TYLOO,market_resolution
+hltv-2394897-108830,BIG,B8,market_resolution
+hltv-2394898-108857,Vitality,FUT Esports,market_resolution
+hltv-2394899-108862,Team Falcons,G2,market_resolution
+hltv-2394900-108864,Natus Vincere,Spirit,market_resolution
+hltv-2394901-108860,FURIA,B8,market_resolution
+hltv-2394902-108861,Aurora Gaming,Monte,market_resolution
+hltv-2394903-108851,PARIVISION,9z,market_resolution
+hltv-2394905-108855,Legacy,MOUZ,market_resolution
+hltv-2394972-108871,B8,TheMongolz,market_resolution
+hltv-2394974-108877,Monte,PARIVISION,market_resolution
+hltv-2394975-108882,Team Falcons,BetBoom Team,market_resolution
+hltv-2394976-108879,Natus Vincere,Legacy,market_resolution
+hltv-2394977-108891,Aurora Gaming,Spirit,market_resolution
+hltv-2394978-108889,Vitality,9z,market_resolution
+hltv-2394979-108913,Natus Vincere,TheMongolz,market_resolution
+hltv-2394980-108910,B8,FUT Esports,market_resolution
+hltv-2394981-108922,Aurora Gaming,G2,market_resolution
+hltv-2394982-108924,Team Falcons,Monte,market_resolution
+hltv-2394983-108931,Vitality,MOUZ,market_resolution
+hltv-2394985-108937,FURIA,BetBoom Team,market_resolution
+hltv-2394987-108961,MOUZ,FUT Esports,market_resolution
+hltv-2394988-108960,Monte,TheMongolz,market_resolution
+hltv-2394989-108968,Vitality,BetBoom Team,market_resolution
+hltv-2394990-108964,Aurora Gaming,9z,market_resolution
+hltv-2394991-108975,Team Falcons,Natus Vincere,market_resolution
+hltv-2394992-108969,G2,Legacy,market_resolution
+hltv-2394993-108984,9z,TheMongolz,market_resolution
+hltv-2394994-108988,BetBoom Team,FUT Esports,market_resolution
+hltv-2394995-108991,G2,Natus Vincere,market_resolution
+hltv-2394998-109032,G2,Spirit,market_resolution
+hltv-2396017-109861,3DMAX,MOUZ,market_resolution
+hltv-2396018-109851,Liquid,Spirit,market_resolution
+hltv-2396019-109924,Astralis,MOUZ,market_resolution
+hltv-2396020-109915,FaZe,Spirit,market_resolution
+hltv-2396021-109950,MOUZ,Spirit,market_resolution
+hltv-2396576-110245,BIG,G2,market_resolution
+hltv-2396578-110242,Aurora Gaming,M80,market_resolution
+hltv-2396581-110279,MIBR,K27,market_resolution
+hltv-2396583-110274,Vitality,B8,market_resolution
+hltv-2396584-110273,MOUZ,FUT Esports,market_resolution
+hltv-2396587-110300,Natus Vincere,TheMongolz,market_resolution
+hltv-2396591-110320,BIG,Spirit,market_resolution
+hltv-2396595-110336,PARIVISION,MOUZ,market_resolution
+hltv-2396596-110327,Vitality,Lynn Vision,market_resolution
+hltv-2396597-110342,9z,magic,market_resolution
+hltv-2396601-110410,FUT Esports,magic,market_resolution
+hltv-2396603-110424,Natus Vincere,Legacy,market_resolution
+hltv-2396605-110428,Vitality,FaZe,market_resolution
+hltv-2396606-110429,Spirit,B8,market_resolution
+hltv-2396608-110449,MOUZ,FUT Esports,market_resolution
+hltv-2396609-110456,Team Falcons,Legacy,market_resolution
+hltv-2396610-110462,Vitality,Spirit,market_resolution

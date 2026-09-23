@@ -33,6 +33,10 @@ CAT_30 = ["first_kill_side"]
 
 
 def _load() -> pd.DataFrame:
+    raise RuntimeError(
+        "legacy_mapwin_evaluation_disabled: reconstruct scores/labels from complete single-map "
+        "round histories before joining v2 midround snapshots; use live_map_model for corrected checkpoints"
+    )
     rd = build_round_dataset()
     mr = build_midround()
     df = rd.merge(mr, on=["demo_path", "round_num"], how="inner", suffixes=("", "_m"))

@@ -1,0 +1,718 @@
+{
+  "universe_px_maps": 278,
+  "conf": 0.55,
+  "sources": {
+    "insample": {
+      "v3_full": {
+        "universe": {
+          "n_with_preds": 174,
+          "n_px_overlap": 139,
+          "n_triggered_strict": 73,
+          "n_triggered_relaxed": 125,
+          "n_side_mapping": 171,
+          "skip_reasons": {
+            "no_px_prices": 35
+          }
+        },
+        "alignment_diag": {
+          "clock_delta_min_median": 2.0,
+          "clock_delta_min_p10": -1.2,
+          "clock_delta_min_p90": 14.2,
+          "jump_side_match": "107/138",
+          "by_lag": {
+            "lag_-2": {
+              "n": 102,
+              "won_pop_mean": 0.016,
+              "lost_pop_mean": -0.016
+            },
+            "lag_-1": {
+              "n": 102,
+              "won_pop_mean": 0.027,
+              "lost_pop_mean": -0.021
+            },
+            "lag_+0": {
+              "n": 102,
+              "won_pop_mean": 0.038,
+              "lost_pop_mean": -0.049
+            },
+            "lag_+1": {
+              "n": 102,
+              "won_pop_mean": 0.045,
+              "lost_pop_mean": -0.048
+            },
+            "lag_+2": {
+              "n": 102,
+              "won_pop_mean": 0.051,
+              "lost_pop_mean": -0.056
+            }
+          },
+          "tape_reference": {
+            "win_pop": 6.25,
+            "loss_drop": -11.2
+          }
+        },
+        "benchmarks": {
+          "ceiling_hit": 0.534,
+          "breakeven_hit": 0.6418,
+          "tape_win_pop_pt": 6.25,
+          "tape_loss_drop_pt": -11.2,
+          "replay_ev_at_ceiling_pt": -1.9,
+          "r2_rebound_rate": 0.444
+        },
+        "arms": {
+          "v1_strict": {
+            "n": 65,
+            "hit": 0.5385,
+            "ci": [
+              0.419,
+              0.654
+            ],
+            "pnl_mean": 0.0048,
+            "pnl_median": 0.02,
+            "pnl_total": 0.31,
+            "win_rate": 0.523,
+            "pnl_cost03": {
+              "n": 65,
+              "pnl_mean": -0.0252,
+              "pnl_median": -0.01,
+              "pnl_total": -1.64,
+              "win_rate": 0.446
+            },
+            "pnl_fee": {
+              "n": 65,
+              "pnl_mean": -0.0163,
+              "pnl_median": -0.0047,
+              "pnl_total": -1.062,
+              "win_rate": 0.477
+            }
+          },
+          "v3_strict": {
+            "pnl": {
+              "n": 30,
+              "pnl_mean": -0.0608,
+              "pnl_median": -0.0575,
+              "pnl_total": -1.825,
+              "win_rate": 0.2
+            },
+            "hold_legs": {
+              "n": 8,
+              "pnl_mean": -0.0919,
+              "pnl_median": -0.0975,
+              "pnl_total": -0.735,
+              "win_rate": 0.25
+            },
+            "hold_n": 8,
+            "rebound_hit": {
+              "n": 8,
+              "hit": 0.0,
+              "ci": [
+                0.0,
+                0.324
+              ],
+              "note": "R2 won during hold"
+            }
+          },
+          "v1_relaxed": {
+            "n": 102,
+            "hit": 0.5784,
+            "ci": [
+              0.481,
+              0.67
+            ],
+            "pnl_mean": 0.0015,
+            "pnl_median": 0.0,
+            "pnl_total": 0.15,
+            "win_rate": 0.48,
+            "pnl_cost03": {
+              "n": 102,
+              "pnl_mean": -0.0285,
+              "pnl_median": -0.03,
+              "pnl_total": -2.91,
+              "win_rate": 0.422
+            },
+            "pnl_fee": {
+              "n": 102,
+              "pnl_mean": -0.02,
+              "pnl_median": -0.0195,
+              "pnl_total": -2.037,
+              "win_rate": 0.441
+            }
+          },
+          "v3_relaxed": {
+            "pnl": {
+              "n": 43,
+              "pnl_mean": -0.0588,
+              "pnl_median": -0.06,
+              "pnl_total": -2.53,
+              "win_rate": 0.209
+            },
+            "hold_legs": {
+              "n": 10,
+              "pnl_mean": -0.099,
+              "pnl_median": -0.1125,
+              "pnl_total": -0.99,
+              "win_rate": 0.2
+            },
+            "hold_n": 10,
+            "rebound_hit": {
+              "n": 10,
+              "hit": 0.0,
+              "ci": [
+                -0.0,
+                0.278
+              ],
+              "note": "R2 won during hold"
+            }
+          },
+          "conf_sweep_model_hit": {
+            "conf_0.50": {
+              "n": 174,
+              "model_hit": 0.546
+            },
+            "conf_0.55": {
+              "n": 125,
+              "model_hit": 0.52
+            },
+            "conf_0.60": {
+              "n": 86,
+              "model_hit": 0.5116
+            }
+          }
+        }
+      },
+      "control_v2best": {
+        "universe": {
+          "n_with_preds": 174,
+          "n_px_overlap": 139,
+          "n_triggered_strict": 73,
+          "n_triggered_relaxed": 123,
+          "n_side_mapping": 171,
+          "skip_reasons": {
+            "no_px_prices": 35
+          }
+        },
+        "alignment_diag": {
+          "clock_delta_min_median": 2.0,
+          "clock_delta_min_p10": -1.2,
+          "clock_delta_min_p90": 14.2,
+          "jump_side_match": "107/138",
+          "by_lag": {
+            "lag_-2": {
+              "n": 99,
+              "won_pop_mean": 0.014,
+              "lost_pop_mean": -0.017
+            },
+            "lag_-1": {
+              "n": 99,
+              "won_pop_mean": 0.031,
+              "lost_pop_mean": -0.019
+            },
+            "lag_+0": {
+              "n": 99,
+              "won_pop_mean": 0.042,
+              "lost_pop_mean": -0.046
+            },
+            "lag_+1": {
+              "n": 99,
+              "won_pop_mean": 0.048,
+              "lost_pop_mean": -0.047
+            },
+            "lag_+2": {
+              "n": 99,
+              "won_pop_mean": 0.043,
+              "lost_pop_mean": -0.055
+            }
+          },
+          "tape_reference": {
+            "win_pop": 6.25,
+            "loss_drop": -11.2
+          }
+        },
+        "benchmarks": {
+          "ceiling_hit": 0.534,
+          "breakeven_hit": 0.6418,
+          "tape_win_pop_pt": 6.25,
+          "tape_loss_drop_pt": -11.2,
+          "replay_ev_at_ceiling_pt": -1.9,
+          "r2_rebound_rate": 0.444
+        },
+        "arms": {
+          "v1_strict": {
+            "n": 63,
+            "hit": 0.4921,
+            "ci": [
+              0.373,
+              0.612
+            ],
+            "pnl_mean": 0.0008,
+            "pnl_median": 0.02,
+            "pnl_total": 0.05,
+            "win_rate": 0.524,
+            "pnl_cost03": {
+              "n": 63,
+              "pnl_mean": -0.0292,
+              "pnl_median": -0.01,
+              "pnl_total": -1.84,
+              "win_rate": 0.444
+            },
+            "pnl_fee": {
+              "n": 63,
+              "pnl_mean": -0.0206,
+              "pnl_median": -0.0047,
+              "pnl_total": -1.296,
+              "win_rate": 0.476
+            }
+          },
+          "v3_strict": {
+            "pnl": {
+              "n": 32,
+              "pnl_mean": -0.0541,
+              "pnl_median": -0.0575,
+              "pnl_total": -1.73,
+              "win_rate": 0.25
+            },
+            "hold_legs": {
+              "n": 8,
+              "pnl_mean": -0.0663,
+              "pnl_median": -0.0675,
+              "pnl_total": -0.53,
+              "win_rate": 0.375
+            },
+            "hold_n": 8,
+            "rebound_hit": {
+              "n": 8,
+              "hit": 0.0,
+              "ci": [
+                0.0,
+                0.324
+              ],
+              "note": "R2 won during hold"
+            }
+          },
+          "v1_relaxed": {
+            "n": 99,
+            "hit": 0.5455,
+            "ci": [
+              0.448,
+              0.64
+            ],
+            "pnl_mean": 0.002,
+            "pnl_median": 0.01,
+            "pnl_total": 0.195,
+            "win_rate": 0.505,
+            "pnl_cost03": {
+              "n": 99,
+              "pnl_mean": -0.028,
+              "pnl_median": -0.02,
+              "pnl_total": -2.775,
+              "win_rate": 0.434
+            },
+            "pnl_fee": {
+              "n": 99,
+              "pnl_mean": -0.0195,
+              "pnl_median": -0.0146,
+              "pnl_total": -1.926,
+              "win_rate": 0.455
+            }
+          },
+          "v3_relaxed": {
+            "pnl": {
+              "n": 45,
+              "pnl_mean": -0.0527,
+              "pnl_median": -0.06,
+              "pnl_total": -2.37,
+              "win_rate": 0.244
+            },
+            "hold_legs": {
+              "n": 10,
+              "pnl_mean": -0.0785,
+              "pnl_median": -0.095,
+              "pnl_total": -0.785,
+              "win_rate": 0.3
+            },
+            "hold_n": 10,
+            "rebound_hit": {
+              "n": 10,
+              "hit": 0.0,
+              "ci": [
+                -0.0,
+                0.278
+              ],
+              "note": "R2 won during hold"
+            }
+          },
+          "conf_sweep_model_hit": {
+            "conf_0.50": {
+              "n": 174,
+              "model_hit": 0.546
+            },
+            "conf_0.55": {
+              "n": 123,
+              "model_hit": 0.5528
+            },
+            "conf_0.60": {
+              "n": 79,
+              "model_hit": 0.5949
+            }
+          }
+        }
+      }
+    },
+    "oof": {
+      "v3_full": {
+        "universe": {
+          "n_with_preds": 174,
+          "n_px_overlap": 139,
+          "n_triggered_strict": 23,
+          "n_triggered_relaxed": 43,
+          "n_side_mapping": 171,
+          "skip_reasons": {
+            "no_px_prices": 35
+          }
+        },
+        "alignment_diag": {
+          "clock_delta_min_median": 2.0,
+          "clock_delta_min_p10": -1.2,
+          "clock_delta_min_p90": 14.2,
+          "jump_side_match": "107/138",
+          "by_lag": {
+            "lag_-2": {
+              "n": 36,
+              "won_pop_mean": -0.004,
+              "lost_pop_mean": -0.015
+            },
+            "lag_-1": {
+              "n": 36,
+              "won_pop_mean": 0.014,
+              "lost_pop_mean": -0.017
+            },
+            "lag_+0": {
+              "n": 36,
+              "won_pop_mean": 0.031,
+              "lost_pop_mean": -0.04
+            },
+            "lag_+1": {
+              "n": 36,
+              "won_pop_mean": 0.051,
+              "lost_pop_mean": -0.045
+            },
+            "lag_+2": {
+              "n": 36,
+              "won_pop_mean": 0.057,
+              "lost_pop_mean": -0.066
+            }
+          },
+          "tape_reference": {
+            "win_pop": 6.25,
+            "loss_drop": -11.2
+          }
+        },
+        "benchmarks": {
+          "ceiling_hit": 0.534,
+          "breakeven_hit": 0.6418,
+          "tape_win_pop_pt": 6.25,
+          "tape_loss_drop_pt": -11.2,
+          "replay_ev_at_ceiling_pt": -1.9,
+          "r2_rebound_rate": 0.444
+        },
+        "arms": {
+          "v1_strict": {
+            "n": 20,
+            "hit": 0.4,
+            "ci": [
+              0.219,
+              0.613
+            ],
+            "pnl_mean": -0.0035,
+            "pnl_median": -0.0225,
+            "pnl_total": -0.07,
+            "win_rate": 0.4,
+            "pnl_cost03": {
+              "n": 20,
+              "pnl_mean": -0.0335,
+              "pnl_median": -0.0525,
+              "pnl_total": -0.67,
+              "win_rate": 0.4
+            },
+            "pnl_fee": {
+              "n": 20,
+              "pnl_mean": -0.0244,
+              "pnl_median": -0.0462,
+              "pnl_total": -0.487,
+              "win_rate": 0.4
+            }
+          },
+          "v3_strict": {
+            "pnl": {
+              "n": 12,
+              "pnl_mean": -0.0537,
+              "pnl_median": -0.035,
+              "pnl_total": -0.645,
+              "win_rate": 0.25
+            },
+            "hold_legs": {
+              "n": 1,
+              "pnl_mean": -0.2,
+              "pnl_median": -0.2,
+              "pnl_total": -0.2,
+              "win_rate": 0.0
+            },
+            "hold_n": 1,
+            "rebound_hit": {
+              "n": 1,
+              "hit": 0.0,
+              "ci": [
+                0.0,
+                0.793
+              ],
+              "note": "R2 won during hold"
+            }
+          },
+          "v1_relaxed": {
+            "n": 36,
+            "hit": 0.5556,
+            "ci": [
+              0.396,
+              0.705
+            ],
+            "pnl_mean": -0.0007,
+            "pnl_median": 0.0,
+            "pnl_total": -0.025,
+            "win_rate": 0.444,
+            "pnl_cost03": {
+              "n": 36,
+              "pnl_mean": -0.0307,
+              "pnl_median": -0.03,
+              "pnl_total": -1.105,
+              "win_rate": 0.444
+            },
+            "pnl_fee": {
+              "n": 36,
+              "pnl_mean": -0.0216,
+              "pnl_median": -0.0232,
+              "pnl_total": -0.776,
+              "win_rate": 0.444
+            }
+          },
+          "v3_relaxed": {
+            "pnl": {
+              "n": 16,
+              "pnl_mean": -0.0468,
+              "pnl_median": -0.04,
+              "pnl_total": -0.75,
+              "win_rate": 0.25
+            },
+            "hold_legs": {
+              "n": 1,
+              "pnl_mean": -0.2,
+              "pnl_median": -0.2,
+              "pnl_total": -0.2,
+              "win_rate": 0.0
+            },
+            "hold_n": 1,
+            "rebound_hit": {
+              "n": 1,
+              "hit": 0.0,
+              "ci": [
+                0.0,
+                0.793
+              ],
+              "note": "R2 won during hold"
+            }
+          },
+          "conf_sweep_model_hit": {
+            "conf_0.50": {
+              "n": 124,
+              "model_hit": 0.5645
+            },
+            "conf_0.55": {
+              "n": 43,
+              "model_hit": 0.5349
+            },
+            "conf_0.60": {
+              "n": 12,
+              "model_hit": 0.5
+            }
+          }
+        }
+      },
+      "control_v2best": {
+        "universe": {
+          "n_with_preds": 174,
+          "n_px_overlap": 139,
+          "n_triggered_strict": 26,
+          "n_triggered_relaxed": 46,
+          "n_side_mapping": 171,
+          "skip_reasons": {
+            "no_px_prices": 35
+          }
+        },
+        "alignment_diag": {
+          "clock_delta_min_median": 2.0,
+          "clock_delta_min_p10": -1.2,
+          "clock_delta_min_p90": 14.2,
+          "jump_side_match": "107/138",
+          "by_lag": {
+            "lag_-2": {
+              "n": 40,
+              "won_pop_mean": -0.002,
+              "lost_pop_mean": -0.019
+            },
+            "lag_-1": {
+              "n": 40,
+              "won_pop_mean": 0.013,
+              "lost_pop_mean": -0.028
+            },
+            "lag_+0": {
+              "n": 40,
+              "won_pop_mean": 0.024,
+              "lost_pop_mean": -0.054
+            },
+            "lag_+1": {
+              "n": 40,
+              "won_pop_mean": 0.042,
+              "lost_pop_mean": -0.051
+            },
+            "lag_+2": {
+              "n": 40,
+              "won_pop_mean": 0.04,
+              "lost_pop_mean": -0.074
+            }
+          },
+          "tape_reference": {
+            "win_pop": 6.25,
+            "loss_drop": -11.2
+          }
+        },
+        "benchmarks": {
+          "ceiling_hit": 0.534,
+          "breakeven_hit": 0.6418,
+          "tape_win_pop_pt": 6.25,
+          "tape_loss_drop_pt": -11.2,
+          "replay_ev_at_ceiling_pt": -1.9,
+          "r2_rebound_rate": 0.444
+        },
+        "arms": {
+          "v1_strict": {
+            "n": 23,
+            "hit": 0.4348,
+            "ci": [
+              0.256,
+              0.632
+            ],
+            "pnl_mean": -0.0159,
+            "pnl_median": -0.025,
+            "pnl_total": -0.365,
+            "win_rate": 0.391,
+            "pnl_cost03": {
+              "n": 23,
+              "pnl_mean": -0.0459,
+              "pnl_median": -0.055,
+              "pnl_total": -1.055,
+              "win_rate": 0.391
+            },
+            "pnl_fee": {
+              "n": 23,
+              "pnl_mean": -0.0365,
+              "pnl_median": -0.05,
+              "pnl_total": -0.84,
+              "win_rate": 0.391
+            }
+          },
+          "v3_strict": {
+            "pnl": {
+              "n": 13,
+              "pnl_mean": -0.0719,
+              "pnl_median": -0.065,
+              "pnl_total": -0.935,
+              "win_rate": 0.231
+            },
+            "hold_legs": {
+              "n": 2,
+              "pnl_mean": -0.19,
+              "pnl_median": -0.19,
+              "pnl_total": -0.38,
+              "win_rate": 0.0
+            },
+            "hold_n": 2,
+            "rebound_hit": {
+              "n": 2,
+              "hit": 0.0,
+              "ci": [
+                0.0,
+                0.658
+              ],
+              "note": "R2 won during hold"
+            }
+          },
+          "v1_relaxed": {
+            "n": 40,
+            "hit": 0.575,
+            "ci": [
+              0.422,
+              0.715
+            ],
+            "pnl_mean": -0.0091,
+            "pnl_median": -0.01,
+            "pnl_total": -0.365,
+            "win_rate": 0.425,
+            "pnl_cost03": {
+              "n": 40,
+              "pnl_mean": -0.0391,
+              "pnl_median": -0.04,
+              "pnl_total": -1.565,
+              "win_rate": 0.425
+            },
+            "pnl_fee": {
+              "n": 40,
+              "pnl_mean": -0.0298,
+              "pnl_median": -0.0346,
+              "pnl_total": -1.19,
+              "win_rate": 0.425
+            }
+          },
+          "v3_relaxed": {
+            "pnl": {
+              "n": 17,
+              "pnl_mean": -0.0611,
+              "pnl_median": -0.065,
+              "pnl_total": -1.039,
+              "win_rate": 0.235
+            },
+            "hold_legs": {
+              "n": 2,
+              "pnl_mean": -0.19,
+              "pnl_median": -0.19,
+              "pnl_total": -0.38,
+              "win_rate": 0.0
+            },
+            "hold_n": 2,
+            "rebound_hit": {
+              "n": 2,
+              "hit": 0.0,
+              "ci": [
+                0.0,
+                0.658
+              ],
+              "note": "R2 won during hold"
+            }
+          },
+          "conf_sweep_model_hit": {
+            "conf_0.50": {
+              "n": 124,
+              "model_hit": 0.5645
+            },
+            "conf_0.55": {
+              "n": 46,
+              "model_hit": 0.587
+            },
+            "conf_0.60": {
+              "n": 11,
+              "model_hit": 0.6364
+            }
+          }
+        }
+      }
+    }
+  }
+}

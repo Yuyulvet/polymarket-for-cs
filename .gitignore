@@ -32,3 +32,9 @@ _*.py
 .DS_Store
 Thumbs.db
 *.log
+
+# --- 外部仓库 / 大模型产物（cs-net checkpoints+maps = 1.7GB，不入库） ---
+extern/
+
+# --- 缓存 pickle ---
+reports/**/*.pkl

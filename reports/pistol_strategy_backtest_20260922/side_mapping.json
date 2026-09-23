@@ -1,0 +1,686 @@
+{
+ "hltv-2389651-103966": {
+  "a": "Aurora Gaming",
+  "b": "MOUZ"
+ },
+ "hltv-2389652-103972": {
+  "b": "Team Falcons",
+  "a": "NRG"
+ },
+ "hltv-2389653-103979": {
+  "a": "FURIA",
+  "b": "Natus Vincere"
+ },
+ "hltv-2389654-103977": {
+  "b": "FUT Esports",
+  "a": "Astralis"
+ },
+ "hltv-2389656-103994": {
+  "a": "Team Falcons",
+  "b": "3DMAX"
+ },
+ "hltv-2389657-104002": {
+  "b": "Astralis",
+  "a": "FURIA"
+ },
+ "hltv-2389947-104312": {
+  "b": "Natus Vincere",
+  "a": "Astralis"
+ },
+ "hltv-2389948-104317": {
+  "b": "FUT Esports",
+  "a": "Aurora Gaming"
+ },
+ "hltv-2389952-104340": {
+  "a": "Team Falcons",
+  "b": "3DMAX"
+ },
+ "hltv-2389956-104371": {
+  "a": "Astralis",
+  "b": "3DMAX"
+ },
+ "hltv-2389958-104377": {
+  "a": "G2",
+  "b": "PARIVISION"
+ },
+ "hltv-2389959-104390": {
+  "b": "FUT Esports",
+  "a": "FURIA"
+ },
+ "hltv-2389960-104385": {
+  "b": "paiN",
+  "a": "Aurora Gaming"
+ },
+ "hltv-2389961-104404": {
+  "b": "TheMongolz",
+  "a": "Vitality"
+ },
+ "hltv-2389963-104429": {
+  "b": "Natus Vincere",
+  "a": "Aurora Gaming"
+ },
+ "hltv-2389964-104425": {
+  "a": "FaZe",
+  "b": "PARIVISION"
+ },
+ "hltv-2389965-104434": {
+  "b": "TheMongolz",
+  "a": "B8"
+ },
+ "hltv-2389966-104430": {
+  "b": "FUT Esports",
+  "a": "Astralis"
+ },
+ "hltv-2389972-104462": {
+  "b": "Astralis",
+  "a": "FaZe"
+ },
+ "hltv-2389974-104468": {
+  "a": "Aurora Gaming",
+  "b": "B8"
+ },
+ "hltv-2389975-104482": {
+  "a": "FURIA",
+  "b": "PARIVISION"
+ },
+ "hltv-2389977-104519": {
+  "a": "Aurora Gaming",
+  "b": "Astralis"
+ },
+ "hltv-2389978-104525": {
+  "a": "PARIVISION",
+  "b": "FUT Esports"
+ },
+ "hltv-2389979-104530": {
+  "b": "Natus Vincere",
+  "a": "G2"
+ },
+ "hltv-2389980-104594": {
+  "b": "PARIVISION",
+  "a": "Team Falcons"
+ },
+ "hltv-2389984-104660": {
+  "a": "PARIVISION",
+  "b": "MOUZ"
+ },
+ "hltv-2390811-105805": {
+  "b": "Team Falcons",
+  "a": "NRG"
+ },
+ "hltv-2391140-105700": {
+  "b": "FUT Esports",
+  "a": "Astralis"
+ },
+ "hltv-2391758-105904": {
+  "b": "Aurora Gaming",
+  "a": "FURIA"
+ },
+ "hltv-2391761-105949": {
+  "a": "PARIVISION",
+  "b": "Spirit"
+ },
+ "hltv-2391771-106232": {
+  "a": "Aurora Gaming",
+  "b": "TheMongolz"
+ },
+ "hltv-2391773-106290": {
+  "b": "Vitality",
+  "a": "Aurora Gaming"
+ },
+ "hltv-2391774-106313": {
+  "a": "Natus Vincere",
+  "b": "PARIVISION"
+ },
+ "hltv-2393084-107112": {
+  "a": "Team Falcons",
+  "b": "3DMAX"
+ },
+ "hltv-2393086-107114": {
+  "a": "Natus Vincere",
+  "b": "B8"
+ },
+ "hltv-2393088-107115": {
+  "a": "Legacy",
+  "b": "MOUZ"
+ },
+ "hltv-2393225-107127": {
+  "b": "RED Canids",
+  "a": "Gentle Mates"
+ },
+ "hltv-2393228-107138": {
+  "b": "Natus Vincere",
+  "a": "FURIA"
+ },
+ "hltv-2393229-107137": {
+  "b": "B8",
+  "a": "Passion UA"
+ },
+ "hltv-2393230-107140": {
+  "b": "MOUZ",
+  "a": "Aurora Gaming"
+ },
+ "hltv-2393232-107149": {
+  "b": "RED Canids",
+  "a": "Spirit"
+ },
+ "hltv-2393233-107147": {
+  "b": "G2",
+  "a": "3DMAX"
+ },
+ "hltv-2393234-107153": {
+  "a": "Aurora Gaming",
+  "b": "B8"
+ },
+ "hltv-2393235-107152": {
+  "a": "Natus Vincere",
+  "b": "HOTU"
+ },
+ "hltv-2393236-107158": {
+  "b": "Team Falcons",
+  "a": "Vitality"
+ },
+ "hltv-2393238-107159": {
+  "a": "FURIA",
+  "b": "MOUZ"
+ },
+ "hltv-2393240-107175": {
+  "b": "Spirit",
+  "a": "MOUZ"
+ },
+ "hltv-2393319-107557": {
+  "a": "Vitality",
+  "b": "FUT Esports"
+ },
+ "hltv-2393320-107565": {
+  "b": "G2",
+  "a": "Astralis"
+ },
+ "hltv-2393333-107598": {
+  "a": "Astralis",
+  "b": "FUT Esports"
+ },
+ "hltv-2393334-107607": {
+  "a": "Vitality",
+  "b": "G2"
+ },
+ "hltv-2393335-107611": {
+  "b": "FaZe",
+  "a": "FURIA"
+ },
+ "hltv-2393336-107614": {
+  "b": "Natus Vincere",
+  "a": "GamerLegion"
+ },
+ "hltv-2393346-107656": {
+  "b": "FaZe",
+  "a": "G2"
+ },
+ "hltv-2393347-107661": {
+  "a": "GamerLegion",
+  "b": "Astralis"
+ },
+ "hltv-2393348-107692": {
+  "a": "Natus Vincere",
+  "b": "FaZe"
+ },
+ "hltv-2393349-107699": {
+  "a": "Vitality",
+  "b": "GamerLegion"
+ },
+ "hltv-2393350-107729": {
+  "a": "Vitality",
+  "b": "Natus Vincere"
+ },
+ "hltv-2394110-107912": {
+  "a": "paiN",
+  "b": "FaZe"
+ },
+ "hltv-2394111-107920": {
+  "b": "FUT Esports",
+  "a": "NRG"
+ },
+ "hltv-2394112-107922": {
+  "a": "Natus Vincere",
+  "b": "Passion UA"
+ },
+ "hltv-2394115-107924": {
+  "a": "Astralis",
+  "b": "Liquid"
+ },
+ "hltv-2394116-107828": {
+  "b": "Heroic",
+  "a": "Aurora Gaming"
+ },
+ "hltv-2394118-107831": {
+  "b": "MOUZ",
+  "a": "Gentle Mates"
+ },
+ "hltv-2394123-107837": {
+  "b": "9z",
+  "a": "PARIVISION"
+ },
+ "hltv-2394124-107855": {
+  "a": "G2",
+  "b": "MOUZ"
+ },
+ "hltv-2394125-107854": {
+  "a": "Gentle Mates",
+  "b": "K27"
+ },
+ "hltv-2394126-107862": {
+  "a": "Spirit",
+  "b": "TheMongolz"
+ },
+ "hltv-2394127-107860": {
+  "a": "Aurora Gaming",
+  "b": "The Huns Esports"
+ },
+ "hltv-2394128-107867": {
+  "a": "FURIA",
+  "b": "Heroic"
+ },
+ "hltv-2394130-107875": {
+  "b": "9z",
+  "a": "Team Falcons"
+ },
+ "hltv-2394132-107892": {
+  "a": "Aurora Gaming",
+  "b": "PARIVISION"
+ },
+ "hltv-2394133-107891": {
+  "a": "Gentle Mates",
+  "b": "Heroic"
+ },
+ "hltv-2394134-107896": {
+  "a": "Team Falcons",
+  "b": "Monte"
+ },
+ "hltv-2394136-107903": {
+  "b": "9z",
+  "a": "MOUZ"
+ },
+ "hltv-2394139-107907": {
+  "b": "The Huns Esports",
+  "a": "Fisher College"
+ },
+ "hltv-2394140-107930": {
+  "b": "MOUZ",
+  "a": "Aurora Gaming"
+ },
+ "hltv-2394141-107929": {
+  "b": "magic",
+  "a": "Heroic"
+ },
+ "hltv-2394142-107935": {
+  "a": "Team Falcons",
+  "b": "TheMongolz"
+ },
+ "hltv-2394143-107936": {
+  "a": "Monte",
+  "b": "The Huns Esports"
+ },
+ "hltv-2394144-107942": {
+  "a": "FURIA",
+  "b": "Gentle Mates"
+ },
+ "hltv-2394145-107943": {
+  "a": "G2",
+  "b": "PARIVISION"
+ },
+ "hltv-2394147-107971": {
+  "a": "G2",
+  "b": "Monte"
+ },
+ "hltv-2394148-107977": {
+  "a": "Aurora Gaming",
+  "b": "TheMongolz"
+ },
+ "hltv-2394149-108024": {
+  "b": "MOUZ",
+  "a": "Aurora Gaming"
+ },
+ "hltv-2394151-108031": {
+  "b": "magic",
+  "a": "9z"
+ },
+ "hltv-2394154-108061": {
+  "a": "Team Falcons",
+  "b": "magic"
+ },
+ "hltv-2394157-107957": {
+  "b": "BetBoom Team",
+  "a": "Vitality"
+ },
+ "hltv-2394159-107950": {
+  "b": "B8",
+  "a": "BC.Game Esports"
+ },
+ "hltv-2394160-107951": {
+  "b": "FaZe",
+  "a": "NRG"
+ },
+ "hltv-2394161-107961": {
+  "b": "Natus Vincere",
+  "a": "GamerLegion"
+ },
+ "hltv-2394162-107963": {
+  "b": "Legacy",
+  "a": "Astralis"
+ },
+ "hltv-2394164-107966": {
+  "b": "M80",
+  "a": "Liquid"
+ },
+ "hltv-2394165-107988": {
+  "a": "B8",
+  "b": "FUT Esports"
+ },
+ "hltv-2394167-107993": {
+  "a": "Astralis",
+  "b": "Sinners"
+ },
+ "hltv-2394170-107998": {
+  "a": "Vitality",
+  "b": "B8"
+ },
+ "hltv-2394171-108002": {
+  "b": "Legacy",
+  "a": "Natus Vincere"
+ },
+ "hltv-2394172-108000": {
+  "a": "GamerLegion",
+  "b": "Astralis"
+ },
+ "hltv-2394853-108687": {
+  "b": "TYLOO",
+  "a": "Sinners"
+ },
+ "hltv-2394854-108693": {
+  "b": "B8",
+  "a": "M80"
+ },
+ "hltv-2394855-108690": {
+  "b": "Heroic",
+  "a": "Gaimin Gladiators"
+ },
+ "hltv-2394856-108703": {
+  "a": "FlyQuest",
+  "b": "THUNDER dOWNUNDER"
+ },
+ "hltv-2394857-108705": {
+  "a": "Sharks",
+  "b": "TYLOO"
+ },
+ "hltv-2394858-108709": {
+  "b": "GamerLegion",
+  "a": "BIG"
+ },
+ "hltv-2394860-108715": {
+  "a": "Liquid",
+  "b": "Heroic"
+ },
+ "hltv-2394861-108714": {
+  "b": "M80",
+  "a": "NRG"
+ },
+ "hltv-2394862-108723": {
+  "b": "TYLOO",
+  "a": "Lynn Vision"
+ },
+ "hltv-2394863-108727": {
+  "a": "FlyQuest",
+  "b": "Liquid"
+ },
+ "hltv-2394886-108783": {
+  "b": "paiN",
+  "a": "FlyQuest"
+ },
+ "hltv-2394887-108793": {
+  "b": "FUT Esports",
+  "a": "G2"
+ },
+ "hltv-2394888-108788": {
+  "b": "Spirit",
+  "a": "9z"
+ },
+ "hltv-2394889-108803": {
+  "a": "paiN",
+  "b": "Astralis"
+ },
+ "hltv-2394890-108804": {
+  "a": "MIBR",
+  "b": "B8"
+ },
+ "hltv-2394891-108807": {
+  "a": "BetBoom Team",
+  "b": "Monte"
+ },
+ "hltv-2394892-108806": {
+  "a": "9z",
+  "b": "TYLOO"
+ },
+ "hltv-2394893-108809": {
+  "b": "G2",
+  "a": "BIG"
+ },
+ "hltv-2394894-108812": {
+  "a": "Legacy",
+  "b": "M80"
+ },
+ "hltv-2394895-108825": {
+  "b": "Monte",
+  "a": "paiN"
+ },
+ "hltv-2394896-108829": {
+  "a": "Legacy",
+  "b": "TYLOO"
+ },
+ "hltv-2394897-108830": {
+  "a": "BIG",
+  "b": "B8"
+ },
+ "hltv-2394898-108857": {
+  "b": "FUT Esports",
+  "a": "Vitality"
+ },
+ "hltv-2394899-108862": {
+  "b": "G2",
+  "a": "Team Falcons"
+ },
+ "hltv-2394900-108864": {
+  "b": "Spirit",
+  "a": "Natus Vincere"
+ },
+ "hltv-2394901-108860": {
+  "a": "FURIA",
+  "b": "B8"
+ },
+ "hltv-2394902-108861": {
+  "a": "Aurora Gaming",
+  "b": "Monte"
+ },
+ "hltv-2394903-108851": {
+  "b": "9z",
+  "a": "PARIVISION"
+ },
+ "hltv-2394905-108855": {
+  "b": "MOUZ",
+  "a": "Legacy"
+ },
+ "hltv-2394972-108871": {
+  "b": "TheMongolz",
+  "a": "B8"
+ },
+ "hltv-2394974-108877": {
+  "b": "PARIVISION",
+  "a": "Monte"
+ },
+ "hltv-2394975-108882": {
+  "b": "BetBoom Team",
+  "a": "Team Falcons"
+ },
+ "hltv-2394976-108879": {
+  "a": "Natus Vincere",
+  "b": "Legacy"
+ },
+ "hltv-2394977-108891": {
+  "a": "Aurora Gaming",
+  "b": "Spirit"
+ },
+ "hltv-2394978-108889": {
+  "a": "Vitality",
+  "b": "9z"
+ },
+ "hltv-2394979-108913": {
+  "b": "TheMongolz",
+  "a": "Natus Vincere"
+ },
+ "hltv-2394980-108910": {
+  "a": "B8",
+  "b": "FUT Esports"
+ },
+ "hltv-2394981-108922": {
+  "a": "Aurora Gaming",
+  "b": "G2"
+ },
+ "hltv-2394982-108924": {
+  "a": "Team Falcons",
+  "b": "Monte"
+ },
+ "hltv-2394983-108931": {
+  "a": "Vitality",
+  "b": "MOUZ"
+ },
+ "hltv-2394985-108937": {
+  "a": "FURIA",
+  "b": "BetBoom Team"
+ },
+ "hltv-2394987-108961": {
+  "b": "FUT Esports",
+  "a": "MOUZ"
+ },
+ "hltv-2394988-108960": {
+  "a": "Monte",
+  "b": "TheMongolz"
+ },
+ "hltv-2394989-108968": {
+  "a": "Vitality",
+  "b": "BetBoom Team"
+ },
+ "hltv-2394990-108964": {
+  "a": "Aurora Gaming",
+  "b": "9z"
+ },
+ "hltv-2394991-108975": {
+  "a": "Team Falcons",
+  "b": "Natus Vincere"
+ },
+ "hltv-2394992-108969": {
+  "a": "G2",
+  "b": "Legacy"
+ },
+ "hltv-2394993-108984": {
+  "a": "9z",
+  "b": "TheMongolz"
+ },
+ "hltv-2394994-108988": {
+  "a": "BetBoom Team",
+  "b": "FUT Esports"
+ },
+ "hltv-2394995-108991": {
+  "b": "Natus Vincere",
+  "a": "G2"
+ },
+ "hltv-2394998-109032": {
+  "a": "G2",
+  "b": "Spirit"
+ },
+ "hltv-2396017-109861": {
+  "a": "3DMAX",
+  "b": "MOUZ"
+ },
+ "hltv-2396018-109851": {
+  "b": "Spirit",
+  "a": "Liquid"
+ },
+ "hltv-2396019-109924": {
+  "a": "Astralis",
+  "b": "MOUZ"
+ },
+ "hltv-2396020-109915": {
+  "b": "Spirit",
+  "a": "FaZe"
+ },
+ "hltv-2396021-109950": {
+  "a": "MOUZ",
+  "b": "Spirit"
+ },
+ "hltv-2396576-110245": {
+  "b": "G2",
+  "a": "BIG"
+ },
+ "hltv-2396578-110242": {
+  "a": "Aurora Gaming",
+  "b": "M80"
+ },
+ "hltv-2396581-110279": {
+  "a": "MIBR",
+  "b": "K27"
+ },
+ "hltv-2396583-110274": {
+  "a": "Vitality",
+  "b": "B8"
+ },
+ "hltv-2396584-110273": {
+  "b": "FUT Esports",
+  "a": "MOUZ"
+ },
+ "hltv-2396587-110300": {
+  "a": "Natus Vincere",
+  "b": "TheMongolz"
+ },
+ "hltv-2396591-110320": {
+  "a": "BIG",
+  "b": "Spirit"
+ },
+ "hltv-2396595-110336": {
+  "b": "MOUZ",
+  "a": "PARIVISION"
+ },
+ "hltv-2396596-110327": {
+  "a": "Vitality",
+  "b": "Lynn Vision"
+ },
+ "hltv-2396597-110342": {
+  "b": "magic",
+  "a": "9z"
+ },
+ "hltv-2396601-110410": {
+  "b": "magic",
+  "a": "FUT Esports"
+ },
+ "hltv-2396603-110424": {
+  "b": "Legacy",
+  "a": "Natus Vincere"
+ },
+ "hltv-2396605-110428": {
+  "a": "Vitality",
+  "b": "FaZe"
+ },
+ "hltv-2396606-110429": {
+  "a": "Spirit",
+  "b": "B8"
+ },
+ "hltv-2396608-110449": {
+  "b": "FUT Esports",
+  "a": "MOUZ"
+ },
+ "hltv-2396609-110456": {
+  "b": "Legacy",
+  "a": "Team Falcons"
+ },
+ "hltv-2396610-110462": {
+  "b": "Spirit",
+  "a": "Vitality"
+ }
+}

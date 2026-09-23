@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "binding": {
+    "event_id": "1005581",
+    "team_a": "MOUZ",
+    "team_b": "NRG",
+    "map_number": 1,
+    "market": "Map 1 Winner"
+  },
+  "map_name": "de_cache",
+  "binding_status": "pending_manual_confirmation",
+  "roi": "0,0.06,0.23,0.38",
+  "source": {
+    "kind": "offline_image",
+    "path": "D:\\polymarket\\data\\stream_watch\\20260917T101910Z\\frames\\calib_00001_full.jpg"
+  },
+  "timing_basis": "decoded_at_is_local_decode_time_not_network_receipt_or_game_time",
+  "eligible_for_inference": false,
+  "created_at": "2026-09-18T10:07:15.935301+00:00",
+  "max_image_bytes": 500000000,
+  "full_frame_every_samples": 50
+}

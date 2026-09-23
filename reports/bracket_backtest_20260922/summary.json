@@ -1,0 +1,40 @@
+{
+  "ALL_favorite": {
+    "n": 172,
+    "pistol_hit_rate": 0.547,
+    "pnl_mean": -0.01,
+    "pnl_median": -0.11,
+    "pnl_total": -1.73,
+    "win_rate": 0.477,
+    "exit_mix": {
+      "SL": 90,
+      "TP": 80,
+      "END": 2
+    },
+    "TP_pnl_mean": 0.1461,
+    "SL_pnl_mean": -0.1524,
+    "END_pnl_mean": 0.152
+  },
+  "ORACLE_pistol_only": {
+    "n": 94,
+    "pistol_hit_rate": 1.0,
+    "pnl_mean": -0.0003,
+    "pnl_median": 0.115,
+    "pnl_total": -0.03,
+    "win_rate": 0.511,
+    "exit_mix": {
+      "SL": 46,
+      "TP": 46,
+      "END": 2
+    },
+    "TP_pnl_mean": 0.1461,
+    "SL_pnl_mean": -0.1534,
+    "END_pnl_mean": 0.152
+  },
+  "REALISTIC_53.4pct_read": {
+    "note": "pnl if pistol read hits 53.4% (measured ceiling): EV = 0.534*ORACLE + 0.466*ANTI",
+    "anti_n": 78,
+    "anti_pnl_mean": -0.0217,
+    "ev_mean": -0.0103
+  }
+}

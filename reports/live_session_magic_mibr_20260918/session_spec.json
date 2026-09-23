@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "protocol_id": "cs2_swing_trend_v1",
+  "session_id": "magic-mibr-20260918-map1-partial",
+  "match_id": "csgo_mc_2398100",
+  "event_id": "1039777",
+  "teams": ["magic", "MIBR"],
+  "maps": [
+    {
+      "bout_num": 1,
+      "map_name": "de_ancient",
+      "market_id": "4657629",
+      "market_name": "Map 1 Winner"
+    }
+  ],
+  "sources": {
+    "fivee_events": [
+      "data/fivee/eventlog_csgo_mc_2398100_20260918T134033Z.jsonl"
+    ],
+    "fivee_states": [],
+    "market": {
+      "format": "normalized_top",
+      "events": "data/realtime/event_1039777_20260918_214036.jsonl",
+      "metadata": "data/realtime/event_1039777_20260918_214036.meta.json"
+    }
+  }
+}

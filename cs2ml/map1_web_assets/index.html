@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Map 1 · 纸面工作台</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body>
+<header><div class="brand"><span class="brand-icon">M1</span><div><strong>MAP ONE</strong><small>CS2 预测研究工作台</small></div></div><span class="badge">PAPER ONLY · 无真实订单</span></header>
+<main>
+<section class="intro"><div><p class="eyebrow">OBSERVE. VALIDATE. THEN DECIDE.</p><h1>先积累证据，再决定交易。</h1><p>赛前 Map 1 · HLTV 导入与人工复核 · 真实盘口采集 · 延迟纸面成交</p></div><div class="connection"><span id="connection">正在连接本地服务…</span><small id="updated">—</small></div></section>
+<div class="notice">开发与验证阶段：不接钱包、不签名、不下单。测试通过或纸面盈利均不会自动开启实盘。</div>
+<div id="error" class="error" role="alert" hidden></div>
+<div id="warnings" class="notice" role="status" hidden></div>
+<section class="metrics" aria-label="纸面账本概览">
+<article><small>虚拟可用现金</small><strong id="cash">—</strong><span>初始 1,000 · 非账户余额</span></article>
+<article><small>已实现纸面盈亏</small><strong id="pnl">—</strong><span>仅显式结算入账</span></article>
+<article><small>未结算持仓成本</small><strong id="open">—</strong><span>不视为利润，也不强制平仓</span></article>
+<article><small>独立观察 / 已结算场次</small><strong id="samples">0 / 0</strong><span id="snapshots">0 条原始快照</span></article>
+</section>
+<section class="controls"><div><span class="dot" id="run-dot"></span><strong id="runner">采集已暂停</strong><small id="job">—</small></div><div class="buttons"><button id="discover">刷新公开赛程</button><button id="capture">采集一轮</button><button id="settle">检查结算</button><button id="toggle" class="primary">启动纸面采集</button></div></section>
+<section class="workspace">
+<div class="panel matches"><div class="panel-heading"><div><h2>比赛队列 <span id="event-count" class="count">0</span></h2><p>未来 72 小时 · 确认后在开赛前 60 分钟内采集</p></div><label class="check"><input type="checkbox" id="show-excluded">显示已过期 / 排除</label></div><div id="events" class="event-list"><div class="empty">点击「刷新公开赛程」，开始建立观察队列。不会自动推断地图或首发。</div></div></div>
+<aside class="panel confirmation"><div class="panel-heading"><div><h2>确认比赛信息</h2><p>导入 HLTV 比赛页，复核地图与名单；无需私钥。</p></div></div>
+<div id="no-selection" class="empty">还没有选择比赛。<br>只确认你已经核实的地图与五人阵容。</div>
+<div id="selection" hidden>
+<div class="selection-heading">
+<p id="selected-title" class="selected-title"></p><p id="selected-time" class="muted"></p>
+</div>
+<section class="hltv-panel" aria-labelledby="hltv-title">
+<h3 id="hltv-title">从 HLTV 导入</h3>
+<form id="hltv-import-form">
+<label>HLTV 比赛链接<input id="hltv-url" name="url" type="url" required placeholder="https://www.hltv.org/matches/…" maxlength="1000" autocomplete="off"></label>
+<button id="hltv-import" type="submit">读取公开比赛页</button>
+</form>
+<p class="hint">导入只保存当前读取的证据，不会确认比赛或产生交易。访问受限时不绕过限制，可稍后重试或使用下方人工核实。</p>
+<div id="hltv-empty" class="muted">尚未导入。地图为 TBA、名单不完整或匹配失败时，不进入采集。</div>
+<div id="hltv-evidence" hidden>
+<div class="hltv-heading"><strong id="hltv-map">Map 1 待公布</strong><span id="hltv-status" class="tag wait"></span></div>
+<p id="hltv-meta" class="hint evidence-meta"></p>
+<p id="hltv-error" class="warning" role="status" hidden></p>
+<ul id="hltv-issues" class="hltv-issues" hidden></ul>
+<div id="hltv-players"></div>
+<form id="hltv-identities-form" hidden>
+<p class="hint">候选仅是本地历史记录的匹配提示。请核对选手主页、赛事名单或本地 demo 证据后选择；昵称相同不等于同一人。可分批保存已核实的身份。</p>
+<label class="check attestation"><input id="hltv-identities-attest" type="checkbox" required>我已逐项核实本次填写的 HLTV 选手与 SteamID 对应关系及来源。</label>
+<button id="hltv-identities-save" type="submit">保存已核实的选手身份</button>
+</form>
+<form id="hltv-confirm-form">
+<label class="check attestation"><input id="hltv-reviewed" type="checkbox" required>我已核对双方、赛程、Map 1 与本场五人名单；页面名单不保证最终首发，我会关注变更。</label>
+<p class="hint">证据须在 15 分钟内读取，且地图、双方与全部选手身份匹配。采集运行后定期复查 HLTV；读取失败或内容变化会阻止使用旧确认继续采集。首次采集后不改写历史确认。</p>
+<button id="hltv-confirm" type="submit" class="primary">复核并确认比赛（仅纸面）</button>
+</form>
+</div>
+</section>
+<details id="manual-confirmation" class="manual-confirmation"><summary>人工核实备用入口</summary>
+<p class="hint manual-note">HLTV 无法读取时，可自行核实公开来源后填写。此入口不代表已自动验证来源内容，不应绕过地图未公布或身份不明的问题。</p>
+<form id="context-form">
+<label>第一张地图<input name="map_name" required placeholder="例如 de_mirage" maxlength="40" autocomplete="off"></label>
+<label>地图公布来源<input name="map_source" required placeholder="官方公告 URL / 本地证据记录路径" maxlength="1000"></label>
+<label>地图公布时间（本地时间）<input name="map_known_at" type="datetime-local" step="1" required></label>
+<label><span id="team-a-label">队伍 A</span> · 5 个 Steam ID<textarea name="roster_a" required rows="3" placeholder="每行一个，或用空格 / 逗号分隔" maxlength="200"></textarea></label>
+<label><span id="team-b-label">队伍 B</span> · 5 个 Steam ID<textarea name="roster_b" required rows="3" placeholder="每行一个，或用空格 / 逗号分隔" maxlength="200"></textarea></label>
+<label>首发名单来源<input name="roster_source" required placeholder="官方名单 URL / 本地证据记录路径" maxlength="1000"></label>
+<label>首发公布时间（本地时间）<input name="roster_known_at" type="datetime-local" step="1" required></label>
+<label class="check attestation"><input type="checkbox" name="attest" required>我已核对地图、五人首发与来源；这不是赛后回填。</label>
+<p class="hint">系统以本次确认时间作为最早可用时刻。首次采集后锁定地图和阵容，避免修改历史标签。来源内容仍需人工核验。</p>
+<button type="submit" class="primary" id="confirm">保存确认（仅纸面）</button>
+</form></details></div></aside>
+</section>
+<section class="review-grid">
+<article class="panel"><div class="panel-heading"><div><h2>验证进度</h2><p>以独立比赛计数，不以快照数量计数。</p></div></div><div class="panel-body"><dl id="validation"></dl><p class="hint">Brier 越低越好。无样本显示「待积累」，不显示伪造的 0 分。组合模型至少需要 30 场过去已结算样本，仍不代表证明优势。</p><p class="warning">当前模型尚未验证有优势。以下为研究记录，不是下注建议。</p></div></article>
+<article class="panel"><div class="panel-heading"><div><h2>未交易 / 取消原因</h2><p>数据不足、价格不合适与断线都需要被看见。</p></div></div><div id="reasons" class="panel-body"><p class="muted">暂无记录</p></div></article>
+</section>
+<section class="panel"><div class="panel-heading"><div><h2>纸面账本</h2><p id="ledger-summary">每场最多一次入场 · 持有到结算 · 最近 100 条</p></div><div class="exports"><a href="/api/export/report">完整报告</a><a href="/api/export/snapshots">原始快照</a><a href="/api/export/resolutions">结算证据</a><a href="/api/export/hltv_evidence">HLTV 来源证据</a></div></div><div id="ledger" class="records"><p class="empty">暂无成交或跳过记录</p></div></section>
+<details class="panel"><summary>运行记录与异常</summary><div id="runs" class="records"></div></details>
+<footer><span>仅监听本机 · 启动后默认暂停 · 不包含真实交易接口</span><span id="database"></span></footer>
+</main>
+</body></html>

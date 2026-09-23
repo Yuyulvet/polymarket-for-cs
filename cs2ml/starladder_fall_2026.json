@@ -1,0 +1,33 @@
+{
+  "event": "StarLadder StarSeries Fall 2026",
+  "season_alias": "StarSeries Season 20",
+  "hltv_event_id": 8057,
+  "starts_at": "2026-09-17T00:00:00Z",
+  "ends_at": "2026-09-20T23:59:59Z",
+  "recent_window_starts_at": "2026-06-17T00:00:00Z",
+  "observed_at": "2026-09-17T21:00:00+08:00",
+  "sources": {
+    "official_format": "https://www.starladder.com/en/news/starladder-announces-starseries-20-for-2026-anniversary-season-overview-format-and-prize-pool",
+    "teams_and_lineups": "https://www.hltv.org/events/8057/starladder-starseries-fall-2026",
+    "magic_substitution": "https://www.hltv.org/news/45528/vitality-and-mouz-top-pick-charts-for-starladder-starseries-fall-fantasy"
+  },
+  "teams": [
+    {"name": "MOUZ", "path_slugs": ["mouz"],
+     "players": ["torzsi", "Spinx", "xertioN", "PR", "xelex"]},
+    {"name": "Vitality", "path_slugs": ["vitality"],
+     "players": ["apEX", "ropz", "ZywOo", "flameZ", "mezii"]},
+    {"name": "FURIA", "path_slugs": ["furia"],
+     "players": ["FalleN", "yuurih", "YEKINDAR", "KSCERATO", "molodoy"]},
+    {"name": "Natus Vincere", "path_slugs": ["natus-vincere", "navi"],
+     "players": ["Aleksib", "iM", "b1t", "w0nderful", "makazze"]},
+    {"name": "Aurora", "path_slugs": ["aurora"],
+     "players": ["XANTARES", "woxic", "Jimpphat", "kyxsan", "Wicadia"]},
+    {"name": "magic", "path_slugs": ["magic"],
+     "players": ["MaSvAl", "sFade8", "eksiver", "mo0N", "tenzy"],
+     "note": "eksiver replaces AW for this event"},
+    {"name": "MIBR", "path_slugs": ["mibr"],
+     "players": ["LNZ", "nqz", "insani", "venomzera", "tomaszin"]},
+    {"name": "NRG", "path_slugs": ["nrg"],
+     "players": ["nitr0", "Sonic", "hallzerk", "Grim", "Jeorge"]}
+  ]
+}

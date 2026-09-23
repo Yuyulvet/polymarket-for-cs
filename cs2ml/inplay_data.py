@@ -171,10 +171,20 @@ RAW_CACHE = config.DATA_DIR / "polymarket_inplay_raw.parquet"
 
 
 def fetch_raw_series(matched: pd.DataFrame, refresh: bool = False,
-                     window_hours: float = 5.0) -> pd.DataFrame:
+                     window_hours: float = 5.0,
+                     lead_days: float = 7.0) -> pd.DataFrame:
     """对每场匹配事件的每个 Map N Winner，抓两队的盘中价序列，缓存为原始 parquet。
 
     列：match_id, team1, team2, map_market, outcome, token, t, p。
+
+    修复（2026-09-16）：原先把抓取窗口起点写死为 `start_date - 5 分钟`，
+    导致整份 RAW_CACHE 只有开赛前 5 分钟的价格（278/278 场无一例外），
+    而 CLOB 其实能返回赛前十几小时到几天的分钟级序列（实测 Feb 场 1186 个赛前点、
+    最早距开赛 19.8h）。这让所有"开盘价/软市场/早期定价"的分析都建立在
+    被自己截断的数据上。现在起点改为 `start_date - lead_days`。
+
+    另注意 API 契约：`interval=1m` 配 fidelity=1 会 HTTP 400；
+    必须用显式 `startTs`/`endTs` + fidelity=1（见 fetch_inplay_series）。
     """
     if not refresh and RAW_CACHE.exists():
         return pd.read_parquet(RAW_CACHE)
@@ -187,7 +197,7 @@ def fetch_raw_series(matched: pd.DataFrame, refresh: bool = False,
             # 每个 outcome（队名）一个 token，抓两队的序列
             for outcome, token in toks.items():
                 done += 1
-                t0 = mm["start_date"] - pd.Timedelta(minutes=5)
+                t0 = mm["start_date"] - pd.Timedelta(days=lead_days)
                 t1 = mm["start_date"] + pd.Timedelta(hours=window_hours)
                 try:
                     series = fetch_inplay_series(token, t0, t1)

@@ -1,0 +1,107 @@
+{
+  "version": 2,
+  "status": "paper_execution_backtest",
+  "live_trading_enabled": false,
+  "timing_basis": "strict_receive",
+  "timing_warning": "schema-v2 uses explicit normal-poll receive markers; schema-v1 excludes its inferred first burst; initial and recovery backfills are excluded",
+  "execution": "buy fade outcome at first observed ask; sell at first observed bid after fixed horizon",
+  "overlap_warning": "event rows are independent event-study observations, not an additive portfolio",
+  "inputs": {
+    "fivee": [
+      "data\\fivee\\eventlog_csgo_mc_2398088_20260917T104335Z.jsonl",
+      "data\\fivee\\eventlog_csgo_mc_2398088_20260917T110135Z.jsonl"
+    ],
+    "market": "data\\realtime\\event_1005581_20260917_181619.jsonl",
+    "bout_num": 1,
+    "market_name": "Map 1 Winner",
+    "teams": {
+      "MOUZ": [
+        "xelex",
+        "xertioN",
+        "Spinx",
+        "PR",
+        "torzsi"
+      ],
+      "NRG": [
+        "Grim",
+        "Sonic",
+        "Hallzerk",
+        "nitr0",
+        "jeorge"
+      ]
+    }
+  },
+  "parameters": {
+    "min_kills": 2,
+    "max_gap_seconds": 8.0,
+    "entry_delay": 2.0,
+    "pre_seconds": 5.0,
+    "reaction_threshold": 0.03,
+    "horizons": [
+      15.0,
+      30.0,
+      60.0,
+      120.0
+    ],
+    "fee_rate_assumption": 0.05
+  },
+  "audit": {
+    "rows": 1980,
+    "schema_v1_rows": 1980,
+    "schema_v2_rows": 0,
+    "events": 219,
+    "duplicates": 186,
+    "invalid": 0,
+    "initial_or_recovery": 211,
+    "unknown_killer_team": 0,
+    "market_rows_scanned": 1755755,
+    "quote_changes_retained": 11166,
+    "quote_changes_by_outcome": {
+      "MOUZ": 5583,
+      "NRG": 5583
+    },
+    "kills": 146,
+    "streaks": 30,
+    "matched_event_horizons": 0,
+    "matched_events": 0,
+    "triggered_events": 0
+  },
+  "summary_by_horizon": {
+    "15.0": {
+      "trades": 0,
+      "mean_gross_pnl": null,
+      "gross_win_rate": null,
+      "mean_net_pnl": null,
+      "median_net_pnl": null,
+      "net_win_rate": null,
+      "sum_independent_event_net_pnl": null
+    },
+    "30.0": {
+      "trades": 0,
+      "mean_gross_pnl": null,
+      "gross_win_rate": null,
+      "mean_net_pnl": null,
+      "median_net_pnl": null,
+      "net_win_rate": null,
+      "sum_independent_event_net_pnl": null
+    },
+    "60.0": {
+      "trades": 0,
+      "mean_gross_pnl": null,
+      "gross_win_rate": null,
+      "mean_net_pnl": null,
+      "median_net_pnl": null,
+      "net_win_rate": null,
+      "sum_independent_event_net_pnl": null
+    },
+    "120.0": {
+      "trades": 0,
+      "mean_gross_pnl": null,
+      "gross_win_rate": null,
+      "mean_net_pnl": null,
+      "median_net_pnl": null,
+      "net_win_rate": null,
+      "sum_independent_event_net_pnl": null
+    }
+  }
+}

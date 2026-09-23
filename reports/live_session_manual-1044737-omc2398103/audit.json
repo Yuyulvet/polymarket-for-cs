@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-19T20:52:41.336522+00:00",
+  "protocol_id": "cs2_swing_trend_v1",
+  "protocol_sha256": "0c1131c7793fb4dc104c1f3a41145f4c6c4cf124e4a63505768e915afd2b4536",
+  "paper_only": true,
+  "session_id": "manual-1044737-omc2398103",
+  "eligible_for_trend_dataset": false,
+  "blocking_reasons": [
+    "capture_did_not_observe_round_one_live",
+    "capture_did_not_observe_terminal_round_live",
+    "market_capture_missing_normal_end"
+  ],
+  "warnings": [
+    "fivee_event_snapshot_limit_reached_review_for_gaps"
+  ],
+  "three_source_overlap_seconds": 26905.59369301796,
+  "sources": {
+    "fivee_events": {
+      "paths": [
+        "D:\\polymarket\\data\\live_sessions\\manual-1044737-omc2398103\\fivee_events.jsonl"
+      ],
+      "segments": 1,
+      "complete_segments": 1,
+      "match_ids": [
+        "csgo_mc_2398103"
+      ],
+      "maps": [
+        "de_cache",
+        "de_mirage",
+        "de_nuke"
+      ],
+      "bouts": [
+        1,
+        2,
+        3
+      ],
+      "round_one_bouts": [],
+      "terminal_bouts": [
+        3
+      ],
+      "counts": {
+        "session_start": 2,
+        "poll_ok": 11484,
+        "event": 773,
+        "ineligible_events": 500,
+        "truncated_polls": 9696,
+        "eligible_events": 273,
+        "eligible_type_4": 6,
+        "eligible_type_3": 5,
+        "eligible_type_8": 218,
+        "eligible_type_6": 7,
+        "eligible_type_2": 19,
+        "eligible_type_1": 18,
+        "session_end": 1
+      },
+      "coverage": {
+        "start": 1789811288.736059,
+        "end": 1789851157.967449,
+        "seconds": 39869.23138999939
+      }
+    },
+    "fivee_states": {
+      "paths": [
+        "D:\\polymarket\\data\\live_sessions\\manual-1044737-omc2398103\\fivee_states.jsonl"
+      ],
+      "segments": 1,
+      "complete_segments": 1,
+      "match_ids": [
+        "csgo_mc_2398103"
+      ],
+      "counts": {
+        "session_start": 2,
+        "state_snapshot": 73,
+        "ineligible_snapshots": 2,
+        "mqtt_connected": 621,
+        "mqtt_subscribe_requested": 2,
+        "mqtt_subscribed": 2,
+        "mqtt_disconnected": 621,
+        "strict_eligible_snapshots": 71,
+        "mqtt_message": 71,
+        "mqtt_message_error": 1,
+        "session_end": 1
+      },
+      "coverage": {
+        "start": 1789811288.737076,
+        "end": 1789851161.205085,
+        "seconds": 39872.468008995056
+      }
+    },
+    "market": {
+      "format": "raw_depth",
+      "events": "D:\\polymarket\\data\\live_sessions\\manual-1044737-omc2398103\\market\\events.jsonl",
+      "event_id": "1044737",
+      "market_ids": [
+        "4708484",
+        "4708485"
+      ],
+      "expected_tokens": [
+        "61461858762797917118055754155213597464701816714940064246083147237728159760644",
+        "66435166827882661172466436828512231278519907440130442219557805005625134841871",
+        "73167698896189089788898587335821008469129986505844676822640771122225209991149",
+        "86247405635543308146129089426663684787448748370974176636398750680249621176218"
+      ],
+      "depth_tokens": [
+        "61461858762797917118055754155213597464701816714940064246083147237728159760644",
+        "66435166827882661172466436828512231278519907440130442219557805005625134841871",
+        "73167698896189089788898587335821008469129986505844676822640771122225209991149",
+        "86247405635543308146129089426663684787448748370974176636398750680249621176218"
+      ],
+      "has_full_depth_for_expected_tokens": true,
+      "exit_reason": "error",
+      "normal_end": false,
+      "counts": {
+        "market_raw": 2416,
+        "invalid_raw_messages": 1384
+      },
+      "coverage": {
+        "start": 1789812244.571882,
+        "end": 1789839150.165575,
+        "seconds": 26905.59369301796
+      }
+    }
+  },
+  "protocol": {
+    "protocol_id": "cs2_swing_trend_v1",
+    "mode": "paper_only",
+    "decision_unit": "one row per mechanism transition, never per quote or video frame",
+    "decision_kinds": [
+      "post_pistol_freeze",
+      "round_end_economy_update",
+      "prematch_prior_dislocation"
+    ],
+    "horizons_seconds": [
+      15,
+      30,
+      60,
+      120
+    ],
+    "entry": "first executable ask at or after state receipt + measured model latency + market secondsDelay",
+    "exit": "first executable bid at or after the fixed horizon",
+    "net_label": "exit proceeds - entry cost - observed market fees",
+    "price_prohibitions": [
+      "no midpoint fills",
+      "no window maximum as an exit",
+      "no quote received before the executable decision time"
+    ],
+    "model_comparison": [
+      "market_only",
+      "game_only",
+      "market_plus_game"
+    ],
+    "cohort_rule": "same decision rows and whole-series forward splits for every model",
+    "timing_rule": "initial snapshots and recovery backfills are ineligible; unknown event time stays unknown",
+    "execution_rule": "full depth is required for size-aware PnL; otherwise the session is diagnostic only",
+    "minimum_source_overlap_seconds": 300,
+    "promotion": "none; a separate frozen future acceptance window is required"
+  }
+}

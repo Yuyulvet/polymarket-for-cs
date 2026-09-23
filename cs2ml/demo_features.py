@@ -95,9 +95,22 @@ def _classify_buy(equip: float) -> str:
     return "full"
 
 
+def _active_players(player_info: pd.DataFrame) -> pd.DataFrame:
+    """只保留实际参赛的两队（team_number 2/3），过滤教练/旁观者。
+
+    修复（2026-09）：带教练的 demo 里 player_info 有 11 人，教练 team_number=1，
+    会被 `_steamid_to_group` 当成第三支队伍 → len(groups)==3 →
+    build_round_dataset 整场丢弃（实测 127/275 个失败 demo 是此因）。
+    """
+    if "team_number" not in player_info.columns:
+        return player_info
+    return player_info[player_info["team_number"].isin((2, 3))]
+
+
 def _steamid_to_group(player_info: pd.DataFrame) -> dict[str, int]:
     """steamid -> 队伍组号（player_info.team_number 的值 2/3，跨半场稳定）。"""
-    return {str(r.steamid): int(r.team_number) for r in player_info.itertuples(index=False)}
+    pi = _active_players(player_info)
+    return {str(r.steamid): int(r.team_number) for r in pi.itertuples(index=False)}
 
 
 def _group_roster(player_info: pd.DataFrame) -> dict[int, tuple[str, ...]]:
@@ -106,8 +119,9 @@ def _group_roster(player_info: pd.DataFrame) -> dict[int, tuple[str, ...]]:
     team_number 在同一张地图内稳定、但跨地图会翻转（主/客队摇号），
     所以队伍身份必须用 roster（5 个 steamid 的集合）而不是 team_number。
     """
+    pi = _active_players(player_info)
     out: dict[int, tuple[str, ...]] = {}
-    for g, sub in player_info.groupby("team_number"):
+    for g, sub in pi.groupby("team_number"):
         out[int(g)] = tuple(sorted(str(s) for s in sub["steamid"]))
     return out
 

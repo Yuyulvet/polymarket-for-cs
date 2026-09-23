@@ -1,0 +1,1126 @@
+{
+  "version": 1,
+  "mode": "offline_post_pistol_conversion_research",
+  "event": "StarLadder StarSeries Fall 2026",
+  "event_starts_at": "2026-09-17T00:00:00Z",
+  "live_trading_enabled": false,
+  "promoted_model": null,
+  "execution_pnl": null,
+  "audit": {
+    "source_round_maps": 607,
+    "eligible_label_maps": 593,
+    "maps": 593,
+    "post_pistol_rows": 1185,
+    "round_2_rows": 593,
+    "round_14_rows": 592,
+    "rejected_maps": {}
+  },
+  "evaluation": {
+    "target_rows": 1185,
+    "scored_rows": 981,
+    "scored_series": 273,
+    "models": {
+      "side_only": [
+        "a_is_ct"
+      ],
+      "economy": [
+        "a_is_ct",
+        "equipment_gap",
+        "equipment_log_ratio"
+      ],
+      "economy_pistol_context": [
+        "a_is_ct",
+        "equipment_gap",
+        "equipment_log_ratio",
+        "pistol_winner_gap",
+        "score_gap_before",
+        "previous_final_margin_gap",
+        "previous_stomp_gap",
+        "previous_comeback_gap",
+        "previous_bomb_t_gap"
+      ],
+      "economy_context_prematch": [
+        "a_is_ct",
+        "equipment_gap",
+        "equipment_log_ratio",
+        "pistol_winner_gap",
+        "score_gap_before",
+        "previous_final_margin_gap",
+        "previous_stomp_gap",
+        "previous_comeback_gap",
+        "previous_bomb_t_gap",
+        "all_win_gap",
+        "all_round_gap",
+        "all_pistol_gap",
+        "all_kd_gap",
+        "all_opening_gap",
+        "all_trade_gap",
+        "all_ct_gap",
+        "map_win_gap",
+        "map_round_gap",
+        "map_pistol_gap",
+        "map_kd_gap",
+        "map_opening_gap",
+        "map_trade_gap",
+        "map_ct_gap"
+      ]
+    },
+    "all_scored_metrics": {
+      "constant_0_5": {
+        "n": 981,
+        "brier": 0.25,
+        "log_loss": 0.6931471805599453,
+        "auc": 0.5,
+        "accuracy": 0.5056065239551478,
+        "calibration": [
+          {
+            "low": 0.5,
+            "n": 981,
+            "predicted": 0.5,
+            "actual": 0.5056065239551478
+          }
+        ]
+      },
+      "side_only": {
+        "n": 981,
+        "brier": 0.2483587195280456,
+        "log_loss": 0.689865919742097,
+        "auc": 0.5458284835384104,
+        "accuracy": 0.5443425076452599,
+        "calibration": [
+          {
+            "low": 0.4,
+            "n": 490,
+            "predicted": 0.4654850418696288,
+            "actual": 0.46122448979591835
+          },
+          {
+            "low": 0.5,
+            "n": 491,
+            "predicted": 0.5344831074990501,
+            "actual": 0.5498981670061099
+          }
+        ]
+      },
+      "economy": {
+        "n": 981,
+        "brier": 0.15162639863713198,
+        "log_loss": 0.4683711802668571,
+        "auc": 0.8622381110741603,
+        "accuracy": 0.7961264016309888,
+        "calibration": [
+          {
+            "low": 0.0,
+            "n": 28,
+            "predicted": 0.0875614382914253,
+            "actual": 0.0
+          },
+          {
+            "low": 0.1,
+            "n": 118,
+            "predicted": 0.13428376266070968,
+            "actual": 0.01694915254237288
+          },
+          {
+            "low": 0.2,
+            "n": 65,
+            "predicted": 0.2500731985241084,
+            "actual": 0.1076923076923077
+          },
+          {
+            "low": 0.3,
+            "n": 232,
+            "predicted": 0.35155934144102646,
+            "actual": 0.3275862068965517
+          },
+          {
+            "low": 0.4,
+            "n": 36,
+            "predicted": 0.41706740362748274,
+            "actual": 0.3333333333333333
+          },
+          {
+            "low": 0.5,
+            "n": 27,
+            "predicted": 0.5870777219503001,
+            "actual": 0.7407407407407407
+          },
+          {
+            "low": 0.6,
+            "n": 254,
+            "predicted": 0.6486931480970612,
+            "actual": 0.7047244094488189
+          },
+          {
+            "low": 0.7,
+            "n": 80,
+            "predicted": 0.7452958111436864,
+            "actual": 0.775
+          },
+          {
+            "low": 0.8,
+            "n": 98,
+            "predicted": 0.8583835731269155,
+            "actual": 0.9795918367346939
+          },
+          {
+            "low": 0.9,
+            "n": 43,
+            "predicted": 0.9124921707662528,
+            "actual": 0.9767441860465116
+          }
+        ]
+      },
+      "economy_pistol_context": {
+        "n": 981,
+        "brier": 0.14993363256354778,
+        "log_loss": 0.4646248145917411,
+        "auc": 0.8614441303624875,
+        "accuracy": 0.7961264016309888,
+        "calibration": [
+          {
+            "low": 0.0,
+            "n": 24,
+            "predicted": 0.08816140523214287,
+            "actual": 0.0
+          },
+          {
+            "low": 0.1,
+            "n": 150,
+            "predicted": 0.14121194311419516,
+            "actual": 0.02666666666666667
+          },
+          {
+            "low": 0.2,
+            "n": 196,
+            "predicted": 0.2576262934365383,
+            "actual": 0.2755102040816326
+          },
+          {
+            "low": 0.3,
+            "n": 105,
+            "predicted": 0.33031819140989466,
+            "actual": 0.3523809523809524
+          },
+          {
+            "low": 0.4,
+            "n": 4,
+            "predicted": 0.4259840994047011,
+            "actual": 0.5
+          },
+          {
+            "low": 0.5,
+            "n": 2,
+            "predicted": 0.5951779365535016,
+            "actual": 0.5
+          },
+          {
+            "low": 0.6,
+            "n": 93,
+            "predicted": 0.6641586793933356,
+            "actual": 0.7741935483870968
+          },
+          {
+            "low": 0.7,
+            "n": 232,
+            "predicted": 0.7412086665299388,
+            "actual": 0.6896551724137931
+          },
+          {
+            "low": 0.8,
+            "n": 133,
+            "predicted": 0.8545464498189731,
+            "actual": 0.9398496240601504
+          },
+          {
+            "low": 0.9,
+            "n": 42,
+            "predicted": 0.9119892333762539,
+            "actual": 0.9761904761904762
+          }
+        ]
+      },
+      "economy_context_prematch": {
+        "n": 981,
+        "brier": 0.15047738440829653,
+        "log_loss": 0.4666169363306684,
+        "auc": 0.8625415696707682,
+        "accuracy": 0.7981651376146789,
+        "calibration": [
+          {
+            "low": 0.0,
+            "n": 38,
+            "predicted": 0.08013010507573144,
+            "actual": 0.0
+          },
+          {
+            "low": 0.1,
+            "n": 129,
+            "predicted": 0.14823745977367464,
+            "actual": 0.06201550387596899
+          },
+          {
+            "low": 0.2,
+            "n": 158,
+            "predicted": 0.25085967978354223,
+            "actual": 0.1962025316455696
+          },
+          {
+            "low": 0.3,
+            "n": 104,
+            "predicted": 0.3392989639744234,
+            "actual": 0.36538461538461536
+          },
+          {
+            "low": 0.4,
+            "n": 38,
+            "predicted": 0.43963036717233317,
+            "actual": 0.34210526315789475
+          },
+          {
+            "low": 0.5,
+            "n": 26,
+            "predicted": 0.557953126804751,
+            "actual": 0.6538461538461539
+          },
+          {
+            "low": 0.6,
+            "n": 92,
+            "predicted": 0.6606267718480311,
+            "actual": 0.6847826086956522
+          },
+          {
+            "low": 0.7,
+            "n": 176,
+            "predicted": 0.7518252033863952,
+            "actual": 0.75
+          },
+          {
+            "low": 0.8,
+            "n": 156,
+            "predicted": 0.854948725792251,
+            "actual": 0.8525641025641025
+          },
+          {
+            "low": 0.9,
+            "n": 64,
+            "predicted": 0.9232815191959974,
+            "actual": 0.953125
+          }
+        ]
+      }
+    },
+    "round_2_metrics": {
+      "constant_0_5": {
+        "n": 491,
+        "brier": 0.25,
+        "log_loss": 0.6931471805599453,
+        "auc": 0.5,
+        "accuracy": 0.539714867617108,
+        "calibration": [
+          {
+            "low": 0.5,
+            "n": 491,
+            "predicted": 0.5,
+            "actual": 0.539714867617108
+          }
+        ]
+      },
+      "side_only": {
+        "n": 491,
+        "brier": 0.24809403868065316,
+        "log_loss": 0.6893360474369836,
+        "auc": 0.5482384371347471,
+        "accuracy": 0.5458248472505092,
+        "calibration": [
+          {
+            "low": 0.4,
+            "n": 243,
+            "predicted": 0.4659274594851341,
+            "actual": 0.49382716049382713
+          },
+          {
+            "low": 0.5,
+            "n": 248,
+            "predicted": 0.5348853969230695,
+            "actual": 0.5846774193548387
+          }
+        ]
+      },
+      "economy": {
+        "n": 491,
+        "brier": 0.15092953696057046,
+        "log_loss": 0.4676854814684906,
+        "auc": 0.8575054266154617,
+        "accuracy": 0.8044806517311609,
+        "calibration": [
+          {
+            "low": 0.0,
+            "n": 11,
+            "predicted": 0.08778855649349787,
+            "actual": 0.0
+          },
+          {
+            "low": 0.1,
+            "n": 57,
+            "predicted": 0.13697586974601828,
+            "actual": 0.03508771929824561
+          },
+          {
+            "low": 0.2,
+            "n": 29,
+            "predicted": 0.24568063386319294,
+            "actual": 0.10344827586206896
+          },
+          {
+            "low": 0.3,
+            "n": 112,
+            "predicted": 0.351036340215707,
+            "actual": 0.3392857142857143
+          },
+          {
+            "low": 0.4,
+            "n": 17,
+            "predicted": 0.4156287362828259,
+            "actual": 0.29411764705882354
+          },
+          {
+            "low": 0.5,
+            "n": 12,
+            "predicted": 0.5859571871777095,
+            "actual": 1.0
+          },
+          {
+            "low": 0.6,
+            "n": 133,
+            "predicted": 0.6477683389184915,
+            "actual": 0.706766917293233
+          },
+          {
+            "low": 0.7,
+            "n": 42,
+            "predicted": 0.7452759478846888,
+            "actual": 0.8095238095238095
+          },
+          {
+            "low": 0.8,
+            "n": 55,
+            "predicted": 0.8577958358890495,
+            "actual": 1.0
+          },
+          {
+            "low": 0.9,
+            "n": 23,
+            "predicted": 0.9133345379656952,
+            "actual": 0.9565217391304348
+          }
+        ]
+      },
+      "economy_pistol_context": {
+        "n": 491,
+        "brier": 0.14904867246887524,
+        "log_loss": 0.4636405084286038,
+        "auc": 0.8560694606779096,
+        "accuracy": 0.8044806517311609,
+        "calibration": [
+          {
+            "low": 0.0,
+            "n": 9,
+            "predicted": 0.08573979150776283,
+            "actual": 0.0
+          },
+          {
+            "low": 0.1,
+            "n": 72,
+            "predicted": 0.14090933086145382,
+            "actual": 0.027777777777777776
+          },
+          {
+            "low": 0.2,
+            "n": 97,
+            "predicted": 0.2559514749317167,
+            "actual": 0.26804123711340205
+          },
+          {
+            "low": 0.3,
+            "n": 47,
+            "predicted": 0.3316028350189805,
+            "actual": 0.425531914893617
+          },
+          {
+            "low": 0.4,
+            "n": 1,
+            "predicted": 0.403028072854918,
+            "actual": 0.0
+          },
+          {
+            "low": 0.5,
+            "n": 1,
+            "predicted": 0.5981994489016507,
+            "actual": 1.0
+          },
+          {
+            "low": 0.6,
+            "n": 55,
+            "predicted": 0.66465152030557,
+            "actual": 0.8545454545454545
+          },
+          {
+            "low": 0.7,
+            "n": 114,
+            "predicted": 0.7420547906074847,
+            "actual": 0.6842105263157895
+          },
+          {
+            "low": 0.8,
+            "n": 72,
+            "predicted": 0.8563756951767966,
+            "actual": 0.9583333333333334
+          },
+          {
+            "low": 0.9,
+            "n": 23,
+            "predicted": 0.9113163957796956,
+            "actual": 0.9565217391304348
+          }
+        ]
+      },
+      "economy_context_prematch": {
+        "n": 491,
+        "brier": 0.15226503391836024,
+        "log_loss": 0.47147577988761413,
+        "auc": 0.8524795458340291,
+        "accuracy": 0.8004073319755601,
+        "calibration": [
+          {
+            "low": 0.0,
+            "n": 13,
+            "predicted": 0.07453862710849125,
+            "actual": 0.0
+          },
+          {
+            "low": 0.1,
+            "n": 67,
+            "predicted": 0.14860895851099354,
+            "actual": 0.07462686567164178
+          },
+          {
+            "low": 0.2,
+            "n": 74,
+            "predicted": 0.2526514185830991,
+            "actual": 0.22972972972972974
+          },
+          {
+            "low": 0.3,
+            "n": 53,
+            "predicted": 0.3380494594507773,
+            "actual": 0.41509433962264153
+          },
+          {
+            "low": 0.4,
+            "n": 15,
+            "predicted": 0.4368502562100371,
+            "actual": 0.2
+          },
+          {
+            "low": 0.5,
+            "n": 14,
+            "predicted": 0.5649344263513735,
+            "actual": 0.6428571428571429
+          },
+          {
+            "low": 0.6,
+            "n": 50,
+            "predicted": 0.6672028642518937,
+            "actual": 0.8
+          },
+          {
+            "low": 0.7,
+            "n": 85,
+            "predicted": 0.7525109870291988,
+            "actual": 0.7529411764705882
+          },
+          {
+            "low": 0.8,
+            "n": 83,
+            "predicted": 0.8563212127039578,
+            "actual": 0.8433734939759037
+          },
+          {
+            "low": 0.9,
+            "n": 37,
+            "predicted": 0.923010021566861,
+            "actual": 0.9459459459459459
+          }
+        ]
+      }
+    },
+    "round_14_metrics": {
+      "constant_0_5": {
+        "n": 490,
+        "brier": 0.25,
+        "log_loss": 0.6931471805599453,
+        "auc": 0.5,
+        "accuracy": 0.4714285714285714,
+        "calibration": [
+          {
+            "low": 0.5,
+            "n": 490,
+            "predicted": 0.5,
+            "actual": 0.4714285714285714
+          }
+        ]
+      },
+      "side_only": {
+        "n": 490,
+        "brier": 0.24862394054043271,
+        "log_loss": 0.6903968734192617,
+        "auc": 0.5417857560714704,
+        "accuracy": 0.5428571428571428,
+        "calibration": [
+          {
+            "low": 0.4,
+            "n": 247,
+            "predicted": 0.4650497889118646,
+            "actual": 0.4291497975708502
+          },
+          {
+            "low": 0.5,
+            "n": 243,
+            "predicted": 0.5340725405148659,
+            "actual": 0.51440329218107
+          }
+        ]
+      },
+      "economy": {
+        "n": 490,
+        "brier": 0.15232468248038036,
+        "log_loss": 0.4690582784505264,
+        "auc": 0.8661351518494377,
+        "accuracy": 0.7877551020408163,
+        "calibration": [
+          {
+            "low": 0.0,
+            "n": 17,
+            "predicted": 0.08741447945479011,
+            "actual": 0.0
+          },
+          {
+            "low": 0.1,
+            "n": 61,
+            "predicted": 0.13176818718755245,
+            "actual": 0.0
+          },
+          {
+            "low": 0.2,
+            "n": 36,
+            "predicted": 0.2536116533898458,
+            "actual": 0.1111111111111111
+          },
+          {
+            "low": 0.3,
+            "n": 120,
+            "predicted": 0.3520474759179912,
+            "actual": 0.31666666666666665
+          },
+          {
+            "low": 0.4,
+            "n": 19,
+            "predicted": 0.41835463230428105,
+            "actual": 0.3684210526315789
+          },
+          {
+            "low": 0.5,
+            "n": 15,
+            "predicted": 0.5879741497683725,
+            "actual": 0.5333333333333333
+          },
+          {
+            "low": 0.6,
+            "n": 121,
+            "predicted": 0.6497096738883814,
+            "actual": 0.7024793388429752
+          },
+          {
+            "low": 0.7,
+            "n": 38,
+            "predicted": 0.7453177652720524,
+            "actual": 0.7368421052631579
+          },
+          {
+            "low": 0.8,
+            "n": 43,
+            "predicted": 0.8591353300590697,
+            "actual": 0.9534883720930233
+          },
+          {
+            "low": 0.9,
+            "n": 20,
+            "predicted": 0.9115234484868935,
+            "actual": 1.0
+          }
+        ]
+      },
+      "economy_pistol_context": {
+        "n": 490,
+        "brier": 0.15082039869922978,
+        "log_loss": 0.4656111295429663,
+        "auc": 0.8659847231275802,
+        "accuracy": 0.7877551020408163,
+        "calibration": [
+          {
+            "low": 0.0,
+            "n": 15,
+            "predicted": 0.0896143734667709,
+            "actual": 0.0
+          },
+          {
+            "low": 0.1,
+            "n": 78,
+            "predicted": 0.14149127750134097,
+            "actual": 0.02564102564102564
+          },
+          {
+            "low": 0.2,
+            "n": 99,
+            "predicted": 0.2592672772240909,
+            "actual": 0.2828282828282828
+          },
+          {
+            "low": 0.3,
+            "n": 58,
+            "predicted": 0.3292771871059802,
+            "actual": 0.29310344827586204
+          },
+          {
+            "low": 0.4,
+            "n": 3,
+            "predicted": 0.4336361082546288,
+            "actual": 0.6666666666666666
+          },
+          {
+            "low": 0.5,
+            "n": 1,
+            "predicted": 0.5921564242053525,
+            "actual": 0.0
+          },
+          {
+            "low": 0.6,
+            "n": 38,
+            "predicted": 0.6634453570203648,
+            "actual": 0.6578947368421053
+          },
+          {
+            "low": 0.7,
+            "n": 118,
+            "predicted": 0.7403912246245132,
+            "actual": 0.6949152542372882
+          },
+          {
+            "low": 0.8,
+            "n": 61,
+            "predicted": 0.852387340544165,
+            "actual": 0.9180327868852459
+          },
+          {
+            "low": 0.9,
+            "n": 19,
+            "predicted": 0.91280372099314,
+            "actual": 1.0
+          }
+        ]
+      },
+      "economy_context_prematch": {
+        "n": 490,
+        "brier": 0.14868608663392655,
+        "log_loss": 0.4617481767664636,
+        "auc": 0.8716174430460145,
+        "accuracy": 0.7959183673469388,
+        "calibration": [
+          {
+            "low": 0.0,
+            "n": 25,
+            "predicted": 0.08303767361869635,
+            "actual": 0.0
+          },
+          {
+            "low": 0.1,
+            "n": 62,
+            "predicted": 0.14783600146076553,
+            "actual": 0.04838709677419355
+          },
+          {
+            "low": 0.2,
+            "n": 84,
+            "predicted": 0.24928124322202777,
+            "actual": 0.16666666666666666
+          },
+          {
+            "low": 0.3,
+            "n": 51,
+            "predicted": 0.34059746867546753,
+            "actual": 0.3137254901960784
+          },
+          {
+            "low": 0.4,
+            "n": 23,
+            "predicted": 0.44144348301730885,
+            "actual": 0.43478260869565216
+          },
+          {
+            "low": 0.5,
+            "n": 12,
+            "predicted": 0.5498082773336913,
+            "actual": 0.6666666666666666
+          },
+          {
+            "low": 0.6,
+            "n": 42,
+            "predicted": 0.6527980904148611,
+            "actual": 0.5476190476190477
+          },
+          {
+            "low": 0.7,
+            "n": 91,
+            "predicted": 0.7511846362475127,
+            "actual": 0.7472527472527473
+          },
+          {
+            "low": 0.8,
+            "n": 73,
+            "predicted": 0.853388226974831,
+            "actual": 0.863013698630137
+          },
+          {
+            "low": 0.9,
+            "n": 27,
+            "predicted": 0.9236535715025921,
+            "actual": 0.9629629629629629
+          }
+        ]
+      }
+    },
+    "recent_target_rows": 132,
+    "recent_target_metrics": {
+      "constant_0_5": {
+        "n": 132,
+        "brier": 0.25,
+        "log_loss": 0.6931471805599454,
+        "auc": 0.5,
+        "accuracy": 0.4621212121212121,
+        "calibration": [
+          {
+            "low": 0.5,
+            "n": 132,
+            "predicted": 0.5,
+            "actual": 0.4621212121212121
+          }
+        ]
+      },
+      "side_only": {
+        "n": 132,
+        "brier": 0.25526930325273706,
+        "log_loss": 0.7037692240262562,
+        "auc": 0.4759870699607481,
+        "accuracy": 0.49242424242424243,
+        "calibration": [
+          {
+            "low": 0.4,
+            "n": 66,
+            "predicted": 0.43863158719863776,
+            "actual": 0.4696969696969697
+          },
+          {
+            "low": 0.5,
+            "n": 66,
+            "predicted": 0.5613684128013623,
+            "actual": 0.45454545454545453
+          }
+        ]
+      },
+      "economy": {
+        "n": 132,
+        "brier": 0.14636158375346264,
+        "log_loss": 0.4580555097878455,
+        "auc": 0.8690833525744632,
+        "accuracy": 0.8181818181818182,
+        "calibration": [
+          {
+            "low": 0.0,
+            "n": 10,
+            "predicted": 0.08602810249308385,
+            "actual": 0.0
+          },
+          {
+            "low": 0.1,
+            "n": 14,
+            "predicted": 0.12103477122808534,
+            "actual": 0.07142857142857142
+          },
+          {
+            "low": 0.2,
+            "n": 7,
+            "predicted": 0.2686256750865733,
+            "actual": 0.14285714285714285
+          },
+          {
+            "low": 0.3,
+            "n": 36,
+            "predicted": 0.3478059474838342,
+            "actual": 0.2222222222222222
+          },
+          {
+            "low": 0.6,
+            "n": 32,
+            "predicted": 0.654702627563784,
+            "actual": 0.71875
+          },
+          {
+            "low": 0.7,
+            "n": 10,
+            "predicted": 0.7220301840167156,
+            "actual": 0.7
+          },
+          {
+            "low": 0.8,
+            "n": 9,
+            "predicted": 0.8631920299274001,
+            "actual": 0.8888888888888888
+          },
+          {
+            "low": 0.9,
+            "n": 14,
+            "predicted": 0.9129726616396555,
+            "actual": 0.9285714285714286
+          }
+        ]
+      },
+      "economy_pistol_context": {
+        "n": 132,
+        "brier": 0.14584739948629827,
+        "log_loss": 0.458871088254854,
+        "auc": 0.8610020780420226,
+        "accuracy": 0.8181818181818182,
+        "calibration": [
+          {
+            "low": 0.0,
+            "n": 10,
+            "predicted": 0.08868407422578545,
+            "actual": 0.0
+          },
+          {
+            "low": 0.1,
+            "n": 18,
+            "predicted": 0.14687591016678506,
+            "actual": 0.1111111111111111
+          },
+          {
+            "low": 0.2,
+            "n": 18,
+            "predicted": 0.2790402262947313,
+            "actual": 0.16666666666666666
+          },
+          {
+            "low": 0.3,
+            "n": 21,
+            "predicted": 0.3271892662914355,
+            "actual": 0.23809523809523808
+          },
+          {
+            "low": 0.6,
+            "n": 19,
+            "predicted": 0.6651579303334363,
+            "actual": 0.7894736842105263
+          },
+          {
+            "low": 0.7,
+            "n": 24,
+            "predicted": 0.7446873924855885,
+            "actual": 0.6666666666666666
+          },
+          {
+            "low": 0.8,
+            "n": 11,
+            "predicted": 0.867990723035135,
+            "actual": 0.9090909090909091
+          },
+          {
+            "low": 0.9,
+            "n": 11,
+            "predicted": 0.9172381123622071,
+            "actual": 0.9090909090909091
+          }
+        ]
+      },
+      "economy_context_prematch": {
+        "n": 132,
+        "brier": 0.1465042699854121,
+        "log_loss": 0.4608815954188811,
+        "auc": 0.8690833525744631,
+        "accuracy": 0.8181818181818182,
+        "calibration": [
+          {
+            "low": 0.0,
+            "n": 7,
+            "predicted": 0.08421834602574732,
+            "actual": 0.0
+          },
+          {
+            "low": 0.1,
+            "n": 17,
+            "predicted": 0.14328155361784572,
+            "actual": 0.058823529411764705
+          },
+          {
+            "low": 0.2,
+            "n": 12,
+            "predicted": 0.2510462473421495,
+            "actual": 0.16666666666666666
+          },
+          {
+            "low": 0.3,
+            "n": 24,
+            "predicted": 0.33924236839002425,
+            "actual": 0.20833333333333334
+          },
+          {
+            "low": 0.4,
+            "n": 7,
+            "predicted": 0.43199661537842654,
+            "actual": 0.2857142857142857
+          },
+          {
+            "low": 0.5,
+            "n": 3,
+            "predicted": 0.5781776362891176,
+            "actual": 0.6666666666666666
+          },
+          {
+            "low": 0.6,
+            "n": 13,
+            "predicted": 0.669396975081949,
+            "actual": 0.6923076923076923
+          },
+          {
+            "low": 0.7,
+            "n": 22,
+            "predicted": 0.75379814689808,
+            "actual": 0.7272727272727273
+          },
+          {
+            "low": 0.8,
+            "n": 16,
+            "predicted": 0.8526708077175809,
+            "actual": 0.875
+          },
+          {
+            "low": 0.9,
+            "n": 11,
+            "predicted": 0.9226645416241347,
+            "actual": 0.9090909090909091
+          }
+        ]
+      }
+    },
+    "paired_brier_minus_economy": {
+      "constant_0_5": 0.09837360136286803,
+      "side_only": 0.09673232089091362,
+      "economy": 0.0,
+      "economy_pistol_context": -0.0016927660735842401,
+      "economy_context_prematch": -0.001149014228835463
+    },
+    "folds": [
+      {
+        "test_start": "2026-02-22T12:00:00+00:00",
+        "train_rows": 204,
+        "train_series": 58,
+        "test_rows": 171,
+        "test_series": 51
+      },
+      {
+        "test_start": "2026-04-14T16:40:00+00:00",
+        "train_rows": 373,
+        "train_series": 108,
+        "test_rows": 206,
+        "test_series": 56
+      },
+      {
+        "test_start": "2026-05-11T18:35:00+00:00",
+        "train_rows": 579,
+        "train_series": 164,
+        "test_rows": 202,
+        "test_series": 56
+      },
+      {
+        "test_start": "2026-06-07T18:50:00+00:00",
+        "train_rows": 783,
+        "train_series": 221,
+        "test_rows": 226,
+        "test_series": 55
+      },
+      {
+        "test_start": "2026-08-02T10:30:00+00:00",
+        "train_rows": 1009,
+        "train_series": 276,
+        "test_rows": 176,
+        "test_series": 55
+      }
+    ]
+  },
+  "reference": {
+    "repository": "https://github.com/TaiZo1/cs2-win-prediction",
+    "commit": "aba1689661219c085e2a3515d7086c5e65712325",
+    "license": "MIT",
+    "adopted_concepts": [
+      "separate post-pistol regime",
+      "freeze-end equipment state",
+      "whole-match temporal evaluation"
+    ],
+    "copied_source_code": false
+  },
+  "feature_scope": {
+    "available_now": [
+      "round-start equipment",
+      "score",
+      "starting side",
+      "preceding pistol result/margin/type/bomb plant",
+      "strictly prior roster/map history"
+    ],
+    "deferred_until_rebuilt": [
+      "cash",
+      "weapon classes",
+      "armor/helmet",
+      "utility inventory",
+      "saved equipment by roster"
+    ]
+  },
+  "validation": "whole-series forward blocks; results require available_at < block start; mirrored only after split",
+  "limitations": [
+    "This predicts R2/R14 winner, not Map Winner or Polymarket price movement.",
+    "Historical data has already been inspected, so this is development evidence rather than fresh acceptance data.",
+    "No synchronized historical order books exist for these maps; profitability is not evaluated.",
+    "Round-start equipment is available, but cash, exact weapons and utility require a new demo extraction schema."
+  ],
+  "model_stability": {
+    "logistic_C": 0.01,
+    "status": "diagnostic candidate only"
+  },
+  "inputs": {
+    "history": {
+      "path": "D:\\polymarket\\data\\map1\\history.parquet",
+      "sha256": "1d2895f3744f10f15617afb59f9e4d672bfd17bcd7ad9706bf454446d3b6ea86"
+    },
+    "rounds": {
+      "path": "D:\\polymarket\\data\\map1\\rebuild\\full-20260916\\round_states.parquet",
+      "sha256": "a02055ceb548cb955aa40e50569d3b564fc2c7c7c2f0c4700c649e6039ec16a3"
+    },
+    "labels": {
+      "path": "D:\\polymarket\\data\\map1\\rebuild\\full-20260916\\map_labels.parquet",
+      "sha256": "4817bdf7559c97186a598d6e4a5fd5e5315d8b3449c389223f9ef3396c4695a7"
+    },
+    "manifest": {
+      "path": "D:\\polymarket\\cs2ml\\starladder_fall_2026.json",
+      "sha256": "db108c82e01ea878b1cafc75edfb4e121eb7e454e2292407aad46322edfc5205"
+    }
+  }
+}

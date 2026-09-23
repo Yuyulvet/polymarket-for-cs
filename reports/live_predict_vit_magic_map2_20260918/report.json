@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-17T19:39:39.918197+00:00",
+  "paper_only": true,
+  "live_trading_enabled": false,
+  "paired_path": "D:\\polymarket\\reports\\live_pair_vit_magic_map2_20260917\\paired_states.jsonl",
+  "models_path": "D:\\polymarket\\data\\map1\\research\\fivee-compatible-20260918-v3\\models.joblib",
+  "model_research_version": "event_time_map_winner_fixed_ablation_v3",
+  "model_trained_before": "2026-09-17T19:39:16.939922+00:00",
+  "max_source_lag_seconds": 5.0,
+  "rows_scanned": 0,
+  "predictions": 0,
+  "rejected": {},
+  "profitability_evaluated": false,
+  "limitations": [
+    "Historical model event sampling does not match irregular 5E push sampling.",
+    "Gross model-price gaps exclude fees, slippage, queue position and fill probability.",
+    "No action is emitted until a fresh forward market-aligned acceptance set exists."
+  ],
+  "artifacts": {
+    "predictions": "reports\\live_predict_vit_magic_map2_20260918\\predictions.jsonl"
+  }
+}

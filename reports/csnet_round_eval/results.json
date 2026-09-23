@@ -1,0 +1,94 @@
+{
+  "E_equip": {
+    "auc": 0.6999,
+    "n_test": 3814
+  },
+  "E_plus_score": {
+    "auc": 0.7,
+    "n_test": 3814,
+    "paired_vs_E": {
+      "base_auc": 0.6999,
+      "new_auc": 0.7,
+      "diff": 0.0001,
+      "ci95": [
+        -0.0,
+        0.0001
+      ],
+      "p_gt0": 0.928,
+      "n_rounds": 3814,
+      "n_test_dem": 175
+    }
+  },
+  "R_early3_only": {
+    "auc": 0.7012,
+    "n_test": 3814,
+    "paired_vs_E": {
+      "base_auc": 0.6999,
+      "new_auc": 0.7012,
+      "diff": 0.0013,
+      "ci95": [
+        -0.0054,
+        0.0079
+      ],
+      "p_gt0": 0.641,
+      "n_rounds": 3814,
+      "n_test_dem": 175
+    }
+  },
+  "E_plus_R_early3": {
+    "auc": 0.7019,
+    "n_test": 3814,
+    "paired_vs_E": {
+      "base_auc": 0.6999,
+      "new_auc": 0.7019,
+      "diff": 0.002,
+      "ci95": [
+        -0.0039,
+        0.0078
+      ],
+      "p_gt0": 0.743,
+      "n_rounds": 3814,
+      "n_test_dem": 175
+    }
+  },
+  "E_plus_R_all6": {
+    "auc": 0.8059,
+    "n_test": 3814,
+    "paired_vs_E": {
+      "base_auc": 0.6999,
+      "new_auc": 0.8059,
+      "diff": 0.106,
+      "ci95": [
+        0.0957,
+        0.1165
+      ],
+      "p_gt0": 1.0,
+      "n_rounds": 3814,
+      "n_test_dem": 175
+    }
+  },
+  "PISTOL_E_equip": {
+    "auc": 0.5108,
+    "n_test": 350
+  },
+  "PISTOL_R_early3_only": {
+    "auc": 0.5457,
+    "n_test": 350
+  },
+  "PISTOL_E_plus_R_early3": {
+    "auc": 0.543,
+    "n_test": 350
+  },
+  "PISTOL_R_early3_vs_E": {
+    "base_auc": 0.5108,
+    "new_auc": 0.5457,
+    "diff": 0.0349,
+    "ci95": [
+      -0.0371,
+      0.1054
+    ],
+    "p_gt0": 0.809,
+    "n_rounds": 350,
+    "n_test_dem": 175
+  }
+}

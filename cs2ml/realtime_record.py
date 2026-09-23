@@ -43,11 +43,14 @@ def discover_events(query: str, limit: int = 10) -> list[dict]:
     return d.get("events", d if isinstance(d, list) else [])
 
 
-def event_tokens(event_id: int) -> dict:
-    """event_id -> {market_name: {outcome: token_id}}，只取二元 moneyline 盘。"""
+def event_details(event_id: int) -> dict:
     r = creq.get(f"{GAMMA}/events/{event_id}", impersonate="chrome", timeout=40)
     r.raise_for_status()
-    e = r.json()
+    return r.json()
+
+
+def tokens_from_event(e: dict) -> dict:
+    """Event payload -> {market_name: {outcome: token_id}}."""
     out = {}
     for mk in e.get("markets", []):
         name = mk.get("groupItemTitle") or mk.get("question")
@@ -62,10 +65,15 @@ def event_tokens(event_id: int) -> dict:
     return out
 
 
+def event_tokens(event_id: int) -> dict:
+    """event_id -> {market_name: {outcome: token_id}}."""
+    return tokens_from_event(event_details(event_id))
+
+
 # ---------------------------------------------------------------- WebSocket 录价
 class RealtimeRecorder:
     def __init__(self, tokens: dict[str, dict[str, str]], out_file: Path,
-                 probe_limit: int = 0):
+                 probe_limit: int = 0, event_id: str | None = None):
         self.tokens = tokens                      # market -> {outcome: token}
         self.tok2info = {}                        # token -> (market, outcome)
         self.assets = []
@@ -75,6 +83,7 @@ class RealtimeRecorder:
                 self.assets.append(tok)
         self.out_file = out_file
         self.probe_limit = probe_limit
+        self.event_id = None if event_id is None else str(event_id)
         self.n_events = 0
         self.n_msgs = 0
         self.best = {}                            # token -> {"bid","ask","last","ts"}
@@ -136,6 +145,7 @@ class RealtimeRecorder:
 
     def _handle(self, msg):
         local_ts = time.time()
+        source_ts = self._source_ts(msg)
         # 1) price_changes：数组，每项带 asset_id + best_bid/best_ask
         pcs = msg.get("price_changes")
         if isinstance(pcs, list):
@@ -154,7 +164,7 @@ class RealtimeRecorder:
                     "type": "pc", "market": market, "outcome": outcome, "token": aid,
                     "price": self._f(pc.get("price")), "size": self._f(pc.get("size")),
                     "side": pc.get("side"), "best_bid": bb, "best_ask": ba, "mid": mid,
-                    "local_ts": local_ts,
+                    "local_ts": local_ts, "source_ts": source_ts,
                 })
             return
         # 2) book 快照：asset_id + bids/asks
@@ -170,6 +180,7 @@ class RealtimeRecorder:
             self._write({
                 "type": "book", "market": market, "outcome": outcome, "token": aid,
                 "best_bid": bb, "best_ask": ba, "mid": mid, "local_ts": local_ts,
+                "source_ts": source_ts,
             })
             return
         # 3) last_trade_price 成交
@@ -182,7 +193,7 @@ class RealtimeRecorder:
             self._write({
                 "type": "trade", "market": market, "outcome": outcome, "token": aid,
                 "price": self._f(msg.get("price")), "size": self._f(msg.get("size")),
-                "side": msg.get("side"), "local_ts": local_ts,
+                "side": msg.get("side"), "local_ts": local_ts, "source_ts": source_ts,
             })
             return
 
@@ -190,6 +201,14 @@ class RealtimeRecorder:
     def _top(levels, kind):
         if not isinstance(levels, list) or not levels:
             return None
+
+    @staticmethod
+    def _source_ts(message):
+        try:
+            value = float(message.get("timestamp"))
+        except (AttributeError, TypeError, ValueError):
+            return None
+        return value / 1000.0 if value > 10_000_000_000 else value
         try:
             prices = []
             for lv in levels:
@@ -203,6 +222,9 @@ class RealtimeRecorder:
 
     def _write(self, row):
         # 追加 JSONL；每行一个事件，保秒级时间戳
+        if self.event_id is not None:
+            row = {"event_id": self.event_id, **row}
+        row["recv_utc"] = dt.datetime.now(dt.timezone.utc).isoformat()
         line = json.dumps(row, ensure_ascii=False)
         with open(self.out_file, "a", encoding="utf-8") as f:
             f.write(line + "\n")
@@ -240,6 +262,8 @@ def main():
     ap.add_argument("--event", type=int, default=None)
     ap.add_argument("--match", nargs="+", default=None, help="队名关键字，如 G2 Falcons")
     ap.add_argument("--hours", type=float, default=6.0)
+    ap.add_argument("--market", action="append", default=[],
+                    help="只录指定盘口，可重复，例如 --market 'Map 2 Winner'")
     args = ap.parse_args()
 
     if args.probe:
@@ -269,12 +293,43 @@ def main():
         print("需要 --event 或 --match")
         return
 
-    tokens = event_tokens(event_id)
+    event = event_details(event_id)
+    tokens = tokens_from_event(event)
+    if args.market:
+        wanted = {name.casefold() for name in args.market}
+        tokens = {name: values for name, values in tokens.items()
+                  if name.casefold() in wanted}
+        missing = wanted - {name.casefold() for name in tokens}
+        if missing:
+            raise ValueError(f"markets_not_found:{sorted(missing)}")
     for m, o2t in tokens.items():
         print(f"  {m}: {list(o2t)}")
     stamp = dt.datetime.now().strftime("%Y%m%d_%H%M%S")
     out = OUT_DIR / f"event_{event_id}_{stamp}.jsonl"
-    rec = RealtimeRecorder(tokens, out)
+    selected = []
+    for market in event.get("markets", []):
+        name = market.get("groupItemTitle") or market.get("question")
+        if name not in tokens:
+            continue
+        selected.append({
+            "market": name, "market_id": str(market.get("id")),
+            "condition_id": market.get("conditionId"),
+            "outcomes": list(tokens[name]), "tokens": tokens[name],
+            "seconds_delay": market.get("secondsDelay"),
+            "fees_enabled": market.get("feesEnabled"),
+            "fee_type": market.get("feeType"),
+            "fee_schedule": market.get("feeSchedule"),
+        })
+    meta = {
+        "schema_version": 2, "event_id": str(event_id),
+        "event_title": event.get("title"), "event_slug": event.get("slug"),
+        "ws_url": WS_URL, "timing_basis": "local_receive_time",
+        "started_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
+        "markets": selected,
+    }
+    out.with_suffix(".meta.json").write_text(
+        json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
+    rec = RealtimeRecorder(tokens, out, event_id=str(event_id))
     rec.run(duration_hours=args.hours)
 
 
