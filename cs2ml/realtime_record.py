@@ -21,6 +21,7 @@ import json
 import math
 import re
 import sys
+import threading
 import time
 from pathlib import Path
 
@@ -91,6 +92,7 @@ class RealtimeRecorder:
         self.market_metadata = market_metadata or {}
         self.n_events = 0
         self.n_msgs = 0
+        self.reconnects = 0
         self.books: dict[str, dict[str, dict[float, float]]] = {}
         self.last_write = 0.0
 
@@ -350,18 +352,27 @@ class RealtimeRecorder:
         deadline = time.time() + duration_hours * 3600
         while time.time() < deadline:
             ws = self._connect()
+            remaining = max(deadline - time.time(), 0.0)
+            deadline_timer = threading.Timer(remaining, ws.close)
+            deadline_timer.daemon = True
+            deadline_timer.start()
             try:
                 ws.run_forever(ping_interval=15, ping_timeout=10)
             except Exception as e:
                 print(f"[{self._now()}] run_forever exited: {e}", flush=True)
+            finally:
+                deadline_timer.cancel()
             if self.probe_limit and self.n_events >= self.probe_limit:
                 break  # probe 达到目标即停，不重连
             if time.time() >= deadline:
                 break
+            self.reconnects += 1
             print(f"[{self._now()}] reconnect in 3s ...", flush=True)
             time.sleep(3)
         print(f"[{self._now()}] done. events={self.n_events} msgs={self.n_msgs} "
               f"-> {self.out_file}", flush=True)
+        return {"events": self.n_events, "messages": self.n_msgs,
+                "reconnects": self.reconnects}
 
 
 # ---------------------------------------------------------------- CLI

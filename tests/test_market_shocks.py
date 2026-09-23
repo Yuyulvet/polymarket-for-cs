@@ -82,7 +82,9 @@ class ShockStudyTests(unittest.TestCase):
         self.assertEqual(report["number_of_matches"], 2)
         self.assertEqual(report["number_of_series"], 2)
         self.assertEqual(report["number_of_clusters"], 2)
-        self.assertIsNotNone(report["executable_pnl_95pct_clustered_ci"])
+        self.assertIsNone(report["executable_pnl_95pct_clustered_ci"])
+        self.assertEqual(report["clustered_ci_status"],
+                         "insufficient_clusters_minimum_5")
         self.assertEqual(report["conclusion"], "costs_unknown_no_net_edge_conclusion")
 
     def test_one_cluster_cannot_fabricate_confidence_interval(self):

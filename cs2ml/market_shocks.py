@@ -25,6 +25,7 @@ SCHEMA_VERSION = 1
 SHOCK_WINDOWS_SECONDS = (1, 2, 5)
 SHOCK_THRESHOLDS = (0.01, 0.02, 0.03, 0.05)
 HORIZONS_SECONDS = (1, 2, 3, 5, 10, 30, 60)
+MIN_BOOTSTRAP_CLUSTERS = 5
 
 
 def _finite(value):
@@ -183,6 +184,13 @@ def detect_shocks(features: pd.DataFrame, *,
                     "token_shock_id": f"{token}:{window:g}:{timestamp:.9f}",
                     "shock_window_seconds": window, "shock_change": change,
                     "shock_magnitude": magnitude, "shock_direction": direction,
+                    "pre_shock_mid": prior.get("mid"),
+                    "pre_shock_bid": prior.get("best_bid"),
+                    "pre_shock_ask": prior.get("best_ask"),
+                    "post_shock_bid": row.get("best_bid"),
+                    "post_shock_ask": row.get("best_ask"),
+                    "pre_shock_obi_1": prior.get("obi_1"),
+                    "pre_shock_obi_5": prior.get("obi_5"),
                     "shock_magnitude_bucket": _magnitude_bucket(magnitude),
                     "starting_probability_bucket": _probability_bucket(row["mid"]),
                     "spread_bucket": _spread_bucket(row.get("spread")),
@@ -293,11 +301,12 @@ def executable_drift(features: pd.DataFrame, shocks: list[dict], *,
 
 
 def clustered_bootstrap(values, clusters, *, draws: int = 2000,
-                        seed: int = 20260923) -> list[float] | None:
+                        seed: int = 20260923,
+                        minimum_clusters: int = MIN_BOOTSTRAP_CLUSTERS) -> list[float] | None:
     pairs = [(float(value), str(cluster)) for value, cluster in zip(values, clusters)
              if _finite(value) is not None and cluster is not None]
     names = sorted({cluster for _, cluster in pairs})
-    if len(names) < 2:
+    if len(names) < minimum_clusters:
         return None
     grouped = {name: [value for value, cluster in pairs if cluster == name]
                for name in names}
@@ -377,6 +386,9 @@ def summarize(rows: list[dict], *, draws: int = 2000, seed: int = 20260923) -> d
         "number_of_series": len(series), "unique_teams": len(_teams(rows)),
         "decision_days": len(days), "cluster_unit": "series_or_match_or_event",
         "number_of_clusters": len(set(clusters)),
+        "clustered_ci_status": (
+            "available" if ci is not None else
+            f"insufficient_clusters_minimum_{MIN_BOOTSTRAP_CLUSTERS}"),
         "mean_executable_pnl": float(np.mean(pnl)) if pnl else None,
         "median_executable_pnl": float(np.median(pnl)) if pnl else None,
         "executable_pnl_95pct_clustered_ci": ci,

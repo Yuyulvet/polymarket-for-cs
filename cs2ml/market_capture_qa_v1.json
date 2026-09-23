@@ -1,0 +1,25 @@
+{
+  "config_version": "market_capture_qa_v1",
+  "purpose": "operational capture integrity; thresholds are not alpha parameters",
+  "stale_quote_seconds": 5.0,
+  "fail": {
+    "minimum_message_count": 1,
+    "require_local_receive_monotonicity": true,
+    "minimum_valid_two_sided_quote_pct": 0.50,
+    "maximum_crossed_book_rate": 0.01
+  },
+  "warn": {
+    "minimum_valid_two_sided_quote_pct": 0.95,
+    "minimum_valid_l1_depth_pct": 0.80,
+    "minimum_valid_l5_depth_pct": 0.80,
+    "maximum_duplicate_message_rate": 0.05,
+    "maximum_stale_quote_rate": 0.05,
+    "maximum_p99_quote_interval_seconds": 5.0,
+    "maximum_locked_book_rate": 0.05
+  },
+  "analysis_policy": {
+    "PASS": "main_analysis",
+    "WARN": "sensitivity_analysis_only",
+    "FAIL": "excluded_with_reason"
+  }
+}

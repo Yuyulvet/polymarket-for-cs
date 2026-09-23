@@ -81,3 +81,7 @@ No strategy is promoted by this experiment. A confidence interval crossing
 zero is reported as insufficient evidence. Even a positive interval is only an
 observed research result and still requires a frozen out-of-sample forward
 window.
+
+The follow-on automated collection, QA, frozen protocol, latency, taxonomy,
+annotation and unified-dataset layer is documented in
+`docs/market-p0.5-infrastructure.md`.

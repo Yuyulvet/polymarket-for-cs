@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 import tempfile
+import threading
 import unittest
 from unittest.mock import patch
 
@@ -111,6 +112,27 @@ class RealtimeRecorderTests(unittest.TestCase):
             row = json.loads(path.read_text())
         self.assertEqual(row["type"], "best_bid_ask")
         self.assertAlmostEqual(row["spread"], .03)
+
+    def test_run_actively_closes_healthy_socket_at_deadline(self):
+        class HealthySocket:
+            def __init__(self):
+                self.closed = threading.Event()
+
+            def close(self):
+                self.closed.set()
+
+            def run_forever(self, **_):
+                self.closed.wait(timeout=1)
+
+        with tempfile.TemporaryDirectory() as directory:
+            recorder = RealtimeRecorder(
+                {"Match Winner": {"Alpha": "a"}},
+                Path(directory) / "quotes.jsonl")
+            socket = HealthySocket()
+            with patch.object(recorder, "_connect", return_value=socket):
+                result = recorder.run(duration_hours=0.00001)
+        self.assertTrue(socket.closed.is_set())
+        self.assertEqual(result["reconnects"], 0)
 
 
 if __name__ == "__main__":
